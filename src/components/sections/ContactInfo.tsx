@@ -1,6 +1,6 @@
 'use client';
 
-import { MapPin, Phone, Mail, Clock, Users, Award, Target, Zap } from 'lucide-react';
+import { MapPin, Clock, Users, Award, Target, Zap } from 'lucide-react';
 
 export default function ContactInfo() {
   return (

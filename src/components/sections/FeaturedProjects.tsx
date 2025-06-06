@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { MapPin, Calendar, ArrowRight, Filter } from 'lucide-react';
+import { MapPin, Calendar, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { cn } from '@/lib/utils';
 

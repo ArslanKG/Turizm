@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowDown, Play, X } from 'lucide-react';
+import { ArrowDown, X } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 
 export default function AboutHero() {

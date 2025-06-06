@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Building2, Home, Compass, ArrowRight, Star, Users, Award, Target } from 'lucide-react';
+import { Building2, Home, Compass, ArrowRight, Star } from 'lucide-react';
 
 interface Service {
   id: string;

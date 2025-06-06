@@ -96,7 +96,7 @@ export default function BlogGrid() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogPosts.map((post, index) => (
+          {blogPosts.map((post, _index) => (
             <article
               key={post.id}
               className={`group relative bg-white rounded-2xl border border-gray-200 overflow-hidden transition-all duration-300 hover:shadow-xl hover:border-orange-200 hover:-translate-y-1 ${

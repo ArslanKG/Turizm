@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { Linkedin, Mail, Phone } from 'lucide-react';
+import { Linkedin, Mail } from 'lucide-react';
 
 interface TeamMember {
   id: string;

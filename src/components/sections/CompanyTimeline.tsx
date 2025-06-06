@@ -1,6 +1,6 @@
 'use client';
 
-import { Calendar, Building, Award, Globe } from 'lucide-react';
+import { Building, Award, Globe } from 'lucide-react';
 
 interface TimelineEvent {
   year: string;

@@ -3,9 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ChevronLeft, ChevronRight, Play, ArrowRight, Leaf, ChevronDown } from 'lucide-react';
-import { Button } from '@/components/ui/Button';
-import { cn } from '@/lib/utils';
+import { ChevronLeft, ChevronRight, Play, ArrowRight, ChevronDown } from 'lucide-react';
 
 interface HeroSlide {
   id: string;
