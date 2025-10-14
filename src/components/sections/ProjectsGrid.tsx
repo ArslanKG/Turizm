@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Calendar, MapPin, ArrowRight, Eye } from 'lucide-react';
 
 const projects = [
@@ -10,6 +11,7 @@ const projects = [
     title: 'İstanbul Kültür Turu',
     category: 'Kültür Turları',
     categoryId: 'cultural',
+    slug: 'istanbul-kultur-turu',
     location: 'İstanbul, Türkiye',
     year: '2024',
     image: 'https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=800&h=600&fit=crop&crop=center&q=90',
@@ -20,6 +22,7 @@ const projects = [
     title: 'Kapadokya Balon Turu',
     category: 'Macera Turları',
     categoryId: 'adventure',
+    slug: 'kapadokya-balon-turu',
     location: 'Kapadokya, Nevşehir',
     year: '2024',
     image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop&crop=center&q=90',
@@ -30,6 +33,7 @@ const projects = [
     title: 'Pamukkale Doğa Turu',
     category: 'Doğa Turları',
     categoryId: 'nature',
+    slug: 'pamukkale-doga-turu',
     location: 'Pamukkale, Denizli',
     year: '2024',
     image: 'https://images.unsplash.com/photo-1605540436563-5bca919ae766?w=800&h=600&fit=crop&crop=center&q=90',
@@ -40,6 +44,7 @@ const projects = [
     title: 'Antalya Şehir Turu',
     category: 'Şehir Turları',
     categoryId: 'city',
+    slug: 'antalya-sehir-turu',
     location: 'Antalya, Türkiye',
     year: '2024',
     image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop&crop=center&q=90',
@@ -50,6 +55,7 @@ const projects = [
     title: 'Efes Antik Kenti Turu',
     category: 'Kültür Turları',
     categoryId: 'cultural',
+    slug: 'efes-antik-kenti-turu',
     location: 'Efes, İzmir',
     year: '2024',
     image: 'https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?w=800&h=600&fit=crop&crop=center&q=90',
@@ -60,6 +66,7 @@ const projects = [
     title: 'Karadeniz Yaylalar Turu',
     category: 'Doğa Turları',
     categoryId: 'nature',
+    slug: 'karadeniz-yaylalar-turu',
     location: 'Karadeniz Bölgesi',
     year: '2024',
     image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop&crop=center&q=90',
@@ -107,9 +114,10 @@ export default function ProjectsGrid({ activeCategory }: ProjectsGridProps) {
         {/* Tours Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project) => (
-            <div
+            <Link
               key={project.id}
-              className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer"
+              href={`/turlar/${project.slug}`}
+              className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer block"
               onMouseEnter={() => setHoveredProject(project.id)}
               onMouseLeave={() => setHoveredProject(null)}
             >
@@ -167,12 +175,12 @@ export default function ProjectsGrid({ activeCategory }: ProjectsGridProps) {
                 </div>
 
                 {/* CTA */}
-                <button className="inline-flex items-center text-blue-600 font-medium group-hover:text-blue-700 transition-colors duration-300">
+                <div className="inline-flex items-center text-blue-600 font-medium group-hover:text-blue-700 transition-colors duration-300">
                   <span className="mr-2">Tur Detayları</span>
                   <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
-                </button>
+                </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 

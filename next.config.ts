@@ -74,7 +74,17 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/projects',
-        destination: '/projeler',
+        destination: '/turlar',
+        permanent: true,
+      },
+      {
+        source: '/projeler',
+        destination: '/turlar',
+        permanent: true,
+      },
+      {
+        source: '/projeler/:slug*',
+        destination: '/turlar/:slug*',
         permanent: true,
       },
       {
