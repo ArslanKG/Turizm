@@ -82,12 +82,13 @@ export default function BlogDetail({ post }: BlogDetailProps) {
 
           {/* Featured Image */}
           <div className="mb-8">
-            <div className="aspect-[16/9] rounded-2xl overflow-hidden">
+            <div className="relative aspect-[16/9] rounded-2xl overflow-hidden">
               <Image
                 src={post.image}
                 alt={post.title}
                 fill
                 className="object-cover"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1024px"
               />
             </div>
           </div>
