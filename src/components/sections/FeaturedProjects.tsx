@@ -12,7 +12,7 @@ interface FeaturedProject {
   title: string;
   location: string;
   year: number;
-  category: 'kentsel-donusum' | 'insaat' | 'mimarlik';
+  category: 'kultur-turlari' | 'otel-rezervasyonu' | 'macera-turlari' | 'rehberlik-hizmetleri';
   image: string;
   area: string;
   description: string;
@@ -23,59 +23,60 @@ interface FeaturedProject {
 const featuredProjects: FeaturedProject[] = [
   {
     id: '1',
-    title: 'Kadıköy Kentsel Dönüşüm Projesi',
-    location: 'Kadıköy, İstanbul',
+    title: 'İstanbul Kültür Turu',
+    location: 'İstanbul',
     year: 2023,
-    category: 'kentsel-donusum',
+    category: 'kultur-turlari',
     image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&h=600&fit=crop&crop=center',
-    area: '45.000 m²',
-    description: 'Modern yaşam alanları ile tarihî dokuyu harmanlayan öncü kentsel dönüşüm projesi.',
-    slug: 'kadikoy-kentsel-donusum',
+    area: '7 Gün',
+    description: 'İstanbul\'un tarihi dokusunu keşfetmek için özel olarak tasarlanan kültür turu.',
+    slug: 'istanbul-kultur-turu',
     featured: true
   },
   {
     id: '2',
-    title: 'Beyoğlu Rezidans Kompleksi',
-    location: 'Beyoğlu, İstanbul',
+    title: 'Kapadokya Balon Turu',
+    location: 'Kapadokya, Nevşehir',
     year: 2023,
-    category: 'insaat',
+    category: 'otel-rezervasyonu',
     image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&h=600&fit=crop&crop=center',
-    area: '28.000 m²',
-    description: 'Lüks konut ve ticari alanların bir arada bulunduğu modern yaşam kompleksi.',
-    slug: 'beyoglu-rezidans',
+    area: '1 Gün',
+    description: 'Kapadokya\'nın eşsiz manzarasını gün doğumunda balon ile keşfedin.',
+    slug: 'kapadokya-balon-turu',
     featured: true
   },
   {
     id: '3',
-    title: 'Ataşehir İş Merkezi',
-    location: 'Ataşehir, İstanbul',
+    title: 'Antalya Macera Turu',
+    location: 'Antalya',
     year: 2022,
-    category: 'mimarlik',
+    category: 'macera-turlari',
     image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop&crop=center',
-    area: '32.000 m²',
-    description: 'Sürdürülebilir mimari yaklaşımıyla tasarlanan A+ ofis kompleksi.',
-    slug: 'atasehir-is-merkezi',
+    area: '3 Gün',
+    description: 'Antalya\'nın doğal güzelliklerinde macera dolu aktiviteler.',
+    slug: 'antalya-macera-turu',
     featured: true
   },
   {
     id: '4',
-    title: 'Üsküdar Sahil Projesi',
-    location: 'Üsküdar, İstanbul',
+    title: 'Ege Mavi Turu',
+    location: 'Bodrum, Muğla',
     year: 2024,
-    category: 'kentsel-donusum',
+    category: 'rehberlik-hizmetleri',
     image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&h=600&fit=crop&crop=center',
-    area: '15.000 m²',
-    description: 'Boğaz manzaralı sahil şeridinin modern yaşam alanlarına dönüşümü.',
-    slug: 'uskudar-sahil',
+    area: '5 Gün',
+    description: 'Ege\'nin berrak sularında tekne ile unutulmaz bir mavi yolculuk.',
+    slug: 'ege-mavi-turu',
     featured: true
   }
 ];
 
 const categories = [
   { id: 'all', label: 'Tümü' },
-  { id: 'kentsel-donusum', label: 'Kentsel Dönüşüm' },
-  { id: 'insaat', label: 'İnşaat' },
-  { id: 'mimarlik', label: 'Mimarlık' }
+  { id: 'kultur-turlari', label: 'Kültür Turları' },
+  { id: 'otel-rezervasyonu', label: 'Otel Rezervasyonu' },
+  { id: 'rehberlik-hizmetleri', label: 'Rehberlik Hizmetleri' },
+  { id: 'macera-turlari', label: 'Macera Turları' }
 ];
 
 export default function FeaturedProjects() {
@@ -87,12 +88,14 @@ export default function FeaturedProjects() {
 
   const getCategoryColor = (category: string) => {
     switch (category) {
-      case 'kentsel-donusum':
+      case 'kultur-turlari':
         return 'bg-orange-100 text-orange-700';
-      case 'insaat':
-        return 'bg-orange-100 text-orange-700';
-      case 'mimarlik':
-        return 'bg-orange-100 text-orange-700';
+      case 'otel-rezervasyonu':
+        return 'bg-blue-100 text-blue-700';
+      case 'rehberlik-hizmetleri':
+        return 'bg-green-100 text-green-700';
+      case 'macera-turlari':
+        return 'bg-green-100 text-green-700';
       default:
         return 'bg-gray-100 text-gray-700';
     }
@@ -100,12 +103,14 @@ export default function FeaturedProjects() {
 
   const getCategoryLabel = (category: string) => {
     switch (category) {
-      case 'kentsel-donusum':
-        return 'Kentsel Dönüşüm';
-      case 'insaat':
-        return 'İnşaat';
-      case 'mimarlik':
-        return 'Mimarlık';
+      case 'kultur-turlari':
+        return 'Kültür Turları';
+      case 'otel-rezervasyonu':
+        return 'Otel Rezervasyonu';
+      case 'rehberlik-hizmetleri':
+        return 'Rehberlik Hizmetleri';
+      case 'macera-turlari':
+        return 'Macera Turları';
       default:
         return category;
     }
@@ -117,11 +122,11 @@ export default function FeaturedProjects() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 sm:text-5xl font-display mb-4">
-            <span className="text-gradient">Öne Çıkan Projelerimiz</span>
+            <span className="text-gradient">Öne Çıkan Turlarımız</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-            İstanbul'un en prestijli lokasyonlarında gerçekleştirdiğimiz öncü projelerle 
-            şehrin siluetini değiştiriyoruz.
+            Türkiye'nin en güzel destinasyonlarında gerçekleştirdiğimiz özel turlarla
+            unutulmaz anılar biriktiriyoruz.
           </p>
 
           {/* Category Filter */}
@@ -206,7 +211,7 @@ export default function FeaturedProjects() {
 
                 <div className="flex items-center justify-between">
                   <div className="text-sm text-gray-500">
-                    <span className="font-semibold text-orange-600">{project.area}</span> Toplam Alan
+                    <span className="font-semibold text-orange-600">{project.area}</span> Tur Süresi
                   </div>
                   
                   <Link
@@ -225,11 +230,11 @@ export default function FeaturedProjects() {
         {/* CTA Section */}
         <div className="text-center mt-16">
           <p className="text-lg text-gray-600 mb-6">
-            Tüm projelerimizi görmek ve detaylı bilgi almak için portfolyomuzu inceleyin.
+            Tüm turlarımızı görmek ve detaylı bilgi almak için kataloumuzu inceleyin.
           </p>
           <Link href="/projeler">
             <Button variant="orange" size="lg">
-              Tüm Projeler
+              Tüm Turlar
             </Button>
           </Link>
         </div>

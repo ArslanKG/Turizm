@@ -23,32 +23,32 @@ const teamMembers: TeamMember[] = [
     position: 'Kurucu & CEO',
     department: 'Yönetim',
     image: 'https://randomuser.me/api/portraits/men/1.jpg',
-    bio: 'İnşaat Mühendisi. 20+ yıllık sektör deneyimi ile Parla Group\'u sektörde lider konuma taşıdı.',
-    email: 'ahmet.parla@parlagroup.com',
+    bio: 'Turizm İşletmecisi. 20+ yıllık turizm sektörü deneyimi ile Parla Travel\'ı sektörde lider konuma taşıdı.',
+    email: 'ahmet.parla@parlatravel.com',
     linkedin: '#',
-    specialties: ['Proje Yönetimi', 'Stratejik Planlama', 'Kentsel Dönüşüm']
+    specialties: ['Tur Operasyonu', 'Stratejik Planlama', 'Sürdürülebilir Turizm']
   },
   {
     id: '2',
     name: 'Elif Kaya',
-    position: 'Baş Mimar',
-    department: 'Tasarım',
+    position: 'Baş Rehber',
+    department: 'Rehberlik',
     image: 'https://randomuser.me/api/portraits/women/2.jpg',
-    bio: 'Mimar. Sürdürülebilir tasarım ve akıllı bina teknolojileri konusunda uzman.',
-    email: 'elif.kaya@parlagroup.com',
+    bio: 'Profesyonel Turist Rehberi. Sanat tarihi ve kültür turları konusunda uzman.',
+    email: 'elif.kaya@parlatravel.com',
     linkedin: '#',
-    specialties: ['Sürdürülebilir Tasarım', 'Akıllı Binalar', 'İç Mimarlık']
+    specialties: ['Kültür Turları', 'Sanat Tarihi', 'Çoklu Dil']
   },
   {
     id: '3',
     name: 'Mehmet Öztürk',
-    position: 'İnşaat Müdürü',
-    department: 'İnşaat',
+    position: 'Tur Operasyon Müdürü',
+    department: 'Operasyon',
     image: 'https://randomuser.me/api/portraits/men/3.jpg',
-    bio: 'İnşaat Mühendisi. Büyük ölçekli projelerin zamanında ve kaliteli tesliminde uzman.',
-    email: 'mehmet.ozturk@parlagroup.com',
+    bio: 'Turizm İşletmecisi. Büyük grup turlarının organizasyonu ve kaliteli hizmet sunumunda uzman.',
+    email: 'mehmet.ozturk@parlatravel.com',
     linkedin: '#',
-    specialties: ['Proje Yönetimi', 'Kalite Kontrol', 'Güvenlik']
+    specialties: ['Tur Operasyonu', 'Grup Yönetimi', 'Kalite Kontrol']
   },
   {
     id: '4',
@@ -56,36 +56,36 @@ const teamMembers: TeamMember[] = [
     position: 'Pazarlama Direktörü',
     department: 'Pazarlama',
     image: 'https://randomuser.me/api/portraits/women/4.jpg',
-    bio: 'İşletme Yüksek Lisans. Dijital pazarlama ve müşteri ilişkileri yönetiminde uzman.',
-    email: 'zeynep.demir@parlagroup.com',
+    bio: 'İşletme Yüksek Lisans. Dijital pazarlama ve turizm iletişimi konularında uzman.',
+    email: 'zeynep.demir@parlatravel.com',
     linkedin: '#',
-    specialties: ['Dijital Pazarlama', 'Müşteri İlişkileri', 'Marka Yönetimi']
+    specialties: ['Dijital Pazarlama', 'Sosyal Medya', 'Turizm İletişimi']
   },
   {
     id: '5',
     name: 'Can Yılmaz',
-    position: 'Mali İşler Müdürü',
-    department: 'Finans',
+    position: 'Rezervasyon Müdürü',
+    department: 'Rezervasyon',
     image: 'https://randomuser.me/api/portraits/men/5.jpg',
-    bio: 'Mali Müşavir. Finansal planlama ve risk yönetimi konularında deneyimli.',
-    email: 'can.yilmaz@parlagroup.com',
+    bio: 'Otel ve ulaşım rezervasyonları konusunda 10+ yıllık deneyime sahip uzman.',
+    email: 'can.yilmaz@parlatravel.com',
     linkedin: '#',
-    specialties: ['Finansal Planlama', 'Risk Yönetimi', 'Bütçe Kontrolü']
+    specialties: ['Otel Rezervasyonu', 'Ulaşım Planlaması', 'Müşteri Hizmetleri']
   },
   {
     id: '6',
     name: 'Seda Aktaş',
-    position: 'İnsan Kaynakları Müdürü',
-    department: 'İK',
+    position: 'Müşteri Hizmetleri Müdürü',
+    department: 'Müşteri Hizmetleri',
     image: 'https://randomuser.me/api/portraits/women/6.jpg',
-    bio: 'Psikolog. Takım geliştirme ve organizasyonel kültür oluşturma konularında uzman.',
-    email: 'seda.aktas@parlagroup.com',
+    bio: 'Turizm ve Otel İşletmeciliği mezunu. Misafir memnuniyeti ve müşteri deneyimi konularında uzman.',
+    email: 'seda.aktas@parlatravel.com',
     linkedin: '#',
-    specialties: ['Takım Geliştirme', 'Eğitim', 'Kültür Yönetimi']
+    specialties: ['Müşteri Deneyimi', 'Misafir Memnuniyeti', 'CRM Yönetimi']
   }
 ];
 
-const departments = ['Tümü', 'Yönetim', 'Tasarım', 'İnşaat', 'Pazarlama', 'Finans', 'İK'];
+const departments = ['Tümü', 'Yönetim', 'Rehberlik', 'Operasyon', 'Pazarlama', 'Rezervasyon', 'Müşteri Hizmetleri'];
 
 export default function TeamSection() {
   const [selectedDepartment, setSelectedDepartment] = useState('Tümü');
@@ -110,7 +110,7 @@ export default function TeamSection() {
             <span className="text-gradient">Ekibimiz</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Parla Group'un başarısında emeği geçen deneyimli ve tutkulu ekip üyelerimizle tanışın.
+            Parla Travel'ın başarısında emeği geçen deneyimli ve tutkulu ekip üyelerimizle tanışın.
           </p>
         </div>
 
@@ -211,7 +211,7 @@ export default function TeamSection() {
             <div className="relative z-10">
               <h3 className="text-3xl font-bold text-gray-900 mb-4">Ekibimize Katılın</h3>
               <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-                Parla Group ailesinin bir parçası olmak ve İstanbul'un dönüşümüne katkıda bulunmak ister misiniz?
+                Parla Travel ailesinin bir parçası olmak ve Türkiye turizminin gelişimine katkıda bulunmak ister misiniz?
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button className="px-8 py-3 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition-colors duration-200">

@@ -67,7 +67,7 @@ export default function CareerApplication() {
               Başvuru Süreci
             </h2>
             <p className="text-xl text-gray-600 mb-8">
-              Parla Group ailesine katılmak için basit adımları takip edin. 
+              Parla Travel ailesine katılmak için basit adımları takip edin.
               Başvuru süreciniz boyunca sizinle iletişimde olacağız.
             </p>
 
@@ -153,7 +153,7 @@ export default function CareerApplication() {
                   <svg className="w-5 h-5 text-orange-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
-                  <span className="text-gray-700">kariyer@parlagroup.com</span>
+                  <span className="text-gray-700">kariyer@parlatravel.com</span>
                 </div>
                 <div className="flex items-center">
                   <svg className="w-5 h-5 text-orange-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -246,10 +246,12 @@ export default function CareerApplication() {
                   required
                 >
                   <option value="">Pozisyon Seçin</option>
-                  <option value="proje-yoneticisi">Proje Yöneticisi</option>
-                  <option value="insaat-muhendisi">İnşaat Mühendisi</option>
-                  <option value="mimar">Mimar</option>
-                  <option value="satis-danismani">Satış Danışmanı</option>
+                  <option value="tur-rehberi">Profesyonel Tur Rehberi</option>
+                  <option value="rezervasyon-uzmanı">Rezervasyon Uzmanı</option>
+                  <option value="seyahat-danısmani">Seyahat Danışmanı</option>
+                  <option value="operasyon-uzmanı">Operasyon Uzmanı</option>
+                  <option value="satis-temsilcisi">Satış Temsilcisi</option>
+                  <option value="musteri-hizmetleri">Müşteri Hizmetleri</option>
                   <option value="diger">Diğer</option>
                 </select>
               </div>
@@ -300,7 +302,7 @@ export default function CareerApplication() {
                   onChange={handleInputChange}
                   rows={4}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
-                  placeholder="Kendinizi tanıtın ve neden Parla Group'ta çalışmak istediğinizi belirtin..."
+                  placeholder="Kendinizi tanıtın ve neden Parla Travel'da çalışmak istediğinizi belirtin..."
                 />
               </div>
 

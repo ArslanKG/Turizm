@@ -3,109 +3,109 @@ import ProjectDetail from '@/components/sections/ProjectDetail';
 
 // Sample project data - gerçek uygulamada bu bir API'den gelecek
 const projects = {
-  'kadikoy-kentsel-donusum': {
+  'istanbul-kultur-turu': {
     id: '1',
-    title: 'Kadıköy Kentsel Dönüşüm Projesi',
-    location: 'Kadıköy, İstanbul',
+    title: 'İstanbul Kültür ve Tarih Turu',
+    location: 'İstanbul',
     year: 2023,
-    category: 'Kentsel Dönüşüm',
-    area: '45.000 m²',
-    status: 'Tamamlandı',
-    description: 'Modern yaşam alanları ile tarihî dokuyu harmanlayan öncü kentsel dönüşüm projesi. Bu proje ile Kadıköy\'ün merkezinde bulunan eski sanayi alanları, çağdaş yaşam standartlarına uygun konut ve ticari alanlarına dönüştürüldü.',
+    category: 'Kültür Turları',
+    area: 'Tarihi Yarımada',
+    status: 'Aktif',
+    description: 'İstanbul\'un tarihi ve kültürel zenginliklerini keşfetmek isteyenler için özel olarak tasarlanmış kapsamlı kültür turu. Tarihi yarımadanın en önemli noktalarını uzman rehberler eşliğinde geziyoruz.',
     features: [
-      '450 adet konut birimi',
-      '25.000 m² yeşil alan',
-      '5.000 m² ticari alan',
-      'Sosyal tesis alanları',
-      'Yer altı otoparkı',
-      'Çocuk oyun alanları'
+      'Ayasofya ve Sultanahmet Camii',
+      'Topkapı Sarayı Müzesi',
+      'Kapalıçarşı ve Mısır Çarşısı',
+      'Boğaz Turu ve Galata Köprüsü',
+      'Yerel Lezzet Tadımları',
+      'Profesyonel Fotoğraf Çekimi'
     ],
     images: [
-      'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1200&h=800&fit=crop',
-      'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1539650116574-75c0c6d73f6b?w=1200&h=800&fit=crop',
       'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&h=800&fit=crop'
     ],
-    client: 'Kadıköy Belediyesi',
-    architect: 'Parla Group Mimarlık',
-    contractor: 'Parla Group İnşaat'
+    client: 'Parla Travel Müşterileri',
+    coordinator: 'Parla Travel Tur Planlama',
+    partner: 'Parla Travel Rehberlik'
   },
-  'beyoglu-rezidans': {
+  'kapadokya-macera-turu': {
     id: '2',
-    title: 'Beyoğlu Rezidans Kompleksi',
-    location: 'Beyoğlu, İstanbul',
+    title: 'Kapadokya Balon ve Macera Turu',
+    location: 'Kapadokya, Nevşehir',
     year: 2023,
-    category: 'İnşaat',
-    area: '28.000 m²',
-    status: 'Devam Ediyor',
-    description: 'Lüks konut ve ticari alanların bir arada bulunduğu modern yaşam kompleksi. İstanbul\'un tarihi yarımadasında konumlanan bu proje, modern mimarinin en güzel örneklerinden birini oluşturuyor.',
+    category: 'Macera Turları',
+    area: 'Göreme ve Çevrei',
+    status: 'Aktif',
+    description: 'Kapadokya\'nın büyülü manzaralarını sıcak hava balonuyla gökyüzünden izleyin ve eşsiz jeolojik oluşumları yakından keşfedin. Macera dolu bir deneyim için tasarlanmış özel tur paketi.',
     features: [
-      '280 adet lüks daire',
-      'Spa & Wellness merkezi',
-      '3.000 m² AVM',
-      'Kapalı yüzme havuzu',
-      'Fitness merkezi',
-      'Konferans salonları'
+      'Sıcak Hava Balonu Turu',
+      'Göreme Açık Hava Müzesi',
+      'Yeraltı Şehirleri Keşfi',
+      'Valley Trekking',
+      'Seramik Atölyesi Ziyareti',
+      'Yerel El Sanatları Tanıtımı'
     ],
     images: [
-      'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&h=800&fit=crop',
-      'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1200&h=800&fit=crop',
-      'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&h=800&fit=crop'
+      'https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=1200&h=800&fit=crop'
     ],
-    client: 'Özel Yatırımcı',
-    architect: 'Parla Group Mimarlık',
-    contractor: 'Parla Group İnşaat'
+    client: 'Macera Severler',
+    coordinator: 'Parla Travel Macera Ekibi',
+    partner: 'Parla Travel Balon Ortakları'
   },
-  'atasehir-is-merkezi': {
+  'pamukkale-wellness-turu': {
     id: '3',
-    title: 'Ataşehir İş Merkezi',
-    location: 'Ataşehir, İstanbul',
+    title: 'Pamukkale Termal ve Wellness Turu',
+    location: 'Pamukkale, Denizli',
     year: 2022,
-    category: 'Mimarlık',
-    area: '32.000 m²',
-    status: 'Tamamlandı',
-    description: 'Sürdürülebilir mimari yaklaşımıyla tasarlanan A+ ofis kompleksi. Enerji verimliliği ve çevre dostu teknolojilerle donatılan bu proje, modern iş dünyasının ihtiyaçlarını karşılıyor.',
+    category: 'Wellness Turları',
+    area: 'Pamukkale Travertenleri',
+    status: 'Aktif',
+    description: 'Pamukkale\'nin eşsiz beyaz travertenlerinde dinlendirici bir wellness deneyimi yaşayın. Termal sular ve antik Hierapolis kalıntılarıyla mükemmel bir sağlık ve kültür turu.',
     features: [
-      'LEED Gold sertifikası',
-      '50 adet ofis birimi',
-      'Konferans ve toplantı salonları',
-      'Cafeterya ve restoranlar',
-      'Yer altı otoparkı',
-      'Güvenlik sistemleri'
+      'Termal Havuzlarda Banyo',
+      'Pamukkale Travertenleri',
+      'Hierapolis Antik Kenti',
+      'Spa ve Wellness Hizmetleri',
+      'Organik Yerel Ürün Tadımı',
+      'Doğa Fotoğrafçılığı'
     ],
     images: [
-      'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&h=800&fit=crop',
-      'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&h=800&fit=crop',
-      'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1200&h=800&fit=crop'
+      'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1539650116574-75c0c6d73f6b?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=1200&h=800&fit=crop'
     ],
-    client: 'Ataşehir Holding',
-    architect: 'Parla Group Mimarlık',
-    contractor: 'Parla Group İnşaat'
+    client: 'Wellness Meraklıları',
+    coordinator: 'Parla Travel Wellness Uzmanları',
+    partner: 'Parla Travel Termal Ortakları'
   },
-  'uskudar-sahil': {
+  'antalya-kiyilar-turu': {
     id: '4',
-    title: 'Üsküdar Sahil Projesi',
-    location: 'Üsküdar, İstanbul',
+    title: 'Antalya Riviera Kıyıları Turu',
+    location: 'Antalya ve Çevresi',
     year: 2024,
-    category: 'Kentsel Dönüşüm',
-    area: '15.000 m²',
-    status: 'Planlama Aşamasında',
-    description: 'Boğaz manzaralı sahil şeridinin modern yaşam alanlarına dönüşümü. Bu özel proje ile Üsküdar sahilinde eşsiz bir yaşam deneyimi sunulacak.',
+    category: 'Deniz Turları',
+    area: 'Akdeniz Kıyıları',
+    status: 'Yeni Program',
+    description: 'Türk Rivierası\'nın en güzel kıyılarını keşfedin. Antalya\'nın tarihi merkezi, antik şehirleri ve muhteşem koylarıyla unutulmaz bir Akdeniz tatili deneyimi.',
     features: [
-      '120 adet lüks rezidans',
-      'Özel marina',
-      'Sahil yürüyüş yolu',
-      'Yeşil teraslar',
-      'Su sporları merkezi',
-      'Restoran ve kafeler'
+      'Antalya Kaleiçi Turu',
+      'Aspendos ve Perge Antik Kentleri',
+      'Kemer ve Olimpos Plajları',
+      'Tekne Turu ve Dalış',
+      'Likya Yolu Yürüyüşü',
+      'Yerel Balık Restoranları'
     ],
     images: [
-      'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1200&h=800&fit=crop',
-      'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1200&h=800&fit=crop',
-      'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&h=800&fit=crop'
+      'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1471919743851-c4df8b6ee130?w=1200&h=800&fit=crop'
     ],
-    client: 'Üsküdar Belediyesi',
-    architect: 'Parla Group Mimarlık',
-    contractor: 'Parla Group İnşaat'
+    client: 'Deniz Severler',
+    coordinator: 'Parla Travel Kıyı Uzmanları',
+    partner: 'Parla Travel Tekne Ortakları'
   }
 };
 
@@ -115,12 +115,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   
   if (!project) {
     return {
-      title: 'Proje Bulunamadı | Parla Group'
+      title: 'Tur Bulunamadı | Parla Travel'
     };
   }
 
   return {
-    title: `${project.title} | Parla Group`,
+    title: `${project.title} | Parla Travel`,
     description: project.description,
   };
 }

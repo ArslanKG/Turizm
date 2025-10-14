@@ -8,7 +8,7 @@ export default function ServicesHero() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&h=1080&fit=crop&crop=center&q=90"
+          src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=1920&h=1080&fit=crop&crop=center&q=90"
           alt="Hizmetlerimiz"
           fill
           className="object-cover"
@@ -63,8 +63,8 @@ export default function ServicesHero() {
                    maxWidth: '70%'
                  }}
                  className="max-w-[70%]">
-                Kentsel dönüşümden mimari tasarıma, inşaattan proje yönetimine kadar geniş bir yelpazede hizmet sunuyoruz, 
-                <strong className="font-medium text-orange-300"> kaliteli çözümler üretiyoruz</strong>.
+                Kültür turlarından otel rezervasyonlarına, rehberlik hizmetlerinden özel turlara kadar geniş bir yelpazede hizmet sunuyoruz,
+                <strong className="font-medium text-orange-300"> unutulmaz deneyimler yaşatıyoruz</strong>.
               </p>
             </div>
 
@@ -75,12 +75,12 @@ export default function ServicesHero() {
                 <div className="text-sm text-white/70">Yıl Deneyim</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-white mb-2">500+</div>
-                <div className="text-sm text-white/70">Tamamlanan Proje</div>
+                <div className="text-3xl font-bold text-white mb-2">650+</div>
+                <div className="text-sm text-white/70">Düzenlenen Tur</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-white mb-2">100+</div>
-                <div className="text-sm text-white/70">Mutlu Müşteri</div>
+                <div className="text-3xl font-bold text-white mb-2">12000+</div>
+                <div className="text-sm text-white/70">Mutlu Ziyaretçi</div>
               </div>
             </div>
           </div>
@@ -90,7 +90,7 @@ export default function ServicesHero() {
       {/* Company Established Year */}
       <div className="absolute bottom-8 left-8 z-20">
         <div className="text-white/50 text-xs font-normal tracking-wider">
-          EST. 2010
+          EST. 2008
         </div>
       </div>
     </section>

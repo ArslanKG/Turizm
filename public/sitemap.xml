@@ -30,21 +30,21 @@
 
   <!-- Hizmet Detay Sayfaları -->
   <url>
-    <loc>https://www.parlagroup.com/hizmetler/kentsel-donusum</loc>
+    <loc>https://www.parlatravel.com/hizmetler/kultur-turlari</loc>
     <lastmod>2024-12-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
+  
   <url>
-    <loc>https://www.parlagroup.com/hizmetler/insaat</loc>
+    <loc>https://www.parlatravel.com/hizmetler/otel-rezervasyon</loc>
     <lastmod>2024-12-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
+  
   <url>
-    <loc>https://www.parlagroup.com/hizmetler/mimarlik</loc>
+    <loc>https://www.parlatravel.com/hizmetler/rehberlik-hizmetleri</loc>
     <lastmod>2024-12-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

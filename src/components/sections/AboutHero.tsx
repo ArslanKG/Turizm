@@ -13,8 +13,8 @@ export default function AboutHero() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <Image
-          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&h=1080&fit=crop&crop=center"
-          alt="Modern Architecture"
+          src="https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?w=1920&h=1080&fit=crop&crop=center"
+          alt="Beautiful Turkey Landscape"
           fill
           className="object-cover opacity-20"
           priority
@@ -36,16 +36,16 @@ export default function AboutHero() {
           <div className="text-white">
             
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight">
-              <span className="block">Şehirlerin</span>
+              <span className="block">Türkiye'nin</span>
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
-                Geleceğini
+                Keşfine
               </span>
-              <span className="block">Şekillendiriyoruz</span>
+              <span className="block">Davet Ediyoruz</span>
             </h1>
             
             <p className="text-xl sm:text-2xl text-gray-300 mb-8 leading-relaxed">
-              15+ yıldır kentsel dönüşüm, inşaat ve mimarlık alanlarında 
-              öncü projeler gerçekleştiren güçlü bir ekibiz.
+              15+ yıldır kültür turizmi, rehberlik ve otel rezervasyonu alanlarında
+              unutulmaz deneyimler sunan profesyonel bir ekibiz.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 items-start">
@@ -68,16 +68,16 @@ export default function AboutHero() {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-white/20">
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-400 mb-2">125+</div>
-                <div className="text-sm text-gray-400">Tamamlanan Proje</div>
+                <div className="text-3xl font-bold text-blue-400 mb-2">1250+</div>
+                <div className="text-sm text-gray-400">Mutlu Misafir</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-green-400 mb-2">15+</div>
                 <div className="text-sm text-gray-400">Yıllık Deneyim</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-purple-400 mb-2">5000+</div>
-                <div className="text-sm text-gray-400">Mutlu Müşteri</div>
+                <div className="text-3xl font-bold text-purple-400 mb-2">350+</div>
+                <div className="text-sm text-gray-400">Tamamlanan Tur</div>
               </div>
             </div>
           </div>
@@ -88,8 +88,8 @@ export default function AboutHero() {
               <div className="space-y-4">
                 <div className="relative h-48 rounded-2xl overflow-hidden transform rotate-3 hover:rotate-0 transition-transform duration-500">
                   <Image
-                    src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=400&h=300&fit=crop&crop=center"
-                    alt="Modern Building"
+                    src="https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=400&h=300&fit=crop&crop=center"
+                    alt="Istanbul Tourism"
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 50vw, 25vw"
@@ -98,8 +98,8 @@ export default function AboutHero() {
                 </div>
                 <div className="relative h-32 rounded-2xl overflow-hidden transform -rotate-2 hover:rotate-0 transition-transform duration-500">
                   <Image
-                    src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400&h=200&fit=crop&crop=center"
-                    alt="Construction Site"
+                    src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=200&fit=crop&crop=center"
+                    alt="Turkish Culture"
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 50vw, 25vw"
@@ -110,8 +110,8 @@ export default function AboutHero() {
               <div className="space-y-4 pt-8">
                 <div className="relative h-32 rounded-2xl overflow-hidden transform rotate-2 hover:rotate-0 transition-transform duration-500">
                   <Image
-                    src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=400&h=200&fit=crop&crop=center"
-                    alt="Urban Development"
+                    src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=400&h=200&fit=crop&crop=center"
+                    alt="Travel Experience"
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 50vw, 25vw"
@@ -120,8 +120,8 @@ export default function AboutHero() {
                 </div>
                 <div className="relative h-48 rounded-2xl overflow-hidden transform -rotate-3 hover:rotate-0 transition-transform duration-500">
                   <Image
-                    src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=300&fit=crop&crop=center"
-                    alt="Architecture"
+                    src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop&crop=center"
+                    alt="Beautiful Destinations"
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 50vw, 25vw"
@@ -158,7 +158,7 @@ export default function AboutHero() {
             <div className="relative aspect-video bg-black rounded-xl overflow-hidden">
               <iframe
                 src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&rel=0"
-                title="Parla Group Tanıtım Videosu"
+                title="Parla Travel Tanıtım Videosu"
                 className="w-full h-full"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen

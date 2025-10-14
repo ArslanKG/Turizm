@@ -2,44 +2,44 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { Building2, Hammer, PaintBucket, Users, ArrowRight } from 'lucide-react';
+import { MapPin, Hotel, Users, Compass, ArrowRight } from 'lucide-react';
 
 const services = [
   {
-    id: 'kentsel-donusum',
-    title: 'Kentsel Dönüşüm',
-    description: 'Şehrin dokusunu koruyarak modern yaşam alanları yaratıyor, sürdürülebilir projeler geliştiriyoruz.',
-    icon: Building2,
-    image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&h=600&fit=crop&crop=center&q=90',
-    features: ['Sürdürülebilir Tasarım', 'Kentsel Planlama', 'Yenileme Projeleri', 'Çevre Dostu Çözümler'],
-    process: '6-24 Ay'
+    id: 'kultur-turlari',
+    title: 'Kültür Turları',
+    description: 'Türkiye\'nin zengin tarihî ve kültürel mirasını keşfedin, uzman rehberlerimiz eşliğinde unutulmaz deneyimler yaşayın.',
+    icon: MapPin,
+    image: 'https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=800&h=600&fit=crop&crop=center&q=90',
+    features: ['Tarihî Mekanlar', 'Müze Gezileri', 'Antik Şehirler', 'Yerel Kültür'],
+    process: '1-15 Gün'
   },
   {
-    id: 'mimarlik',
-    title: 'Mimari Tasarım',
-    description: 'Estetik ve fonksiyonu mükemmel dengede buluşturan tasarımlar sunuyoruz, özgün çözümler üretiyoruz.',
-    icon: PaintBucket,
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop&crop=center&q=90',
-    features: ['Konsept Tasarım', '3D Görselleştirme', 'İç Mekan Tasarımı', 'Peyzaj Mimarlığı'],
-    process: '3-12 Ay'
+    id: 'otel-rezervasyonu',
+    title: 'Otel Rezervasyonları',
+    description: 'Konforlu konaklama deneyimi için en iyi otellerde rezervasyon hizmeti sunuyoruz, her bütçeye uygun seçenekler.',
+    icon: Hotel,
+    image: 'https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800&h=600&fit=crop&crop=center&q=90',
+    features: ['Lüks Oteller', 'Boutique Hotels', 'Butik Pansiyonlar', 'Özel Villalar'],
+    process: '1-7 Gün'
   },
   {
-    id: 'insaat',
-    title: 'İnşaat Hizmetleri',
-    description: 'En yüksek kalite standartlarında yapılar inşa ediyoruz, dayanıklı çözümler sunuyoruz.',
-    icon: Hammer,
-    image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&h=600&fit=crop&crop=center&q=90',
-    features: ['Yapı İnşaatı', 'Renovasyon', 'Altyapı Çalışmaları', 'Kalite Kontrol'],
-    process: '12-36 Ay'
-  },
-  {
-    id: 'proje-yonetimi',
-    title: 'Proje Yönetimi',
-    description: 'Fonksiyonel ve profesyonel proje yönetimi hizmetleri sunuyoruz, başarılı sonuçlar garantiliyoruz.',
+    id: 'rehberlik-hizmetleri',
+    title: 'Rehberlik Hizmetleri',
+    description: 'Profesyonel ve deneyimli rehberlerimiz ile Türkiye\'nin her köşesini keşfedin, kişisel ve grup turları.',
     icon: Users,
-    image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&h=600&fit=crop&crop=center&q=90',
-    features: ['Planlama', 'Koordinasyon', 'Risk Yönetimi', 'Kalite Güvencesi'],
-    process: '1-6 Ay'
+    image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&h=600&fit=crop&crop=center&q=90',
+    features: ['Kişisel Rehberlik', 'Grup Rehberliği', 'Çok Dilli Hizmet', 'Özel İlgi Alanları'],
+    process: '1-30 Gün'
+  },
+  {
+    id: 'macera-turlari',
+    title: 'Macera Turları',
+    description: 'Size özel hazırladığımız tatil paketleri ile hayalinizdeki seyahati yaşayın, tamamen kişiselleştirilebilir.',
+    icon: Compass,
+    image: 'https://images.unsplash.com/photo-1527838832700-5059252407fa?w=800&h=600&fit=crop&crop=center&q=90',
+    features: ['VIP Turlar', 'Romantik Geziler', 'Macera Turları', 'Gastronomi Turları'],
+    process: '3-21 Gün'
   }
 ];
 
@@ -56,7 +56,7 @@ export default function ServicesGrid() {
           </h2>
           <div className="w-24 h-1 bg-white mx-auto mb-6"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            15 yıllık deneyimimizle mimarlık, inşaat ve kentsel dönüşüm alanlarında 
+            15 yıllık deneyimimizle turizm, seyahat ve rehberlik alanlarında
             kapsamlı hizmetler sunuyoruz.
           </p>
         </div>
@@ -142,13 +142,13 @@ export default function ServicesGrid() {
         <div className="text-center mt-16">
           <div className="bg-white rounded-2xl shadow-lg p-8 max-w-2xl mx-auto">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Projeniz İçin Teklif Alın
+              Hayalinizdeki Tur İçin Teklif Alın
             </h3>
             <p className="text-gray-600 mb-6">
-              Uzman ekibimizle projenizi değerlendirin ve size özel çözümler keşfedin.
+              Uzman ekibimizle seyahat planınızı değerlendirin ve size özel turlar keşfedin.
             </p>
             <button className="inline-flex items-center justify-center py-4 px-8 bg-orange-300 text-white font-medium rounded-xl hover:bg-orange-400 transition-all duration-300 hover:scale-105">
-              <span className="mr-2">Ücretsiz Konsültasyon</span>
+              <span className="mr-2">Ücretsiz Danışmanlık</span>
               <ArrowRight className="h-5 w-5" />
             </button>
           </div>

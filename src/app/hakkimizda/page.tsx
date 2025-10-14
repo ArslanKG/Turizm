@@ -6,13 +6,13 @@ import CompanyTimeline from '@/components/sections/CompanyTimeline';
 import TeamSection from '@/components/sections/TeamSection';
 
 export const metadata: Metadata = {
-  title: 'Hakkımızda | Parla Group - 15+ Yıllık Deneyim',
-  description: 'Parla Group olarak 15+ yıldır kentsel dönüşüm, inşaat ve mimarlık alanlarında öncü projeler gerçekleştiriyoruz. Şirket hikayemiz, değerlerimiz ve ekibimizle tanışın.',
-  keywords: ['parla group hakkında', 'kentsel dönüşüm şirketi', 'inşaat firması', 'mimarlık bürosu', 'şirket tarihi'],
+  title: 'Hakkımızda | Parla Travel - 15+ Yıllık Deneyim',
+  description: 'Parla Travel olarak 15+ yıldır turizm, kültür turları ve rehberlik hizmetleri alanlarında öncü projeler gerçekleştiriyoruz. Şirket hikayemiz, değerlerimiz ve ekibimizle tanışın.',
+  keywords: ['parla travel hakkında', 'turizm şirketi', 'kültür turları', 'rehberlik hizmetleri', 'şirket tarihi'],
   openGraph: {
-    title: 'Hakkımızda | Parla Group',
-    description: 'Parla Group olarak 15+ yıldır kentsel dönüşüm, inşaat ve mimarlık alanlarında öncü projeler gerçekleştiriyoruz.',
-    url: 'https://parlagroup.com/hakkimizda',
+    title: 'Hakkımızda | Parla Travel',
+    description: 'Parla Travel olarak 15+ yıldır turizm, kültür turları ve rehberlik hizmetleri alanlarında öncü projeler gerçekleştiriyoruz.',
+    url: 'https://parlatravel.com/hakkimizda',
     type: 'website',
   },
 };

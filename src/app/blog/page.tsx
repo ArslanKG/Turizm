@@ -1,19 +1,22 @@
+'use client';
+
+import { useState } from 'react';
 import BlogHero from '@/components/sections/BlogHero';
 import BlogGrid from '@/components/sections/BlogGrid';
 import BlogCategories from '@/components/sections/BlogCategories';
 import BlogNewsletter from '@/components/sections/BlogNewsletter';
 
-export const metadata = {
-  title: 'Blog | Parla Group',
-  description: 'Kentsel dönüşüm, mimarlık ve inşaat sektöründeki güncel gelişmeler ve uzman görüşlerimizi okuyun.',
-};
-
 export default function BlogPage() {
+  const [activeCategory, setActiveCategory] = useState('all');
+
   return (
     <>
       <BlogHero />
-      <BlogCategories />
-      <BlogGrid />
+      <BlogCategories
+        activeCategory={activeCategory}
+        onCategoryChange={setActiveCategory}
+      />
+      <BlogGrid activeCategory={activeCategory} />
       <BlogNewsletter />
     </>
   );

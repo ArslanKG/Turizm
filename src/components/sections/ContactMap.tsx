@@ -14,7 +14,7 @@ export default function ContactMap() {
           <div className="w-24 h-1 bg-orange-300 mx-auto mb-6"></div>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Merkez ofisimiz İstanbul'un kalbinde, ulaşım açısından son derece kolay bir konumda bulunuyor.
+            Merkez ofisimiz İstanbul'un kalbinde, turizm merkezi konumunda ve ulaşım açısından son derece kolay bir yerde bulunuyor.
           </p>
         </div>
 
@@ -136,7 +136,7 @@ export default function ContactMap() {
 
               <div className="mt-4 p-3 bg-white/60 rounded-lg">
                 <p className="text-xs text-gray-600">
-                  <strong>Not:</strong> Misafir park alanları mevcut. Ziyaret öncesi arayarak rezervasyon yaptırabilirsiniz.
+                  <strong>Not:</strong> Misafir park alanları mevcut. Seyahat danışmanlığı için ziyaret öncesi arayarak rezervasyon yaptırabilirsiniz.
                 </p>
               </div>
             </div>

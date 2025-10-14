@@ -7,69 +7,106 @@ import { Calendar, MapPin, ArrowRight, Eye } from 'lucide-react';
 const projects = [
   {
     id: 1,
-    title: 'Modern Yaşam Kompleksi',
-    category: 'Kentsel Dönüşüm',
-    location: 'Maslak, İstanbul',
-    year: '2023',
-    image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&h=600&fit=crop&crop=center&q=90',
-    description: 'Şehrin merkezinde sürdürülebilir yaşam alanları oluşturduk, modern mimari çözümler sunduk.'
+    title: 'İstanbul Kültür Turu',
+    category: 'Kültür Turları',
+    categoryId: 'cultural',
+    location: 'İstanbul, Türkiye',
+    year: '2024',
+    image: 'https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=800&h=600&fit=crop&crop=center&q=90',
+    description: 'Tarihi Sultanahmet\'ten modern Beyoğlu\'na kadar İstanbul\'un tüm güzelliklerini keşfediyoruz.'
   },
   {
     id: 2,
-    title: 'Luxury Residence Tower',
-    category: 'Mimari Tasarım',
-    location: 'Bebek, İstanbul',
-    year: '2023',
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop&crop=center&q=90',
-    description: 'Boğaz manzaralı lüks konut projesi ile estetik tasarım sunuyoruz, özgün çözümler üretiyoruz.'
+    title: 'Kapadokya Balon Turu',
+    category: 'Macera Turları',
+    categoryId: 'adventure',
+    location: 'Kapadokya, Nevşehir',
+    year: '2024',
+    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop&crop=center&q=90',
+    description: 'Kapadokya\'nın eşsiz peyzajını sıcak hava balon turu ile keşfetmenin unutulmaz deneyimi.'
   },
   {
     id: 3,
-    title: 'İş Merkezi Kompleksi',
-    category: 'İnşaat',
-    location: 'Levent, İstanbul',
-    year: '2022',
-    image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&h=600&fit=crop&crop=center&q=90',
-    description: 'Modern iş dünyasının ihtiyaçlarını karşılayan yapılar inşa ediyoruz, kaliteli çözümler sunuyoruz.'
+    title: 'Pamukkale Doğa Turu',
+    category: 'Doğa Turları',
+    categoryId: 'nature',
+    location: 'Pamukkale, Denizli',
+    year: '2024',
+    image: 'https://images.unsplash.com/photo-1605540436563-5bca919ae766?w=800&h=600&fit=crop&crop=center&q=90',
+    description: 'Beyaz travertenler ve antik Hierapolis kalıntıları ile doğa harikası Pamukkale keşfi.'
   },
   {
     id: 4,
-    title: 'Aile Konutu Projesi',
-    category: 'Konut',
-    location: 'Etiler, İstanbul',
-    year: '2022',
-    image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&h=600&fit=crop&crop=center&q=90',
-    description: 'Aile yaşamına uygun konforlu mekanlar tasarlıyoruz, yaşanabilir alanlar yaratıyoruz.'
+    title: 'Antalya Şehir Turu',
+    category: 'Şehir Turları',
+    categoryId: 'city',
+    location: 'Antalya, Türkiye',
+    year: '2024',
+    image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop&crop=center&q=90',
+    description: 'Akdeniz\'in turkuaz suları ve tarihi Kaleiçi ile Antalya\'nın eşsiz güzelliklerini yaşayın.'
   },
   {
     id: 5,
-    title: 'Kültür ve Sanat Merkezi',
-    category: 'Mimari Tasarım',
-    location: 'Beyoğlu, İstanbul',
-    year: '2021',
-    image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&h=600&fit=crop&crop=center&q=90',
-    description: 'Kültürel miras ile modern tasarımı harmanlayan projeler üretiyoruz, yaratıcı çözümler sunuyoruz.'
+    title: 'Efes Antik Kenti Turu',
+    category: 'Kültür Turları',
+    categoryId: 'cultural',
+    location: 'Efes, İzmir',
+    year: '2024',
+    image: 'https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?w=800&h=600&fit=crop&crop=center&q=90',
+    description: 'Antik dünyanın en iyi korunmuş şehirlerinden Efes\'in tarihî atmosferinde yolculuk.'
   },
   {
     id: 6,
-    title: 'Yeşil Konut Kompleksi',
-    category: 'Kentsel Dönüşüm',
-    location: 'Kadıköy, İstanbul',
-    year: '2021',
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop&crop=center&q=90',
-    description: 'Çevre dostu teknolojilerle sürdürülebilir projeler geliştiriyoruz, yeşil çözümler üretiyoruz.'
+    title: 'Karadeniz Yaylalar Turu',
+    category: 'Doğa Turları',
+    categoryId: 'nature',
+    location: 'Karadeniz Bölgesi',
+    year: '2024',
+    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop&crop=center&q=90',
+    description: 'Karadeniz\'in yemyeşil yaylaları ve doğal güzellikleri ile huzurlu bir kaçış deneyimi.'
   }
 ];
 
-export default function ProjectsGrid() {
+interface ProjectsGridProps {
+  activeCategory: string;
+}
+
+export default function ProjectsGrid({ activeCategory }: ProjectsGridProps) {
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
+
+  // Filter projects based on active category
+  const filteredProjects = activeCategory === 'all'
+    ? projects
+    : projects.filter(project => project.categoryId === activeCategory);
+
+  // Get category label for display
+  const getCategoryLabel = (categoryId: string) => {
+    const categoryMap = {
+      'all': 'Tüm Turlar',
+      'cultural': 'Kültür Turları',
+      'nature': 'Doğa Turları',
+      'adventure': 'Macera Turları',
+      'city': 'Şehir Turları'
+    };
+    return categoryMap[categoryId as keyof typeof categoryMap] || 'Turlar';
+  };
 
   return (
     <section className="py-24 bg-gray-50">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Projects Grid */}
+        {/* Category Header */}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            {getCategoryLabel(activeCategory)}
+          </h2>
+          <p className="text-gray-600">
+            {filteredProjects.length} tur bulundu
+          </p>
+        </div>
+
+        {/* Tours Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project) => (
+          {filteredProjects.map((project) => (
             <div
               key={project.id}
               className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer"
@@ -101,7 +138,7 @@ export default function ProjectsGrid() {
                   <div className="absolute inset-0 bg-blue-600/90 flex items-center justify-center animate-fade-in-up">
                     <div className="text-center text-white">
                       <Eye className="h-12 w-12 mx-auto mb-4" />
-                      <div className="font-medium">Projeyi İncele</div>
+                      <div className="font-medium">Turu İncele</div>
                     </div>
                   </div>
                 )}
@@ -131,7 +168,7 @@ export default function ProjectsGrid() {
 
                 {/* CTA */}
                 <button className="inline-flex items-center text-blue-600 font-medium group-hover:text-blue-700 transition-colors duration-300">
-                  <span className="mr-2">Detayları Gör</span>
+                  <span className="mr-2">Tur Detayları</span>
                   <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
                 </button>
               </div>
@@ -142,7 +179,7 @@ export default function ProjectsGrid() {
         {/* Load More */}
         <div className="text-center mt-16">
           <button className="inline-flex items-center justify-center py-4 px-8 bg-blue-600 text-white font-medium rounded-xl hover:bg-blue-700 transition-all duration-300 hover:scale-105">
-            <span className="mr-2">Daha Fazla Proje</span>
+            <span className="mr-2">Daha Fazla Tur</span>
             <ArrowRight className="h-5 w-5" />
           </button>
         </div>

@@ -1,69 +1,72 @@
 'use client';
 
-import { useState } from 'react';
-import { Building, Hammer, PenTool, TrendingUp, Users, Lightbulb, Award, Globe } from 'lucide-react';
+import { MapPin, Compass, Hotel, UtensilsCrossed, Users, Camera, Award, Globe } from 'lucide-react';
+
+interface BlogCategoriesProps {
+  activeCategory: string;
+  onCategoryChange: (category: string) => void;
+}
 
 const categories = [
-  { 
-    id: 'all', 
-    name: 'Tümü', 
-    icon: Globe, 
+  {
+    id: 'all',
+    name: 'Tümü',
+    icon: Globe,
     count: 156,
     description: 'Tüm blog yazıları'
   },
-  { 
-    id: 'urban-transformation', 
-    name: 'Kentsel Dönüşüm', 
-    icon: Building, 
+  {
+    id: 'destinations',
+    name: 'Destinasyonlar',
+    icon: MapPin,
     count: 42,
-    description: 'Kentsel dönüşüm projeleri ve stratejileri'
+    description: 'Popüler seyahat destinasyonları ve rehberler'
   },
-  { 
-    id: 'architecture', 
-    name: 'Mimarlık', 
-    icon: PenTool, 
+  {
+    id: 'travel-guides',
+    name: 'Seyahat Rehberleri',
+    icon: Compass,
     count: 38,
-    description: 'Modern mimarlık trendleri ve tasarım'
+    description: 'Detaylı gezi planları ve öneriler'
   },
-  { 
-    id: 'construction', 
-    name: 'İnşaat', 
-    icon: Hammer, 
+  {
+    id: 'accommodation',
+    name: 'Konaklama',
+    icon: Hotel,
     count: 35,
-    description: 'İnşaat teknolojileri ve uygulamalar'
+    description: 'Otel önerileri ve konaklama rehberleri'
   },
-  { 
-    id: 'trends', 
-    name: 'Sektör Trendleri', 
-    icon: TrendingUp, 
+  {
+    id: 'gastronomy',
+    name: 'Gastronomi',
+    icon: UtensilsCrossed,
     count: 28,
-    description: 'Güncel sektör gelişmeleri'
+    description: 'Yerel lezzetler ve kulinarya deneyimleri'
   },
-  { 
-    id: 'team', 
-    name: 'Ekip & Kariyer', 
-    icon: Users, 
+  {
+    id: 'team',
+    name: 'Ekip & Kariyer',
+    icon: Users,
     count: 18,
-    description: 'Ekip hikayeleri ve kariyer fırsatları'
+    description: 'Ekip hikayeleri ve turizm kariyeri'
   },
-  { 
-    id: 'innovation', 
-    name: 'İnovasyon', 
-    icon: Lightbulb, 
+  {
+    id: 'photography',
+    name: 'Seyahat Fotoğrafçılığı',
+    icon: Camera,
     count: 22,
-    description: 'Teknolojik yenilikler ve gelecek'
+    description: 'Fotoğraf ipuçları ve en güzel kareler'
   },
-  { 
-    id: 'awards', 
-    name: 'Ödüller & Başarılar', 
-    icon: Award, 
+  {
+    id: 'awards',
+    name: 'Ödüller & Başarılar',
+    icon: Award,
     count: 15,
     description: 'Aldığımız ödüller ve başarı hikayeleri'
   }
 ];
 
-export default function BlogCategories() {
-  const [activeCategory, setActiveCategory] = useState('all');
+export default function BlogCategories({ activeCategory, onCategoryChange }: BlogCategoriesProps) {
 
   return (
     <section className="py-16 bg-gray-50">
@@ -88,7 +91,7 @@ export default function BlogCategories() {
             return (
               <button
                 key={category.id}
-                onClick={() => setActiveCategory(category.id)}
+                onClick={() => onCategoryChange(category.id)}
                 className={`group relative p-6 rounded-2xl border-2 transition-all duration-300 hover:scale-105 text-left ${
                   isActive 
                     ? 'border-orange-300 bg-orange-50 shadow-lg' 

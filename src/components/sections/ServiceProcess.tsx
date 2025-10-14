@@ -1,59 +1,59 @@
 'use client';
 
 import { useState } from 'react';
-import { ClipboardList, Users, Cog, CheckCircle, ArrowRight } from 'lucide-react';
+import { ClipboardList, MapPin, Calendar, CheckCircle, ArrowRight } from 'lucide-react';
 
 const processSteps = [
   {
     id: 1,
-    title: 'Analiz & Planlama',
-    description: 'Projenizin gereksinimlerini detaylı olarak analiz ediyor, kapsamlı planlamalar yapıyoruz.',
+    title: 'Danışmanlık & Planlama',
+    description: 'Seyahat ihtiyaçlarınızı detaylı olarak analiz ediyor, kişiye özel planlamalar yapıyoruz.',
     icon: ClipboardList,
-    duration: '1-2 Hafta',
+    duration: '1-3 Gün',
     details: [
-      'İhtiyaç analizi ve fizibilite çalışması',
-      'Bütçe planlaması ve zaman çizelgesi',
-      'Risk analizi ve önlem planları',
-      'Yasal süreçlerin değerlendirilmesi'
+      'Seyahat tercihlerinizin analizi',
+      'Bütçe planlaması ve öneri paketleri',
+      'Tarih ve süre planlaması',
+      'Özel isteklerinizin değerlendirilmesi'
     ]
   },
   {
     id: 2,
-    title: 'Tasarım & Konsept',
-    description: 'Uzman tasarım ekibimizle projenize özel çözümler geliştiriyor, modern tasarımlar sunuyoruz.',
-    icon: Users,
-    duration: '2-6 Hafta',
+    title: 'Program & Rota Tasarımı',
+    description: 'Uzman ekibimizle size özel tur programları geliştiriyor, benzersiz deneyimler tasarlıyoruz.',
+    icon: MapPin,
+    duration: '2-5 Gün',
     details: [
-      'Konsept tasarım ve 3D görselleştirme',
-      'Malzeme seçimi ve teknik detaylar',
+      'Özel rota ve program hazırlığı',
+      'Destinasyon seçimi ve aktivite planı',
       'Revizyon ve optimizasyon süreci',
-      'Nihai tasarımın onaylanması'
+      'Nihai program onayı ve detaylandırma'
     ]
   },
   {
     id: 3,
-    title: 'Uygulama & İnşaat',
-    description: 'Kaliteli işçilik ve modern teknolojilerle projelerinizi hayata geçiriyor, güvenli inşaatlar yapıyoruz.',
-    icon: Cog,
-    duration: '3-18 Ay',
+    title: 'Rezervasyon & Organizasyon',
+    description: 'Profesyonel rezervasyon hizmetleriyle turunuzun tüm detaylarını organize ediyor, sorunsuz seyahatler sağlıyoruz.',
+    icon: Calendar,
+    duration: '3-7 Gün',
     details: [
-      'İnşaat ekiplerinin sahaya yerleşimi',
-      'Günlük ilerleme takibi ve raporlama',
-      'Kalite kontrol ve güvenlik önlemleri',
-      'Müşteri ile düzenli bilgilendirme'
+      'Otel ve konaklama rezervasyonları',
+      'Ulaşım ve transfer organizasyonu',
+      'Aktivite ve tur rezervasyonları',
+      'Sigorta ve yasal süreç takibi'
     ]
   },
   {
     id: 4,
-    title: 'Teslim & Garanti',
-    description: 'Projelerinizi zamanında teslim ediyor ve kapsamlı garanti hizmetleri sağlıyoruz.',
+    title: 'Rehberlik & Hizmet',
+    description: 'Profesyonel rehberlik hizmetiyle turunuzu gerçekleştiriyor ve mükemmel deneyimler sunuyoruz.',
     icon: CheckCircle,
-    duration: '1 Hafta',
+    duration: '1-30 Gün',
     details: [
-      'Final kontrol ve kalite testi',
-      'Resmi teslim ve dokümantasyon',
-      'Kullanım eğitimi ve rehberlik',
-      '2 yıl kapsamlı garanti hizmeti'
+      'Uzman rehber eşliğinde tur gerçekleştirme',
+      '7/24 destek ve yardım hattı',
+      'Anlık problemlerin çözümü',
+      'Tur sonrası memnuniyet takibi'
     ]
   }
 ];
@@ -71,7 +71,7 @@ export default function ServiceProcess() {
           </h2>
           <div className="w-24 h-1 bg-white mx-auto mb-6"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Her projede sistematik bir yaklaşım benimsiyor, kaliteli sonuçlar için 
+            Her turda sistematik bir yaklaşım benimsiyor, unutulmaz deneyimler için
             dört aşamalı süreç takip ediyoruz.
           </p>
         </div>
@@ -177,7 +177,7 @@ export default function ServiceProcess() {
                 {/* Progress Bar */}
                 <div className="mb-8">
                   <div className="flex justify-between items-center mb-2">
-                    <span className="text-sm font-medium text-gray-600">Proje İlerlemesi</span>
+                    <span className="text-sm font-medium text-gray-600">Tur Hazırlık Süreci</span>
                     <span className="text-sm font-medium text-blue-600">
                       {Math.round((activeStep / processSteps.length) * 100)}%
                     </span>

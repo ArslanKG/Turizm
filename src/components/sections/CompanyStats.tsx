@@ -178,10 +178,10 @@ export default function CompanyStats() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-white sm:text-5xl font-display mb-4">
-            Sayılarla <span className="text-blue-300">Parla Group</span>
+            Sayılarla <span className="text-blue-300">Parla Travel</span>
           </h2>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-            15+ yıllık deneyimimiz ve başarılarımızla İstanbul'un dönüşümüne 
+            15+ yıllık deneyimimiz ve başarılarımızla Türkiye turizminde
             öncülük eden güçlü bir ekibiz.
           </p>
         </div>

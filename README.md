@@ -1,6 +1,6 @@
-# Parla Group Corporate Website
+# Parla Travel Corporate Website
 
-Modern, responsive corporate website for Parla Group - a leading construction and urban transformation company in Turkey.
+Modern, responsive corporate website for Parla Travel - a leading tourism and travel services company in Turkey.
 
 ## 🚀 Features
 
@@ -26,10 +26,10 @@ Modern, responsive corporate website for Parla Group - a leading construction an
 - **Homepage** (`/`) - Hero section, services preview, featured projects
 - **About** (`/hakkimizda`) - Company story, values, timeline, team
 - **Services** (`/hizmetler`) - Service grid with detailed pages:
-  - Urban Transformation (`/hizmetler/kentsel-donusum`)
-  - Construction (`/hizmetler/insaat`)
-  - Architecture (`/hizmetler/mimarlik`)
-  - Project Management (`/hizmetler/proje-yonetimi`)
+  - Culture Tours (`/hizmetler/kultur-turlari`)
+  - Hotel Reservations (`/hizmetler/otel-rezervasyon`)
+  - Professional Guide Services (`/hizmetler/rehberlik-hizmetleri`)
+  - Tour Planning (`/hizmetler/tur-planlama`)
 - **Projects** (`/projeler`) - Project showcase with filtering
 - **Blog** (`/blog`) - News and insights with categories
 - **Career** (`/kariyer`) - Job positions, benefits, application form
@@ -101,8 +101,8 @@ Copy `.env.example` to `.env.local` and configure:
 
 ```bash
 # Site Configuration
-NEXT_PUBLIC_SITE_URL=https://www.parlagroup.com
-NEXT_PUBLIC_SITE_NAME="Parla Group"
+NEXT_PUBLIC_SITE_URL=https://www.parlatravel.com
+NEXT_PUBLIC_SITE_NAME="Parla Travel"
 
 # Analytics
 NEXT_PUBLIC_GOOGLE_ANALYTICS=your-ga-id
@@ -189,8 +189,8 @@ For technical support or questions:
 
 ## 📄 License
 
-© 2024 Parla Group. All rights reserved.
+© 2024 Parla Travel. All rights reserved.
 
 ---
 
-**Built with ❤️ by Parla Group Development Team**
+**Built with ❤️ by Parla Travel Development Team**

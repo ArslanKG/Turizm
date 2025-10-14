@@ -14,48 +14,48 @@ interface Value {
 const values: Value[] = [
   {
     id: 'quality',
-    title: 'Kalite',
-    description: 'Her projemizde en yüksek kalite standartlarını benimser, detaylara özen gösteririz.',
+    title: 'Kaliteli Hizmet',
+    description: 'Her turumuzda en yüksek hizmet kalitesini sunar, misafirlerimizin memnuniyetini önceliğimiz yaparız.',
     icon: Trophy,
     color: 'text-yellow-600',
     bgColor: 'bg-yellow-100'
   },
   {
     id: 'trust',
-    title: 'Güven',
-    description: 'Müşterilerimizle uzun vadeli güven ilişkileri kurar, sözümüzü tutar, zamanında teslim ederiz.',
+    title: 'Güvenilirlik',
+    description: 'Misafirlerimizle uzun vadeli güven ilişkileri kurar, söz verdiğimiz deneyimi eksiksiz sunarız.',
     icon: Shield,
     color: 'text-blue-600',
     bgColor: 'bg-blue-100'
   },
   {
     id: 'innovation',
-    title: 'Yenilik',
-    description: 'Teknolojik gelişmeleri takip eder, yaratıcı çözümlerle projelerimizi farklılaştırırız.',
+    title: 'Yenilikçilik',
+    description: 'Turizm trendlerini takip eder, teknoloji destekli çözümlerle seyahat deneyimlerini geliştiririz.',
     icon: Lightbulb,
     color: 'text-purple-600',
     bgColor: 'bg-purple-100'
   },
   {
     id: 'teamwork',
-    title: 'Takım Çalışması',
-    description: 'Güçlü ekip ruhuyla çalışır, birlikte daha büyük başarılara imza atarız.',
+    title: 'Takım Ruhu',
+    description: 'Profesyonel ekibimizle çalışır, birlikte unutulmaz anılar yaratırız.',
     icon: Users,
     color: 'text-green-600',
     bgColor: 'bg-green-100'
   },
   {
     id: 'sustainability',
-    title: 'Sürdürülebilirlik',
-    description: 'Çevre dostu projeler geliştirerek gelecek nesillere yaşanabilir bir dünya bırakırız.',
+    title: 'Sürdürülebilir Turizm',
+    description: 'Çevre dostu turizm anlayışıyla yerel kültürleri korur, gelecek nesillere yaşanabilir bir dünya bırakırız.',
     icon: Leaf,
     color: 'text-emerald-600',
     bgColor: 'bg-emerald-100'
   },
   {
     id: 'passion',
-    title: 'Tutku',
-    description: 'İşimizi tutkuyla yapar, her projede kalplerimizi ortaya koyarız.',
+    title: 'Tutku ve Özveri',
+    description: 'Turizm işini tutkuyla yapar, her seyahatte kalplerimizi ortaya koyarız.',
     icon: Heart,
     color: 'text-red-600',
     bgColor: 'bg-red-100'
@@ -80,8 +80,8 @@ export default function CompanyValues() {
             <span className="text-gradient">Değerlerimiz</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Parla Group olarak her projemizde rehber olan temel değerlerimiz, 
-            bizi sektörde farklı kılan ve müşterilerimizin güvenini kazandıran ilkelerimizdir.
+            Parla Travel olarak her turumuzda rehber olan temel değerlerimiz,
+            bizi turizm sektöründe farklı kılan ve misafirlerimizin güvenini kazandıran ilkelerimizdir.
           </p>
         </div>
 
@@ -134,23 +134,23 @@ export default function CompanyValues() {
                   Kurumsal Kültürümüz
                 </h3>
                 <p className="text-lg text-gray-700 leading-relaxed mb-8">
-                  Parla Group'ta her birey değerlidir. Açık iletişim, sürekli öğrenme ve gelişim odaklı 
-                  kültürümüzle ekip üyelerimizin potansiyelini en üst düzeyde ortaya çıkarırız. 
+                  Parla Travel'da her birey değerlidir. Açık iletişim, sürekli öğrenme ve gelişim odaklı
+                  kültürümüzle ekip üyelerimizin potansiyelini en üst düzeyde ortaya çıkarırız.
                   Birlikte büyür, birlikte başarırız.
                 </p>
                 
                 {/* Mini Stats */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-8">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-blue-600 mb-1">75+</div>
+                    <div className="text-2xl font-bold text-blue-600 mb-1">45+</div>
                     <div className="text-sm text-gray-600">Ekip Üyesi</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-green-600 mb-1">%95</div>
-                    <div className="text-sm text-gray-600">Çalışan Memnuniyeti</div>
+                    <div className="text-2xl font-bold text-green-600 mb-1">%98</div>
+                    <div className="text-sm text-gray-600">Misafir Memnuniyeti</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-purple-600 mb-1">8.2</div>
+                    <div className="text-2xl font-bold text-purple-600 mb-1">7.5</div>
                     <div className="text-sm text-gray-600">Ortalama Çalışma Süresi (Yıl)</div>
                   </div>
                 </div>

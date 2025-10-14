@@ -16,8 +16,8 @@ export default function CareerHero() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1600&h=900&fit=crop"
-          alt="Parla Group Kariyer"
+          src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1600&h=900&fit=crop"
+          alt="Parla Travel Kariyer"
           fill
           sizes="100vw"
           className="object-cover opacity-40"
@@ -30,14 +30,14 @@ export default function CareerHero() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="max-w-3xl">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-            Geleceği Birlikte
-            <span className="block text-orange-400">İnşa Edelim</span>
+            Turizmin Geleceğini
+            <span className="block text-orange-400">Birlikte Yaratın</span>
           </h1>
           
           <p className="text-xl md:text-2xl mb-8 text-gray-200 leading-relaxed">
-            Parla Group olarak kentsel dönüşüm ve inşaat sektöründe öncü 
-            projelerimizle gelecek nesillere yaşanabilir şehirler bırakıyoruz. 
-            Profesyonel ekibimize katılın.
+            Parla Travel olarak Türkiye'nin kültürel zenginliklerini dünyaya tanıtıyor,
+            unutulmaz seyahat deneyimleri yaratıyoruz.
+            Tutkulu ekibimize katılın.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
@@ -64,7 +64,7 @@ export default function CareerHero() {
         <div className="bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20">
           <div className="grid grid-cols-2 gap-6 text-center">
             <div>
-              <div className="text-2xl font-bold text-orange-400">150+</div>
+              <div className="text-2xl font-bold text-orange-400">45+</div>
               <div className="text-sm text-gray-300">Çalışan</div>
             </div>
             <div>

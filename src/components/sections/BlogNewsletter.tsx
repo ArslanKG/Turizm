@@ -22,8 +22,8 @@ export default function BlogNewsletter() {
           <div className="w-24 h-1 bg-white mx-auto mb-8"></div>
           
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Sektördeki en güncel gelişmeleri, uzman analizlerini ve özel içerikleri e-posta adresinize gönderiyor, 
-            <strong className="text-orange-300"> bilgide öncü olmanızı sağlıyoruz</strong>.
+            Seyahatteki en güncel destinasyonları, rehber önerilerini ve özel tur fırsatlarını e-posta adresinize gönderiyor,
+            <strong className="text-orange-300"> keşifte öncü olmanızı sağlıyoruz</strong>.
           </p>
         </div>
 
@@ -105,7 +105,7 @@ export default function BlogNewsletter() {
                     Öncelikli Bilgilendirme
                   </h4>
                   <p className="text-gray-300">
-                    Yeni blog yazıları ve önemli gelişmelerden ilk siz haberdar olun.
+                    Yeni destinasyon rehberleri ve özel tur fırsatlarından ilk siz haberdar olun.
                   </p>
                 </div>
               </div>
@@ -116,10 +116,10 @@ export default function BlogNewsletter() {
                 </div>
                 <div>
                   <h4 className="text-xl font-semibold text-white mb-2">
-                    Sektör Analizleri
+                    Destinasyon Analizleri
                   </h4>
                   <p className="text-gray-300">
-                    Detaylı pazar analizleri ve gelecek projeksiyonları.
+                    Detaylı destinasyon rehberleri ve seyahat önerileri.
                   </p>
                 </div>
               </div>
@@ -130,10 +130,10 @@ export default function BlogNewsletter() {
                 </div>
                 <div>
                   <h4 className="text-xl font-semibold text-white mb-2">
-                    Özel İçerikler
+                    Özel Tur Fırsatları
                   </h4>
                   <p className="text-gray-300">
-                    Sadece abone olanlara özel rehberler ve uzman görüşleri.
+                    Sadece abone olanlara özel tur indirimleri ve erken rezervasyon fırsatları.
                   </p>
                 </div>
               </div>

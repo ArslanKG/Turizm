@@ -4,8 +4,8 @@ import ServiceProcess from '@/components/sections/ServiceProcess';
 import ServicesCTA from '@/components/sections/ServicesCTA';
 
 export const metadata = {
-  title: 'Hizmetlerimiz | Parla Group',
-  description: 'Kentsel dönüşüm, mimarlık ve inşaat alanlarında profesyonel hizmetlerimizi keşfedin.',
+  title: 'Hizmetlerimiz | Parla Travel',
+  description: 'Kültür turları, otel rezervasyonları ve rehberlik hizmetleri alanlarında profesyonel turizm hizmetlerimizi keşfedin.',
 };
 
 export default function ServicesPage() {

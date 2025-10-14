@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Building2, Home, Compass, ArrowRight, Star } from 'lucide-react';
+import { MapPin, Hotel, Users, ArrowRight, Star } from 'lucide-react';
 
 interface Service {
   id: string;
@@ -19,39 +19,39 @@ interface Service {
 const services: Service[] = [
   {
     id: '1',
-    title: 'Kentsel Dönüşüm',
-    description: 'Şehrin dokusunu koruyarak modern yaşam alanları yaratıyoruz. Sosyal donatı alanları ve çevre düzenlemesi ile değer katıyoruz.',
-    shortDesc: 'Modern şehircilik çözümleri',
-    icon: Building2,
-    slug: 'kentsel-donusum',
-    projects: 25,
+    title: 'Kültür Turları',
+    description: 'Türkiye\'nin zengin tarihî ve kültürel mirasını keşfedin. Uzman rehberlerimiz eşliğinde unutulmaz deneyimler yaşayın.',
+    shortDesc: 'Tarih ve kültür keşfi',
+    icon: MapPin,
+    slug: 'kultur-turlari',
+    projects: 150,
     color: 'from-blue-500 to-purple-600',
     gradient: 'bg-gradient-to-br from-blue-50 to-purple-50',
-    features: ['Sosyal Donatı Alanları', 'Çevre Düzenlemesi', 'Tarihî Doku Koruma']
+    features: ['Tarihî Mekanlar', 'Müze Gezileri', 'Yerel Kültür']
   },
   {
     id: '2',
-    title: 'İnşaat Projeleri',
-    description: 'Konut, ticari ve karma kullanım projeleri için kaliteli inşaat hizmetleri sunuyoruz. Zamanında teslim garantisi ile çalışıyoruz.',
-    shortDesc: 'Kaliteli inşaat hizmetleri',
-    icon: Home,
-    slug: 'insaat',
-    projects: 40,
+    title: 'Otel Rezervasyonları',
+    description: 'Konforlu konaklama deneyimi için en iyi otellerde rezervasyon hizmeti sunuyoruz. Her bütçeye uygun seçenekler mevcuttur.',
+    shortDesc: 'Kaliteli konaklama çözümleri',
+    icon: Hotel,
+    slug: 'otel-rezervasyonu',
+    projects: 200,
     color: 'from-emerald-500 to-teal-600',
     gradient: 'bg-gradient-to-br from-emerald-50 to-teal-50',
-    features: ['Konut Projeleri', 'Ticari Kompleksler', 'Zamanında Teslim']
+    features: ['Lüks Oteller', 'Boutique Hotels', 'Ekonomik Seçenekler']
   },
   {
     id: '3',
-    title: 'Mimari Tasarım',
-    description: 'Fonksiyonel ve estetik mimari çözümlerle hayallerinizi gerçeğe dönüştürüyoruz. Sürdürülebilir tasarım anlayışımızla fark yaratıyoruz.',
-    shortDesc: 'Yaratıcı mimari çözümler',
-    icon: Compass,
-    slug: 'mimarlik',
-    projects: 60,
+    title: 'Rehberlik Hizmetleri',
+    description: 'Profesyonel ve deneyimli rehberlerimiz ile Türkiye\'nin her köşesini keşfedin. Kişisel ve grup turları için özel hizmet.',
+    shortDesc: 'Uzman rehberlik desteği',
+    icon: Users,
+    slug: 'rehberlik-hizmetleri',
+    projects: 300,
     color: 'from-orange-500 to-red-600',
     gradient: 'bg-gradient-to-br from-orange-50 to-red-50',
-    features: ['Sürdürülebilir Tasarım', 'Estetik Çözümler', 'Yenilikçi Yaklaşım']
+    features: ['Kişisel Rehberlik', 'Grup Turları', 'Dil Desteği']
   }
 ];
 
@@ -73,30 +73,30 @@ export default function ServicesPreview() {
           </div>
           
           <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-            Geleceği
+            Türkiye'yi
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-600">
-              İnşa Ediyoruz
+              Keşfediyoruz
             </span>
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            15+ yıllık deneyimimizle kentsel dönüşüm, inşaat ve mimarlık alanlarında
-            <strong className="text-gray-800"> öncü çözümler</strong> sunuyoruz.
+            15+ yıllık deneyimimizle turizm ve seyahat alanlarında
+            <strong className="text-gray-800"> unutulmaz deneyimler</strong> sunuyoruz.
           </p>
 
           {/* Stats */}
           <div className="flex flex-wrap justify-center gap-8 mt-12">
             <div className="text-center">
-              <div className="text-3xl font-bold text-orange-600 mb-2">125+</div>
-              <div className="text-gray-600 text-sm">Tamamlanan Proje</div>
+              <div className="text-3xl font-bold text-orange-600 mb-2">650+</div>
+              <div className="text-gray-600 text-sm">Gerçekleştirilen Tur</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-orange-600 mb-2">15+</div>
               <div className="text-gray-600 text-sm">Yıllık Deneyim</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-orange-600 mb-2">5000+</div>
-              <div className="text-gray-600 text-sm">Mutlu Müşteri</div>
+              <div className="text-3xl font-bold text-orange-600 mb-2">12000+</div>
+              <div className="text-gray-600 text-sm">Mutlu Ziyaretçi</div>
             </div>
           </div>
         </div>
@@ -157,7 +157,7 @@ export default function ServicesPreview() {
                     <div className="flex items-center justify-between mb-6 p-4 bg-gray-50 rounded-xl">
                       <div className="text-center">
                         <div className="text-2xl font-bold text-orange-600">{service.projects}+</div>
-                        <div className="text-xs text-gray-500">Proje</div>
+                        <div className="text-xs text-gray-500">Tur</div>
                       </div>
                       <div className="text-center">
                         <div className="text-2xl font-bold text-orange-600">⭐</div>

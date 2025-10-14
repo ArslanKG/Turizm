@@ -8,8 +8,8 @@ export default function ProjectsHero() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&h=1080&fit=crop&crop=center&q=90"
-          alt="Projelerimiz"
+          src="https://images.unsplash.com/photo-1527838832700-5059252407fa?w=1920&h=1080&fit=crop&crop=center&q=90"
+          alt="Turlarımız"
           fill
           className="object-cover"
           priority
@@ -27,7 +27,7 @@ export default function ProjectsHero() {
               <div className="flex items-center space-x-2 text-sm text-white/70">
                 <span>Ana Sayfa</span>
                 <span>/</span>
-                <span className="text-orange-300">Projelerimiz</span>
+                <span className="text-orange-300">Turlarımız</span>
               </div>
             </div>
 
@@ -39,8 +39,8 @@ export default function ProjectsHero() {
                   color: 'white',
                   fontWeight: '700'
                 }}>
-                <span className="block mb-2">Başarılı</span>
-                <span className="block">Projelerimiz</span>
+                <span className="block mb-2">Popüler</span>
+                <span className="block">Turlarımız</span>
               </h1>
               
               {/* Accent Line */}
@@ -63,8 +63,8 @@ export default function ProjectsHero() {
                    maxWidth: '70%'
                  }}
                  className="max-w-[70%]">
-                500'den fazla başarılı proje deneyimimizle kentsel dönüşümden modern mimariye kadar geniş bir portföy sunuyoruz, 
-                <strong className="font-medium text-orange-300"> kaliteli çözümler üretiyoruz</strong>.
+                650'den fazla başarılı tur deneyimimizle kültür gezilerinden doğa turlarına kadar geniş bir portföy sunuyoruz,
+                <strong className="font-medium text-orange-300"> unutulmaz anılar yaratıyoruz</strong>.
               </p>
             </div>
 
@@ -74,29 +74,29 @@ export default function ProjectsHero() {
                 <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-3">
                   <span className="text-2xl">🏢</span>
                 </div>
-                <div className="text-white font-medium mb-1">Kentsel Dönüşüm</div>
-                <div className="text-sm text-white/70">120+ Proje</div>
+                <div className="text-white font-medium mb-1">Kültür Turları</div>
+                <div className="text-sm text-white/70">220+ Tur</div>
               </div>
               <div className="text-center">
                 <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-3">
-                  <span className="text-2xl">🏗️</span>
+                  <span className="text-2xl">🏨</span>
                 </div>
-                <div className="text-white font-medium mb-1">İnşaat</div>
-                <div className="text-sm text-white/70">200+ Proje</div>
+                <div className="text-white font-medium mb-1">Konaklama</div>
+                <div className="text-sm text-white/70">180+ Tur</div>
               </div>
               <div className="text-center">
                 <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-3">
-                  <span className="text-2xl">🎨</span>
+                  <span className="text-2xl">🧭</span>
                 </div>
-                <div className="text-white font-medium mb-1">Mimari Tasarım</div>
-                <div className="text-sm text-white/70">150+ Proje</div>
+                <div className="text-white font-medium mb-1">Rehberlik</div>
+                <div className="text-sm text-white/70">150+ Tur</div>
               </div>
               <div className="text-center">
                 <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-3">
-                  <span className="text-2xl">🏡</span>
+                  <span className="text-2xl">✈️</span>
                 </div>
-                <div className="text-white font-medium mb-1">Konut</div>
-                <div className="text-sm text-white/70">80+ Proje</div>
+                <div className="text-white font-medium mb-1">Özel Turlar</div>
+                <div className="text-sm text-white/70">100+ Tur</div>
               </div>
             </div>
           </div>
@@ -106,7 +106,7 @@ export default function ProjectsHero() {
       {/* Company Established Year */}
       <div className="absolute bottom-8 left-8 z-20">
         <div className="text-white/50 text-xs font-normal tracking-wider">
-          EST. 2010
+          EST. 2008
         </div>
       </div>
     </section>

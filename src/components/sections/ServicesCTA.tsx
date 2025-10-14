@@ -5,16 +5,16 @@ import { Phone, Mail, MapPin, ArrowRight, Star } from 'lucide-react';
 
 const testimonials = [
   {
-    name: 'Ahmet Yılmaz',
-    company: 'Yılmaz İnşaat',
+    name: 'Mehmet Demir',
+    company: 'Ankara',
     rating: 5,
-    comment: 'Parla Group ile çalışmak harika bir deneyimdi. Profesyonel yaklaşımları ve kaliteli işçilikleri ile projemizi mükemmel şekilde tamamladılar.'
+    comment: 'Parla Travel ile Kapadokya turumuza katıldık. Profesyonel rehberlik hizmetleri ve mükemmel organizasyon ile unutulmaz bir deneyim yaşadık.'
   },
   {
-    name: 'Elif Kaya',
-    company: 'Modern Yapı A.Ş.',
+    name: 'Ayşe Çelik',
+    company: 'İzmir',
     rating: 5,
-    comment: 'Kentsel dönüşüm projemizde gösterdikleri özen ve titizlik gerçekten takdire şayan. Zamanında teslim, kaliteli işçilik.'
+    comment: 'İstanbul kültür turumuzda gösterdikleri özen ve bilgi birikimi gerçekten takdire şayan. Her detay düşünülmüş, harika bir seyahatti.'
   }
 ];
 
@@ -33,15 +33,15 @@ export default function ServicesCTA() {
           {/* Left Content */}
           <div>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Projenizi Birlikte 
-              <span className="block text-orange-300">Gerçekleştirelim</span>
+              Seyahatinizi Birlikte
+              <span className="block text-orange-300">Planlayalım</span>
             </h2>
             
             <div className="w-24 h-1 bg-white mb-8"></div>
             
             <p className="text-xl text-blue-100 mb-8 leading-relaxed">
-              15 yıllık deneyimimiz ve uzman ekibimizle projenizi en iyi şekilde hayata geçiriyoruz. 
-              <strong className="text-orange-300"> Kaliteli çözümler sunuyoruz</strong>.
+              15 yıllık deneyimimiz ve uzman ekibimizle seyahatinizi en iyi şekilde organize ediyoruz.
+              <strong className="text-orange-300"> Unutulmaz deneyimler yaşatıyoruz</strong>.
             </p>
 
             {/* Contact Info */}
@@ -52,7 +52,7 @@ export default function ServicesCTA() {
                 </div>
                 <div>
                   <div className="font-medium">Telefon</div>
-                  <div className="text-orange-300">+90 212 555 0123</div>
+                  <div className="text-orange-300">+90 212 555 0156</div>
                 </div>
               </div>
               
@@ -72,7 +72,7 @@ export default function ServicesCTA() {
                 </div>
                 <div>
                   <div className="font-medium">Adres</div>
-                  <div className="text-orange-300">Maslak, İstanbul</div>
+                  <div className="text-orange-300">Taksim, İstanbul</div>
                 </div>
               </div>
             </div>
@@ -80,11 +80,11 @@ export default function ServicesCTA() {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/iletisim" className="inline-flex items-center justify-center py-4 px-8 bg-orange-300 text-white font-medium rounded-xl hover:bg-orange-400 transition-all duration-300 hover:scale-105 shadow-lg">
-                <span className="mr-2">Ücretsiz Teklif Al</span>
+                <span className="mr-2">Tur Fiyatları Al</span>
                 <ArrowRight className="h-5 w-5" />
               </Link>
               
-              <a href="tel:+902125550123" className="inline-flex items-center justify-center py-4 px-8 bg-white/10 text-white font-medium rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300 backdrop-blur-sm">
+              <a href="tel:+902125550156" className="inline-flex items-center justify-center py-4 px-8 bg-white/10 text-white font-medium rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300 backdrop-blur-sm">
                 <Phone className="h-5 w-5 mr-2" />
                 <span>Hemen Ara</span>
               </a>
@@ -129,16 +129,16 @@ export default function ServicesCTA() {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-4 mt-8">
               <div className="text-center">
-                <div className="text-3xl font-bold text-orange-300 mb-1">500+</div>
-                <div className="text-sm text-blue-200">Tamamlanan Proje</div>
+                <div className="text-3xl font-bold text-orange-300 mb-1">650+</div>
+                <div className="text-sm text-blue-200">Düzenlenen Tur</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-orange-300 mb-1">15+</div>
                 <div className="text-sm text-blue-200">Yıl Deneyim</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-orange-300 mb-1">100+</div>
-                <div className="text-sm text-blue-200">Mutlu Müşteri</div>
+                <div className="text-3xl font-bold text-orange-300 mb-1">12000+</div>
+                <div className="text-sm text-blue-200">Mutlu Ziyaretçi</div>
               </div>
             </div>
           </div>
@@ -151,7 +151,7 @@ export default function ServicesCTA() {
               24/7 Müşteri Desteği
             </h4>
             <p className="text-blue-200">
-              Projelerinizle ilgili her konuda size destek olmaya hazırız.
+              Seyahatinizle ilgili her konuda size destek olmaya hazırız.
             </p>
           </div>
         </div>

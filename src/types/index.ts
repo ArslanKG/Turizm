@@ -1,10 +1,10 @@
-// Parla Group Kurumsal Portfolyo - TypeScript Type Definitions
+// Parla Travel Kurumsal Portfolyo - TypeScript Type Definitions
 
 export interface Project {
   id: string;
   title: string;
   description: string;
-  category: 'kentsel-donusum' | 'insaat' | 'mimarlik';
+  category: 'kultur-turlari' | 'ozel-turlar' | 'macera-turlari';
   images: ProjectImage[];
   location: string;
   year: number;
@@ -48,10 +48,10 @@ export interface TeamMember {
 }
 
 export interface CompanyStats {
-  projectsCompleted: number;
+  toursCompleted: number;
   yearsExperience: number;
   clientsSatisfied: number;
-  areaTransformed: number;
+  destinationsVisited: number;
 }
 
 export interface BlogPost {

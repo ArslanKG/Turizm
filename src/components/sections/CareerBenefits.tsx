@@ -93,7 +93,7 @@ export default function CareerBenefits() {
             Çalışan Avantajları
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Parla Group ailesi olmanın ayrıcalıklarını keşfedin. 
+            Parla Travel ailesi olmanın ayrıcalıklarını keşfedin.
             Çalışanlarımızın mutluluğu ve gelişimi bizim için öncelik.
           </p>
         </div>
@@ -121,11 +121,11 @@ export default function CareerBenefits() {
         <div className="mt-20 bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl p-8 md:p-12 text-white">
           <div className="grid md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-3xl md:text-4xl font-bold mb-2">150+</div>
+              <div className="text-3xl md:text-4xl font-bold mb-2">45+</div>
               <div className="text-orange-100">Mutlu Çalışan</div>
             </div>
             <div>
-              <div className="text-3xl md:text-4xl font-bold mb-2">%95</div>
+              <div className="text-3xl md:text-4xl font-bold mb-2">%98</div>
               <div className="text-orange-100">Çalışan Memnuniyeti</div>
             </div>
             <div>
@@ -133,7 +133,7 @@ export default function CareerBenefits() {
               <div className="text-orange-100">Yıl Deneyim</div>
             </div>
             <div>
-              <div className="text-3xl md:text-4xl font-bold mb-2">%80</div>
+              <div className="text-3xl md:text-4xl font-bold mb-2">%85</div>
               <div className="text-orange-100">İç Terfi Oranı</div>
             </div>
           </div>
@@ -153,11 +153,11 @@ export default function CareerBenefits() {
                 </div>
                 <div className="ml-3">
                   <div className="font-semibold text-gray-900">Ahmet Şahin</div>
-                  <div className="text-gray-600 text-sm">Proje Yöneticisi</div>
+                  <div className="text-gray-600 text-sm">Tur Operasyon Uzmanı</div>
                 </div>
               </div>
               <p className="text-gray-700 italic">
-                "Parla Group'ta çalışmaya başladığımdan beri hem profesyonel hem de kişisel gelişimimi destekleyen bir ortamda bulunuyorum. Takım ruhu harika!"
+                "Parla Travel'da çalışmaya başladığımdan beri hem profesyonel hem de kişisel gelişimimi destekleyen bir ortamda bulunuyorum. Turizm sektöründeki deneyimim burada katlanarak arttı!"
               </p>
             </div>
 
@@ -168,11 +168,11 @@ export default function CareerBenefits() {
                 </div>
                 <div className="ml-3">
                   <div className="font-semibold text-gray-900">Zeynep Kaya</div>
-                  <div className="text-gray-600 text-sm">Mimar</div>
+                  <div className="text-gray-600 text-sm">Turist Rehberi</div>
                 </div>
               </div>
               <p className="text-gray-700 italic">
-                "Yaratıcılığımı sergileyebileceğim projeler ve destekleyici yönetim anlayışı sayesinde kendimi sürekli geliştiriyorum."
+                "Rehberlik yeteneğimi sergileyebileceğim turlar ve destekleyici yönetim anlayışı sayesinde kendimi sürekli geliştiriyorum. Her gün farklı insanlarla tanışmak harika!"
               </p>
             </div>
 
@@ -183,11 +183,11 @@ export default function CareerBenefits() {
                 </div>
                 <div className="ml-3">
                   <div className="font-semibold text-gray-900">Mehmet Türk</div>
-                  <div className="text-gray-600 text-sm">İnşaat Mühendisi</div>
+                  <div className="text-gray-600 text-sm">Rezervasyon Uzmanı</div>
                 </div>
               </div>
               <p className="text-gray-700 italic">
-                "Teknoloji ile donatılmış ofisimiz ve esnek çalışma saatleri sayesinde iş-yaşam dengemizi çok iyi kurabiliyoruz."
+                "Teknoloji ile donatılmış ofisimiz ve esnek çalışma saatleri sayesinde iş-yaşam dengemizi çok iyi kurabiliyoruz. Turizm sektöründe çalışmak gerçekten keyifli!"
               </p>
             </div>
           </div>

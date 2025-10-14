@@ -25,7 +25,7 @@ export default function ContactHero() {
               <div className="w-24 h-1 bg-white"></div>
               
               <p className="text-xl text-gray-300 leading-relaxed">
-                Projeleriniz için teklif almak, sorularınızı sormak veya iş birliği fırsatlarını değerlendirmek için 
+                Seyahat planlarınız için bilgi almak, rezervasyon yapmak veya özel tur talepleri için
                 <strong className="text-orange-300"> bizimle iletişime geçin</strong>.
               </p>
             </div>
@@ -34,7 +34,7 @@ export default function ContactHero() {
             <div className="grid grid-cols-2 gap-6">
               <div className="text-center">
                 <div className="text-3xl font-bold text-orange-300 mb-2">24/7</div>
-                <div className="text-gray-400 text-sm">Müşteri Hizmetleri</div>
+                <div className="text-gray-400 text-sm">Rezervasyon Hizmetleri</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-orange-300 mb-2">&lt;1</div>
@@ -67,7 +67,7 @@ export default function ContactHero() {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-white">E-posta</h3>
-                  <p className="text-gray-300">info@parlagroup.com</p>
+                  <p className="text-gray-300">info@parlatravel.com</p>
                   <p className="text-sm text-gray-400">7/24 e-posta desteği</p>
                 </div>
               </div>

@@ -21,49 +21,49 @@ const storyData: StorySection[] = [
   {
     id: 'foundation',
     year: '2008',
-    title: 'Güçlü Temeller',
-    description: 'İstanbul\'da kentsel dönüşüm alanında ilk adımlarımızı attık. Vizyonumuz şehirlerin yaşanabilirliğini artırmak ve modern yaşam alanları yaratmaktı.',
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=400&fit=crop&crop=center',
+    title: 'Turizm Yolculuğumuzun Başlangıcı',
+    description: 'İstanbul\'da profesyonel turizm rehberliği alanında ilk adımlarımızı attık. Vizyonumuz Türkiye\'nin kültürel zenginliklerini dünyaya tanıtmak ve unutulmaz seyahat deneyimleri yaratmaktı.',
+    image: 'https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=600&h=400&fit=crop&crop=center',
     icon: Calendar,
     stats: [
-      { label: 'İlk Proje', value: '5.000 m²' },
-      { label: 'Ekip Büyüklüğü', value: '8 Kişi' }
+      { label: 'İlk Tur', value: 'İstanbul' },
+      { label: 'Ekip Büyüklüğü', value: '5 Kişi' }
     ]
   },
   {
     id: 'expansion',
     year: '2015',
-    title: 'Büyüme ve Gelişim',
-    description: 'Ekibimizi genişlettik ve daha büyük projelere imza atmaya başladık. İnşaat ve mimarlık hizmetlerimizi de portföyümüze ekledik.',
-    image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&h=400&fit=crop&crop=center',
+    title: 'Hizmet Çeşitliliği',
+    description: 'Ekibimizi genişlettik ve hizmet portföyümüze otel rezervasyonu ile kültür turlarını ekledik. Türkiye\'nin dört bir yanında rehberlik hizmeti vermeye başladık.',
+    image: 'https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=600&h=400&fit=crop&crop=center',
     icon: Target,
     stats: [
-      { label: 'Tamamlanan Proje', value: '50+' },
-      { label: 'Ekip Büyüklüğü', value: '25 Kişi' }
+      { label: 'Tur Destinasyonu', value: '25+' },
+      { label: 'Ekip Büyüklüğü', value: '20 Kişi' }
     ]
   },
   {
     id: 'innovation',
     year: '2020',
-    title: 'İnovasyon ve Sürdürülebilirlik',
-    description: 'Sürdürülebilir yapı teknolojilerini benimser, akıllı binalar ve çevre dostu projeler geliştirmeye odaklandık.',
-    image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=600&h=400&fit=crop&crop=center',
+    title: 'Dijital Dönüşüm',
+    description: 'Dijital teknolojileri benimser, online rezervasyon sistemi ve mobil rehberlik uygulamaları geliştirerek müşteri deneyimini dijitalleştirdik.',
+    image: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&h=400&fit=crop&crop=center',
     icon: Lightbulb,
     stats: [
-      { label: 'Yeşil Sertifika', value: 'LEED Gold' },
-      { label: 'Enerji Tasarrufu', value: '%40' }
+      { label: 'Online Rezervasyon', value: '%85' },
+      { label: 'Mobil App İndirme', value: '10K+' }
     ]
   },
   {
     id: 'leadership',
     year: '2024',
-    title: 'Sektör Liderliği',
-    description: 'Bugün İstanbul\'un en prestijli kentsel dönüşüm projelerinde öncü konumundayız ve geleceğin şehirlerini şekillendirmeye devam ediyoruz.',
-    image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&h=400&fit=crop&crop=center',
+    title: 'Turizm Sektöründe Öncülük',
+    description: 'Bugün Türkiye turizminin en güvenilir markalarından biriyiz ve sürdürülebilir turizm anlayışıyla geleceğin seyahat deneyimlerini şekillendirmeye devam ediyoruz.',
+    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop&crop=center',
     icon: Users,
     stats: [
-      { label: 'Aktif Proje', value: '15+' },
-      { label: 'Ekip Büyüklüğü', value: '75 Kişi' }
+      { label: 'Yıllık Misafir', value: '5000+' },
+      { label: 'Ekip Büyüklüğü', value: '45 Kişi' }
     ]
   }
 ];
@@ -86,8 +86,8 @@ export default function CompanyStory() {
             <span className="text-gradient">Hikayemiz</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            2008'den bu yana İstanbul'un dönüşümüne öncülük eden bir yolculuk. 
-            Her adımda kalite, yenilik ve sürdürülebilirlik odaklı büyüdük.
+            2008'den bu yana Türkiye turizminde öncülük eden bir yolculuk.
+            Her adımda kalite, güven ve misafir memnuniyeti odaklı büyüdük.
           </p>
         </div>
 
@@ -191,10 +191,10 @@ export default function CompanyStory() {
           <div className="max-w-4xl mx-auto p-8 bg-gradient-to-r from-blue-50 to-purple-50 rounded-3xl">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Misyonumuz</h3>
             <p className="text-lg text-gray-700 leading-relaxed">
-              İstanbul'un kentsel dokusu içinde yaşanabilir, sürdürülebilir ve estetik yapılar inşa ederek, 
-              şehrin geleceğini şekillendirmek ve insanların yaşam kalitesini artırmaktır. 
-              Her projemizde kalite, güven ve yenilik ilkelerini benimser, 
-              müşterilerimizin hayallerini gerçeğe dönüştürürüz.
+              Türkiye'nin eşsiz güzelliklerini, zengin kültürünü ve tarihini tüm dünyaya tanıtarak,
+              unutulmaz seyahat deneyimleri yaşatmaktır.
+              Her turumuzda kalite, güven ve profesyonellik ilkelerini benimser,
+              misafirlerimizin hayallerindeki tatili gerçeğe dönüştürürüz.
             </p>
           </div>
         </div>

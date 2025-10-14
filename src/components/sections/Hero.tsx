@@ -20,45 +20,45 @@ interface HeroSlide {
 const heroSlides: HeroSlide[] = [
   {
     id: '1',
-    title: 'Kentsel Dönüşüm Projelerimiz',
+    title: 'Eşsiz Türkiye Turları',
     subtitle: '',
-    description: 'Şehrin dokusunu koruyarak modern yaşam alanları yaratıyor, geleceğe değer katıyoruz.',
-    image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1920&h=1080&fit=crop&crop=center&q=90',
+    description: 'Türkiye\'nin zengin kültürel mirasını keşfedin, unutulmaz anılar biriktirin.',
+    image: 'https://images.unsplash.com/photo-1527838832700-5059252407fa?w=1920&h=1080&fit=crop&crop=center&q=90',
     cta: {
-      primary: 'Projelerimiz',
+      primary: 'Turlarımız',
       secondary: 'Hizmetlerimiz'
     }
   },
   {
     id: '2',
-    title: 'Modern Mimari Zamansız Değerler',
+    title: 'Lüks Otel Rezervasyonları',
     subtitle: '',
-    description: 'Estetik ve fonksiyonu mükemmel dengede buluşturan tasarımlar sunuyoruz, özgün çözümler üretiyoruz.',
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&h=1080&fit=crop&crop=center&q=90',
+    description: 'Konforlu konaklama seçenekleri ile tatil deneyiminizi mükemmel hale getiriyoruz.',
+    image: 'https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=1920&h=1080&fit=crop&crop=center&q=90',
     cta: {
-      primary: 'Projelerimiz',
+      primary: 'Oteller',
       secondary: 'Hizmetlerimiz'
     }
   },
   {
     id: '3',
-    title: 'Kaliteli İnşaat Güvenli Gelecek',
+    title: 'Kültür Gezileri ve Rehberlik',
     subtitle: '',
-    description: 'En yüksek kalite standartlarında yapılar inşa ediyoruz, dayanıklı çözümler sunuyoruz.',
-    image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&h=1080&fit=crop&crop=center&q=90',
+    description: 'Uzman rehberlerimiz eşliğinde tarihi ve kültürel zenginlikleri keşfedin.',
+    image: 'https://images.unsplash.com/photo-1527838832700-5059252407fa?w=1920&h=1080&fit=crop&crop=center&q=90',
     cta: {
-      primary: 'Projelerimiz',
+      primary: 'Kültür Turları',
       secondary: 'Hizmetlerimiz'
     }
   },
   {
     id: '4',
-    title: 'Yaşam Alanlarınıza Değer Katıyoruz',
+    title: 'Özel Tatil Paketleri',
     subtitle: '',
-    description: 'Fonksiyonel ve estetik iç mekanlar tasarlıyoruz, yaşanabilir alanlar yaratıyoruz.',
-    image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1920&h=1080&fit=crop&crop=center&q=90',
+    description: 'Size özel hazırladığımız tatil paketleri ile hayalinizdeki seyahati yaşayın.',
+    image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1920&h=1080&fit=crop&crop=center&q=90',
     cta: {
-      primary: 'Projelerimiz',
+      primary: 'Paketler',
       secondary: 'Hizmetlerimiz'
     }
   }
@@ -132,7 +132,7 @@ export default function Hero() {
       {/* Company Established Year - minimal design */}
       <div className="absolute bottom-8 left-8 z-20">
         <div className="text-white/50 text-xs font-normal tracking-wider">
-          EST. 2010
+          EST. 2008
         </div>
       </div>
 
@@ -191,32 +191,32 @@ export default function Hero() {
                    }}
                    className="w-full md:max-w-[50%] max-w-[80%]">
                   {(() => {
-                    if (currentSlideData.description.includes('geleceğe değer katıyoruz')) {
+                    if (currentSlideData.description.includes('unutulmaz anılar biriktirin')) {
                       return (
                         <>
-                          {currentSlideData.description.split(', geleceğe değer katıyoruz')[0]},
-                          <strong className="font-medium text-orange-300"> geleceğe değer katıyoruz</strong>.
+                          {currentSlideData.description.split(', unutulmaz anılar biriktirin')[0]},
+                          <strong className="font-medium text-orange-300"> unutulmaz anılar biriktirin</strong>.
                         </>
                       );
-                    } else if (currentSlideData.description.includes('özgün çözümler üretiyoruz')) {
+                    } else if (currentSlideData.description.includes('mükemmel hale getiriyoruz')) {
                       return (
                         <>
-                          {currentSlideData.description.split(', özgün çözümler üretiyoruz')[0]},
-                          <strong className="font-medium text-orange-300"> özgün çözümler üretiyoruz</strong>.
+                          {currentSlideData.description.split(' mükemmel hale getiriyoruz')[0]},
+                          <strong className="font-medium text-orange-300"> mükemmel hale getiriyoruz</strong>.
                         </>
                       );
-                    } else if (currentSlideData.description.includes('dayanıklı çözümler sunuyoruz')) {
+                    } else if (currentSlideData.description.includes('zenginlikleri keşfedin')) {
                       return (
                         <>
-                          {currentSlideData.description.split(', dayanıklı çözümler sunuyoruz')[0]},
-                          <strong className="font-medium text-orange-300"> dayanıklı çözümler sunuyoruz</strong>.
+                          {currentSlideData.description.split(' zenginlikleri keşfedin')[0]},
+                          <strong className="font-medium text-orange-300"> zenginlikleri keşfedin</strong>.
                         </>
                       );
-                    } else if (currentSlideData.description.includes('yaşanabilir alanlar yaratıyoruz')) {
+                    } else if (currentSlideData.description.includes('seyahati yaşayın')) {
                       return (
                         <>
-                          {currentSlideData.description.split(', yaşanabilir alanlar yaratıyoruz')[0]},
-                          <strong className="font-medium text-orange-300"> yaşanabilir alanlar yaratıyoruz</strong>.
+                          {currentSlideData.description.split(' seyahati yaşayın')[0]},
+                          <strong className="font-medium text-orange-300"> seyahati yaşayın</strong>.
                         </>
                       );
                     } else {
@@ -229,8 +229,8 @@ export default function Hero() {
               {/* Butonlar - Sabit Pozisyon ve Tek Satır */}
               <div className="flex flex-col gap-4 md:flex-row md:gap-4 w-full md:w-auto">
                 <Link
-                  href="/projeler"
-                  className="group inline-flex items-center justify-center transition-all duration-200 ease-out hover:-translate-y-0.5 whitespace-nowrap"
+                  href="/turlar"
+                  className="group inline-flex items-center justify-center transition-all duration-200 ease-out hover:-translate-y-.5 whitespace-nowrap"
                   style={{
                     width: '200px',
                     height: '56px',
@@ -286,7 +286,7 @@ export default function Hero() {
                     color: 'white'
                   }} />
                   <span>
-                    Tanıtım Videosu
+                    Keşif Videosu
                   </span>
                 </button>
               </div>

@@ -4,15 +4,15 @@ import Link from 'next/link';
 import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin, Twitter } from 'lucide-react';
 
 const services = [
-  { label: 'Kentsel Dönüşüm', href: '/hizmetler/kentsel-donusum' },
-  { label: 'İnşaat Projeleri', href: '/hizmetler/insaat' },
-  { label: 'Mimari Tasarım', href: '/hizmetler/mimarlik' },
-  { label: 'Proje Yönetimi', href: '/hizmetler/proje-yonetimi' }
+  { label: 'Kültür Turları', href: '/hizmetler/kultur-turlari' },
+  { label: 'Otel Rezervasyonları', href: '/hizmetler/otel-rezervasyonu' },
+  { label: 'Rehberlik Hizmetleri', href: '/hizmetler/rehberlik-hizmetleri' },
+  { label: 'Macera Turları', href: '/hizmetler/macera-turlari' }
 ];
 
 const quickLinks = [
   { label: 'Hakkımızda', href: '/hakkimizda' },
-  { label: 'Projelerimiz', href: '/projeler' },
+  { label: 'Turlarımız', href: '/projeler' },
   { label: 'Blog', href: '/blog' },
   { label: 'Kariyer', href: '/kariyer' },
   { label: 'İletişim', href: '/iletisim' }
@@ -37,8 +37,8 @@ export default function Footer() {
           <div className="col-span-1 lg:col-span-2">
             <div className="mb-4">
               <p className="text-gray-300 leading-relaxed">
-                Kentsel dönüşüm, inşaat ve mimarlık alanlarında 15+ yıllık deneyimle,
-                şehirleri yeniden şekillendiren öncü projeler gerçekleştiriyoruz.
+                Turizm ve seyahat alanlarında 15+ yıllık deneyimle,
+                Türkiye'nin en güzel destinasyonlarını keşfetmeniz için unutulmaz turlar düzenliyoruz.
               </p>
             </div>
             
@@ -46,17 +46,17 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-blue-400" />
-                <span className="text-gray-300">+90 212 555 0123</span>
+                <span className="text-gray-300">+90 212 555 0156</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-blue-400" />
-                <span className="text-gray-300">info@parlagroup.com</span>
+                <span className="text-gray-300">info@parlatravel.com</span>
               </div>
               <div className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 text-blue-400 mt-0.5" />
                 <span className="text-gray-300">
-                  Maslak Mahallesi, Büyükdere Caddesi<br />
-                  No: 123, Şişli/İstanbul
+                  Taksim Meydanı, İstiklal Caddesi<br />
+                  No: 250, Beyoğlu/İstanbul
                 </span>
               </div>
             </div>
@@ -119,7 +119,7 @@ export default function Footer() {
 
             {/* Copyright */}
             <div className="text-center text-gray-400 sm:text-right">
-              <p>© {currentYear} Parla Group. Tüm hakları saklıdır.</p>
+              <p>© {currentYear} Parla Travel. Tüm hakları saklıdır.</p>
               <div className="mt-1 space-x-4 text-sm">
                 <Link href="/gizlilik" className="hover:text-blue-400">
                   Gizlilik Politikası

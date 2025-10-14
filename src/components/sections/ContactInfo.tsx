@@ -51,8 +51,8 @@ export default function ContactInfo() {
 
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-1">E-posta</h4>
-                  <a href="mailto:info@parlagroup.com" className="text-orange-600 hover:text-orange-700 transition-colors">
-                    info@parlagroup.com
+                  <a href="mailto:info@parlatravel.com" className="text-orange-600 hover:text-orange-700 transition-colors">
+                    info@parlatravel.com
                   </a>
                 </div>
 
@@ -76,7 +76,7 @@ export default function ContactInfo() {
                   <Users className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900">Satış Ofisi</h3>
+                  <h3 className="text-xl font-bold text-gray-900">Rezervasyon Ofisi</h3>
                   <p className="text-gray-600 font-medium">Levent</p>
                 </div>
               </div>
@@ -99,8 +99,8 @@ export default function ContactInfo() {
 
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-1">E-posta</h4>
-                  <a href="mailto:satis@parlagroup.com" className="text-gray-600 hover:text-gray-800 transition-colors">
-                    satis@parlagroup.com
+                  <a href="mailto:rezervasyon@parlatravel.com" className="text-gray-600 hover:text-gray-800 transition-colors">
+                    rezervasyon@parlatravel.com
                   </a>
                 </div>
 
@@ -123,7 +123,7 @@ export default function ContactInfo() {
                   <Target className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900">Proje Ofisi</h3>
+                  <h3 className="text-xl font-bold text-gray-900">Tur Operasyon Ofisi</h3>
                   <p className="text-gray-600 font-medium">Şişli</p>
                 </div>
               </div>
@@ -146,8 +146,8 @@ export default function ContactInfo() {
 
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-1">E-posta</h4>
-                  <a href="mailto:proje@parlagroup.com" className="text-gray-600 hover:text-gray-800 transition-colors">
-                    proje@parlagroup.com
+                  <a href="mailto:operasyon@parlatravel.com" className="text-gray-600 hover:text-gray-800 transition-colors">
+                    operasyon@parlatravel.com
                   </a>
                 </div>
 
@@ -171,7 +171,7 @@ export default function ContactInfo() {
             </div>
             <h3 className="text-lg font-semibold text-gray-900 mb-2">Hızlı Yanıt</h3>
             <p className="text-gray-600 text-sm">
-              Tüm sorularınıza 1 saat içinde yanıt verme garantisi
+              Tüm rezervasyon taleplerinize 1 saat içinde yanıt verme garantisi
             </p>
           </div>
 
@@ -179,9 +179,9 @@ export default function ContactInfo() {
             <div className="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-200 transition-colors duration-300">
               <Users className="h-8 w-8 text-orange-600" />
             </div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">Uzman Ekip</h3>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">Uzman Rehberler</h3>
             <p className="text-gray-600 text-sm">
-              Her alanda deneyimli profesyonel ekibimiz
+              Profesyonel turist rehberleri ve tur operasyon uzmanları
             </p>
           </div>
 
@@ -191,7 +191,7 @@ export default function ContactInfo() {
             </div>
             <h3 className="text-lg font-semibold text-gray-900 mb-2">Güvenilir Hizmet</h3>
             <p className="text-gray-600 text-sm">
-              15+ yıllık deneyim ve %100 müşteri memnuniyeti
+              15+ yıllık turizm deneyimi ve %98 misafir memnuniyeti
             </p>
           </div>
 
@@ -199,9 +199,9 @@ export default function ContactInfo() {
             <div className="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-200 transition-colors duration-300">
               <Zap className="h-8 w-8 text-orange-600" />
             </div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">7/24 Destek</h3>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">7/24 Seyahat Desteği</h3>
             <p className="text-gray-600 text-sm">
-              Acil durumlar için kesintisiz destek hizmetimiz
+              Seyahatiniz boyunca kesintisiz destek hizmetimiz
             </p>
           </div>
         </div>

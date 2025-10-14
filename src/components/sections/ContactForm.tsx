@@ -33,14 +33,14 @@ export default function ContactForm() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Proje Teklifi Alın
+            Seyahat Talebi Oluşturun
           </h2>
           
           <div className="w-24 h-1 bg-orange-300 mx-auto mb-6"></div>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Projeleriniz için detaylı bir teklif almak üzere aşağıdaki formu doldurun. 
-            Uzman ekibimiz 24 saat içinde sizinle iletişime geçecek.
+            Unutulmaz bir seyahat deneyimi için aşağıdaki formu doldurun.
+            Uzman ekibimiz 24 saat içinde sizinle iletişime geçerek kişiselleştirilmiş seyahat planınızı hazırlayacak.
           </p>
         </div>
 
@@ -144,11 +144,11 @@ export default function ContactForm() {
                       className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-300 focus:border-transparent transition-all duration-300"
                     >
                       <option value="">Hizmet seçiniz</option>
-                      <option value="kentsel-donusum">Kentsel Dönüşüm</option>
-                      <option value="mimari-tasarim">Mimari Tasarım</option>
-                      <option value="insaat">İnşaat</option>
-                      <option value="proje-yonetimi">Proje Yönetimi</option>
-                      <option value="danismanlik">Danışmanlık</option>
+                      <option value="kultur-turu">Kültür Turları</option>
+                      <option value="ozel-tur">Özel Tur Organizasyonu</option>
+                      <option value="otel-rezervasyon">Otel Rezervasyonu</option>
+                      <option value="grup-turu">Grup Turları</option>
+                      <option value="rehberlik">Profesyonel Rehberlik</option>
                       <option value="diger">Diğer</option>
                     </select>
                   </div>
@@ -165,10 +165,10 @@ export default function ContactForm() {
                       className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-300 focus:border-transparent transition-all duration-300"
                     >
                       <option value="">Bütçe seçiniz</option>
-                      <option value="100k-500k">100.000 - 500.000 TL</option>
-                      <option value="500k-1m">500.000 - 1.000.000 TL</option>
-                      <option value="1m-5m">1.000.000 - 5.000.000 TL</option>
-                      <option value="5m+">5.000.000 TL+</option>
+                      <option value="5k-15k">5.000 - 15.000 TL</option>
+                      <option value="15k-30k">15.000 - 30.000 TL</option>
+                      <option value="30k-50k">30.000 - 50.000 TL</option>
+                      <option value="50k+">50.000 TL+</option>
                     </select>
                   </div>
                 </div>
@@ -177,7 +177,7 @@ export default function ContactForm() {
                   <label htmlFor="timeline" className="block text-sm font-medium text-gray-700 mb-2">
                     <div className="flex items-center gap-2">
                       <Calendar className="h-4 w-4" />
-                      Proje Başlangıç Zamanı
+                      Seyahat Zamanı
                     </div>
                   </label>
                   <select
@@ -200,7 +200,7 @@ export default function ContactForm() {
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
                     <div className="flex items-center gap-2">
                       <MessageSquare className="h-4 w-4" />
-                      Proje Detayları *
+                      Seyahat Detayları *
                     </div>
                   </label>
                   <textarea
@@ -211,7 +211,7 @@ export default function ContactForm() {
                     value={formData.message}
                     onChange={handleChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-300 focus:border-transparent transition-all duration-300 resize-none"
-                    placeholder="Projenizin detaylarını, beklentilerinizi ve özel gereksinimlerinizi açıklayın..."
+                    placeholder="Seyahat planınızın detaylarını, gitmek istediğiniz yerleri, özel taleplerinizi ve beklentilerinizi açıklayın..."
                   />
                 </div>
 
@@ -232,7 +232,7 @@ export default function ContactForm() {
                   className="w-full py-4 bg-orange-300 text-white font-medium rounded-xl hover:bg-orange-400 transition-all duration-300 hover:scale-105 shadow-lg flex items-center justify-center gap-2"
                 >
                   <Send className="h-5 w-5" />
-                  <span>Teklif Talebini Gönder</span>
+                  <span>Seyahat Talebini Gönder</span>
                 </button>
               </form>
             </div>
@@ -288,9 +288,9 @@ export default function ContactForm() {
                     <Phone className="h-4 w-4" />
                     +90 212 555 0123
                   </a>
-                  <a href="mailto:info@parlagroup.com" className="flex items-center gap-2 text-orange-600 font-semibold">
+                  <a href="mailto:info@parlatravel.com" className="flex items-center gap-2 text-orange-600 font-semibold">
                     <Mail className="h-4 w-4" />
-                    info@parlagroup.com
+                    info@parlatravel.com
                   </a>
                 </div>
               </div>

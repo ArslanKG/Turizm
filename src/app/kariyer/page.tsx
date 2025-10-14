@@ -5,9 +5,9 @@ import CareerBenefits from '@/components/sections/CareerBenefits'
 import CareerApplication from '@/components/sections/CareerApplication'
 
 export const metadata: Metadata = {
-  title: 'Kariyer - Parla Group | İş Fırsatları ve Açık Pozisyonlar',
-  description: 'Parla Group\'ta kariyer fırsatları, açık pozisyonlar ve çalışan avantajları. Kentsel dönüşüm ve inşaat sektöründe profesyonel ekibimize katılın.',
-  keywords: 'kariyer, iş ilanları, açık pozisyonlar, parla group, kentsel dönüşüm, inşaat, mimarlık, işe alım',
+  title: 'Kariyer - Parla Travel | İş Fırsatları ve Açık Pozisyonlar',
+  description: 'Parla Travel\'da kariyer fırsatları, açık pozisyonlar ve çalışan avantajları. Turizm sektöründe profesyonel ekibimize katılın.',
+  keywords: 'kariyer, iş ilanları, açık pozisyonlar, parla travel, turizm, rehberlik, seyahat, işe alım',
 }
 
 export default function CareerPage() {

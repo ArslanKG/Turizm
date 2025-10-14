@@ -122,7 +122,7 @@ export default function BlogDetail({ post }: BlogDetailProps) {
               <div className="text-right">
                 <p className="text-sm text-gray-500 mb-2">Yazar</p>
                 <p className="font-semibold text-gray-900">{post.author}</p>
-                <p className="text-sm text-gray-600">Parla Group Uzmanı</p>
+                <p className="text-sm text-gray-600">Parla Travel Uzmanı</p>
               </div>
             </div>
           </footer>

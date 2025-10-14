@@ -17,8 +17,8 @@ interface Project {
   features: string[];
   images: string[];
   client: string;
-  architect: string;
-  contractor: string;
+  coordinator: string;
+  partner: string;
 }
 
 interface ProjectDetailProps {
@@ -91,7 +91,7 @@ export default function ProjectDetail({ project }: ProjectDetailProps) {
               <div className="grid grid-cols-2 gap-6">
                 <div className="text-center">
                   <div className="text-3xl font-bold text-orange-300 mb-2">{project.area}</div>
-                  <div className="text-gray-400 text-sm">Toplam Alan</div>
+                  <div className="text-gray-400 text-sm">Tur Süresi</div>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold text-orange-300 mb-2">{project.year}</div>
@@ -187,16 +187,16 @@ export default function ProjectDetail({ project }: ProjectDetailProps) {
                     <div className="flex items-center gap-3">
                       <Building className="h-5 w-5 text-orange-600" />
                       <div>
-                        <div className="font-semibold text-gray-900">Mimar</div>
-                        <div className="text-gray-600">{project.architect}</div>
+                        <div className="font-semibold text-gray-900">Koordinatör</div>
+                        <div className="text-gray-600">{project.coordinator}</div>
                       </div>
                     </div>
                     
                     <div className="flex items-center gap-3">
                       <Building className="h-5 w-5 text-orange-600" />
                       <div>
-                        <div className="font-semibold text-gray-900">Müteahhit</div>
-                        <div className="text-gray-600">{project.contractor}</div>
+                        <div className="font-semibold text-gray-900">İş Ortağı</div>
+                        <div className="text-gray-600">{project.partner}</div>
                       </div>
                     </div>
                   </div>

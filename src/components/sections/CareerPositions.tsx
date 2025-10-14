@@ -18,94 +18,94 @@ interface JobPosition {
 const jobPositions: JobPosition[] = [
   {
     id: '1',
-    title: 'Proje Yöneticisi',
-    department: 'Proje Yönetimi',
+    title: 'Tur Operasyon Uzmanı',
+    department: 'Tur Operasyon',
     location: 'İstanbul',
     type: 'Tam Zamanlı',
-    experience: '5+ yıl',
-    description: 'Kentsel dönüşüm projelerinin planlama, yürütme ve teslim süreçlerini yönetecek deneyimli proje yöneticisi aranmaktadır.',
+    experience: '3+ yıl',
+    description: 'Kültür turları ve özel tur organizasyonlarının planlama, koordinasyon ve operasyon süreçlerini yönetecek deneyimli tur operasyon uzmanı aranmaktadır.',
     requirements: [
-      'İnşaat Mühendisliği veya İktisat mezunu',
-      'Minimum 5 yıl proje yönetimi deneyimi',
-      'PMP sertifikası tercih edilir',
-      'İleri düzey MS Project ve Excel bilgisi',
-      'Güçlü liderlik ve iletişim becerileri'
+      'Turizm İşletmeciliği veya İşletme mezunu',
+      'Minimum 3 yıl tur operasyonu deneyimi',
+      'Turizm acentesi operasyonları bilgisi',
+      'İleri düzey MS Office ve rezervasyon sistemleri',
+      'Güçlü organizasyon ve iletişim becerileri'
     ],
     responsibilities: [
-      'Proje planlaması ve kaynak yönetimi',
-      'Risk analizi ve önlem planları oluşturma',
-      'Paydaş yönetimi ve koordinasyonu',
-      'İlerleme raporları hazırlama',
-      'Kalite kontrol süreçlerini yönetme'
+      'Tur programlarının planlanması ve koordinasyonu',
+      'Otel ve ulaşım rezervasyonları',
+      'Rehber atamaları ve program takibi',
+      'Misafir memnuniyeti kontrolü',
+      'Operasyon raporları hazırlama'
     ]
   },
   {
     id: '2',
-    title: 'İnşaat Mühendisi',
-    department: 'Teknik',
+    title: 'Profesyonel Turist Rehberi',
+    department: 'Rehberlik Hizmetleri',
     location: 'İstanbul',
     type: 'Tam Zamanlı',
-    experience: '2-5 yıl',
-    description: 'Kentsel dönüşüm ve konut projeleri için deneyimli inşaat mühendisi aranmaktadır.',
+    experience: '2+ yıl',
+    description: 'İstanbul ve çevresinde kültür turları düzenleyecek, çoklu dil bilen profesyonel turist rehberi aranmaktadır.',
     requirements: [
-      'İnşaat Mühendisliği mezunu',
-      '2-5 yıl saha deneyimi',
-      'AutoCAD ve teknik çizim bilgisi',
-      'Yapı denetim süreçleri bilgisi',
-      'Saha yönetimi tecrübesi'
+      'Turist Rehberliği sertifikası',
+      'Minimum 2 yıl rehberlik deneyimi',
+      'İngilizce ve bir yabancı dil (Almanca/Fransızca/İspanyolca)',
+      'Türk tarihi ve kültürü konularında bilgi',
+      'Sunum ve grup yönetimi becerileri'
     ],
     responsibilities: [
-      'Teknik çizimlerin hazırlanması',
-      'Şantiye denetimi ve kontrol',
-      'Malzeme kalite kontrolü',
-      'İş güvenliği önlemlerinin takibi',
-      'Teknik raporlama'
+      'Kültür turları rehberliği',
+      'Müze ve tarihi alan gezileri',
+      'Misafir güvenliği ve memnuniyeti',
+      'Tur programlarına uyum',
+      'Acil durum yönetimi'
     ]
   },
   {
     id: '3',
-    title: 'Mimar',
-    department: 'Tasarım',
+    title: 'Rezervasyon Uzmanı',
+    department: 'Rezervasyon Hizmetleri',
     location: 'İstanbul',
     type: 'Tam Zamanlı',
-    experience: '3+ yıl',
-    description: 'Yaratıcı tasarım projelerinde yer alacak deneyimli mimar aranmaktadır.',
+    experience: '1-3 yıl',
+    description: 'Otel rezervasyonları ve seyahat planlaması konularında uzman rezervasyon uzmanı aranmaktadır.',
     requirements: [
-      'Mimarlık mezunu',
-      'Minimum 3 yıl konut projeleri deneyimi',
-      'AutoCAD, SketchUp, 3ds Max bilgisi',
-      'Yaratıcı tasarım becerisi',
-      'Ekip çalışmasına uyum'
+      'Turizm, İşletme veya ilgili bölüm mezunu',
+      '1-3 yıl rezervasyon deneyimi',
+      'Amadeus, Sabre gibi GDS sistemleri bilgisi',
+      'Müşteri hizmetleri odaklı yaklaşım',
+      'Detaycı ve dikkatli çalışma'
     ],
     responsibilities: [
-      'Mimari tasarım ve planlama',
-      '3D modelleme ve görselleştirme',
-      'Ruhsat süreçlerinin takibi',
-      'Müşteri sunum hazırlama',
-      'Teknik detay çizimler'
+      'Otel ve ulaşım rezervasyonları',
+      'Fiyat araştırması ve teklif hazırlama',
+      'Rezervasyon onayları ve iptal işlemleri',
+      'Müşteri talep takibi',
+      'Tedarikçi ilişkileri yönetimi'
     ]
   },
   {
     id: '4',
-    title: 'Satış Danışmanı',
-    department: 'Satış & Pazarlama',
+    title: 'Turizm Pazarlama Uzmanı',
+    department: 'Pazarlama & Satış',
     location: 'İstanbul',
     type: 'Tam Zamanlı',
-    experience: '1-3 yıl',
-    description: 'Konut projelerinin satış süreçlerinde yer alacak dinamik satış danışmanı aranmaktadır.',
+    experience: '2-4 yıl',
+    description: 'Turizm hizmetlerinin pazarlanması ve satış süreçlerinde yer alacak dinamik pazarlama uzmanı aranmaktadır.',
     requirements: [
-      'Üniversite mezunu (tercihen İşletme)',
-      '1-3 yıl satış deneyimi',
-      'Emlak sektörü deneyimi tercih edilir',
-      'İkna kabiliyeti ve güçlü iletişim',
-      'Müşteri odaklı yaklaşım'
+      'Pazarlama, İşletme veya Turizm mezunu',
+      '2-4 yıl pazarlama deneyimi',
+      'Dijital pazarlama ve sosyal medya bilgisi',
+      'Google Analytics ve SEO temel bilgisi',
+      'Yaratıcı düşünce ve analitik beceriler'
     ],
     responsibilities: [
-      'Müşteri görüşmeleri ve danışmanlık',
-      'Proje tanıtımları yapma',
-      'Satış hedeflerini gerçekleştirme',
-      'CRM sistemi kullanımı',
-      'Müşteri memnuniyeti takibi'
+      'Dijital pazarlama kampanyaları yönetimi',
+      'Sosyal medya içerik üretimi',
+      'Müşteri segmentasyonu ve hedefleme',
+      'Turizm fuarları ve etkinlik organizasyonu',
+      'Marka bilinirliği artırma çalışmaları'
     ]
   }
 ]
@@ -128,7 +128,7 @@ export default function CareerPositions() {
             Açık Pozisyonlar
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Parla Group ailesi olarak yetenekli profesyonelleri aramaktayız. 
+            Parla Travel ailesi olarak turizm sektöründe yetenekli profesyonelleri aramaktayız.
             Size uygun pozisyonu bulun ve kariyerinizi bizimle şekillendirin.
           </p>
         </div>

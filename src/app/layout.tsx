@@ -18,18 +18,18 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   title: {
-    default: "Parla Group - Kentsel Dönüşüm, İnşaat & Mimarlık",
-    template: "%s | Parla Group"
+    default: "Parla Travel - Türkiye Turları & Seyahat Hizmetleri",
+    template: "%s | Parla Travel"
   },
-  description: "15+ yıllık deneyimle kentsel dönüşüm, inşaat ve mimarlık alanlarında öncü projeler gerçekleştiren Parla Group ile tanışın. İstanbul'da konut, ticari ve kentsel dönüşüm projeleri.",
+  description: "15+ yıllık deneyimle Türkiye'nin en güzel destinasyonlarını keşfetmeniz için özel turlar düzenleyen Parla Travel ile tanışın. Kültür turları, otel rezervasyonları ve rehberlik hizmetleri.",
   keywords: [
-    "kentsel dönüşüm", "inşaat", "mimarlık", "istanbul", "proje geliştirme",
-    "konut projeleri", "ticari kompleks", "yapı denetim", "mimari tasarım",
-    "sürdürülebilir inşaat", "modern mimarlık", "parla group", "türkiye"
+    "türkiye turları", "kültür gezileri", "otel rezervasyonu", "rehberlik hizmeti", "seyahat acentesi",
+    "tatil paketleri", "istanbul turları", "kapadokya turları", "pamukkale", "efes",
+    "türkiye seyahat", "grup turları", "parla travel", "turizm"
   ],
-  authors: [{ name: "Parla Group", url: "https://www.parlagroup.com" }],
-  creator: "Parla Group",
-  publisher: "Parla Group",
+  authors: [{ name: "Parla Travel", url: "https://www.parlatravel.com" }],
+  creator: "Parla Travel",
+  publisher: "Parla Travel",
   robots: {
     index: true,
     follow: true,
@@ -50,31 +50,31 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "tr_TR",
-    url: "https://www.parlagroup.com",
-    title: "Parla Group - Kentsel Dönüşüm, İnşaat & Mimarlık",
-    description: "15+ yıllık deneyimle kentsel dönüşüm, inşaat ve mimarlık alanlarında öncü projeler gerçekleştiren Parla Group ile tanışın.",
-    siteName: "Parla Group",
+    url: "https://www.parlatravel.com",
+    title: "Parla Travel - Türkiye Turları & Seyahat Hizmetleri",
+    description: "15+ yıllık deneyimle Türkiye'nin en güzel destinasyonlarını keşfetmeniz için özel turlar düzenleyen Parla Travel ile tanışın.",
+    siteName: "Parla Travel",
     images: [
       {
         url: "https://www.parlagroup.com/images/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Parla Group - Kentsel Dönüşüm ve İnşaat",
+        alt: "Parla Travel - Türkiye Turları ve Seyahat",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Parla Group - Kentsel Dönüşüm, İnşaat & Mimarlık",
-    description: "15+ yıllık deneyimle kentsel dönüşüm, inşaat ve mimarlık alanlarında öncü projeler gerçekleştiren Parla Group ile tanışın.",
-    images: ["https://www.parlagroup.com/images/og-image.jpg"],
+    title: "Parla Travel - Türkiye Turları & Seyahat Hizmetleri",
+    description: "15+ yıllık deneyimle Türkiye'nin en güzel destinasyonlarını keşfetmeniz için özel turlar düzenleyen Parla Travel ile tanışın.",
+    images: ["https://www.parlatravel.com/images/og-image.jpg"],
     creator: "@parlagroup",
   },
   verification: {
     google: "your-google-verification-code",
     yandex: "your-yandex-verification-code",
   },
-  category: "construction",
+  category: "travel",
   classification: "Business",
 };
 

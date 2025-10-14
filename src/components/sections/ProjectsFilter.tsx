@@ -1,18 +1,21 @@
 'use client';
 
-import { useState } from 'react';
-import { Building2, Hammer, PaintBucket, Home, Grid3X3 } from 'lucide-react';
+import { MapPin, Camera, Mountain, Compass, Grid3X3 } from 'lucide-react';
 
 const categories = [
-  { id: 'all', label: 'Tümü', icon: Grid3X3, count: 500 },
-  { id: 'urban', label: 'Kentsel Dönüşüm', icon: Building2, count: 120 },
-  { id: 'construction', label: 'İnşaat', icon: Hammer, count: 200 },
-  { id: 'architecture', label: 'Mimari Tasarım', icon: PaintBucket, count: 150 },
-  { id: 'residential', label: 'Konut', icon: Home, count: 80 }
+  { id: 'all', label: 'Tümü', icon: Grid3X3, count: 250 },
+  { id: 'cultural', label: 'Kültür Turları', icon: Camera, count: 85 },
+  { id: 'nature', label: 'Doğa Turları', icon: Mountain, count: 70 },
+  { id: 'adventure', label: 'Macera Turları', icon: Compass, count: 45 },
+  { id: 'city', label: 'Şehir Turları', icon: MapPin, count: 50 }
 ];
 
-export default function ProjectsFilter() {
-  const [activeCategory, setActiveCategory] = useState('all');
+interface ProjectsFilterProps {
+  activeCategory: string;
+  onCategoryChange: (category: string) => void;
+}
+
+export default function ProjectsFilter({ activeCategory, onCategoryChange }: ProjectsFilterProps) {
 
   return (
     <section className="py-16 bg-white border-b border-gray-100">
@@ -24,7 +27,7 @@ export default function ProjectsFilter() {
             return (
               <button
                 key={category.id}
-                onClick={() => setActiveCategory(category.id)}
+                onClick={() => onCategoryChange(category.id)}
                 className={`inline-flex items-center space-x-3 px-6 py-4 rounded-2xl font-medium transition-all duration-300 ${
                   activeCategory === category.id
                     ? 'bg-blue-600 text-white shadow-lg scale-105'

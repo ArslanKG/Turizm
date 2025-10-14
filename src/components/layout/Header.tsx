@@ -20,12 +20,12 @@ const navigation: NavigationItem[] = [
     label: 'Hizmetler',
     href: '/hizmetler',
     children: [
-      { label: 'Kentsel Dönüşüm', href: '/hizmetler/kentsel-donusum' },
-      { label: 'İnşaat', href: '/hizmetler/insaat' },
-      { label: 'Mimarlık', href: '/hizmetler/mimarlik' }
+      { label: 'Kültür Turları', href: '/hizmetler/kultur-turlari' },
+      { label: 'Otel Rezervasyonları', href: '/hizmetler/otel-rezervasyonu' },
+      { label: 'Rehberlik Hizmetleri', href: '/hizmetler/rehberlik-hizmetleri' }
     ]
   },
-  { label: 'Projeler', href: '/projeler' },
+  { label: 'Turlarımız', href: '/projeler' },
   { label: 'Blog', href: '/blog' },
   { label: 'Kariyer', href: '/kariyer' },
   { label: 'İletişim', href: '/iletisim' }
@@ -70,10 +70,11 @@ export default function Header() {
           <Link href="/" className="flex items-center group ml-4">
             <Image
               src="/images/logo.png"
-              alt="Parla Group Logo"
+              alt="Parla Travel Logo"
               width={200}
               height={120}
               className="brightness-0 invert drop-shadow-2xl filter contrast-125 transition-all duration-500 group-hover:scale-105"
+              style={{ width: "auto", height: "auto", maxHeight: "100px" }}
               priority
             />
           </Link>

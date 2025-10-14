@@ -3,113 +3,113 @@ import ServiceDetail from '@/components/sections/ServiceDetail';
 
 // Hizmet detay verileri
 const services = {
-  'kentsel-donusum': {
+  'kultur-turlari': {
     id: '1',
-    title: 'Kentsel Dönüşüm',
-    subtitle: 'Şehrin Dokusunu Koruyarak Modern Yaşam Alanları',
-    description: 'Kentsel dönüşüm projelerinde 15+ yıllık deneyimimizle, şehirlerin tarihi dokusunu koruyarak modern yaşam standartlarına uygun projeler gerçekleştiriyoruz.',
-    detailedDescription: 'Kentsel dönüşüm, sadece eski binaları yıkıp yenisini yapmak değildir. Bizim yaklaşımımız, mevcut dokuyu analiz ederek, sosyal yaşamı destekleyen, çevre dostu ve sürdürülebilir çözümler üretmektir. Her proje için detaylı fizibilite çalışmaları yaparak, bölgenin karakterini koruyacak tasarım anlayışını benimseriz.',
+    title: 'Kültür Turları',
+    subtitle: 'Tarihi ve Kültürel Zenginlikleri Keşfedin',
+    description: 'Türkiye\'nin tarihi ve kültürel zenginliklerini keşfetmek isteyenlere özel olarak tasarlanmış rehberli kültür turları sunuyoruz.',
+    detailedDescription: 'Kültür turlarımızda, Türkiye\'nin binlerce yıllık tarihi mirasını uzman rehberler eşliğinde keşfedeceksiniz. Antik şehirlerden Osmanlı saraylarına, müzelerden arkeolojik alanlarına kadar geniş bir yelpazede kültürel deneyimler sunuyoruz. Her turumuzu küçük gruplar halinde organize ederek, daha kişisel ve derinlemesine bir deneyim yaşatıyoruz.',
     features: [
-      'Sosyal Donatı Alanları Tasarımı',
-      'Çevre Düzenlemesi ve Peyzaj',
-      'Tarihî Doku Koruma Çalışmaları',
-      'Modern Yaşam Standartları',
-      'Sürdürülebilir Mimari Çözümler',
-      'Trafik ve Ulaşım Planlaması'
+      'Uzman Rehber Eşliğinde Geziler',
+      'Müze ve Antik Alan Ziyaretleri',
+      'Yerel Kültür Deneyimleri',
+      'Küçük Grup Turları',
+      'Özel Tema Turları',
+      'Fotoğraf ve Video Çekimi'
     ],
     stats: [
-      { label: 'Tamamlanan Proje', value: '25+' },
-      { label: 'Dönüştürülen Alan', value: '500K m²' },
-      { label: 'Konut Birimi', value: '1200+' },
-      { label: 'Yeşil Alan', value: '150K m²' }
+      { label: 'Tamamlanan Tur', value: '250+' },
+      { label: 'Ziyaret Edilen Yer', value: '50+' },
+      { label: 'Mutlu Müşteri', value: '1200+' },
+      { label: 'Rehber Deneyimi', value: '15+ Yıl' }
     ],
     images: [
-      'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1200&h=800&fit=crop',
-      'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1539650116574-75c0c6d73f6b?w=1200&h=800&fit=crop',
       'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&h=800&fit=crop'
     ],
-    category: 'Kentsel Dönüşüm'
+    category: 'Kültür Turları'
   },
-  'insaat': {
+  'otel-rezervasyonu': {
     id: '2',
-    title: 'İnşaat Projeleri',
-    subtitle: 'Kaliteli İnşaat Hizmetleri ile Güvenilir Projeler',
-    description: 'Konut, ticari ve karma kullanım projeleri için modern teknolojiler kullanarak kaliteli inşaat hizmetleri sunuyoruz.',
-    detailedDescription: 'İnşaat projelerimizde, en son teknolojileri kullanarak hem kaliteli hem de zamanında teslim garantisi veriyoruz. Deneyimli ekibimiz ve güvenilir tedarikçi ağımızla, konut projelerinden büyük ölçekli ticari komplekslere kadar her türlü inşaat ihtiyacınızı karşılıyoruz.',
+    title: 'Otel Rezervasyonu',
+    subtitle: 'En İyi Konaklama Seçenekleri ile Konforlu Tatil',
+    description: 'Türkiye\'nin en güzel destinasyonlarında seçkin otellerde konaklama rezervasyonu hizmetimizle tatil planınızı kolaylaştırıyoruz.',
+    detailedDescription: 'Otel rezervasyon hizmetimizde, butik otellerden lüks resort\'lara kadar geniş bir yelpazede konaklama seçenekleri sunuyoruz. Müşterilerimizin bütçe ve tercihlerine uygun en iyi fiyat garantisi vererek, tatillerini unutulmaz kılıyoruz. Özel anlaşmalarımız sayesinde eksklüzif fırsatlar ve erken rezervasyon indirimleri sunuyoruz.',
     features: [
-      'Konut Projeleri',
-      'Ticari Kompleksler',
-      'Karma Kullanım Projeleri',
-      'Zamanında Teslim Garantisi',
-      'Kalite Kontrol Sistemleri',
-      'Modern İnşaat Teknolojileri'
+      'Boutique ve Lüks Oteller',
+      'En İyi Fiyat Garantisi',
+      'Özel Anlaşmalar ve İndirimler',
+      'Ücretsiz İptal Seçenekleri',
+      '7/24 Rezervasyon Desteği',
+      'Özel İstekler ve Düzenlemeler'
     ],
     stats: [
-      { label: 'Tamamlanan Proje', value: '40+' },
-      { label: 'İnşa Edilen Alan', value: '750K m²' },
-      { label: 'Konut Birimi', value: '2000+' },
-      { label: 'Ticari Alan', value: '200K m²' }
+      { label: 'Tamamlanan Rezervasyon', value: '400+' },
+      { label: 'Partner Otel', value: '75+' },
+      { label: 'Müşteri Memnuniyeti', value: '%98' },
+      { label: 'Ortalama İndirim', value: '%15' }
     ],
     images: [
-      'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1200&h=800&fit=crop',
-      'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1200&h=800&fit=crop',
-      'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&h=800&fit=crop'
+      'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200&h=800&fit=crop'
     ],
-    category: 'İnşaat'
+    category: 'Otel Rezervasyonu'
   },
-  'mimarlik': {
+  'rehberlik-hizmetleri': {
     id: '3',
-    title: 'Mimari Tasarım',
-    subtitle: 'Fonksiyonel ve Estetik Mimari Çözümler',
-    description: 'Sürdürülebilir tasarım anlayışımızla hayallerinizi gerçeğe dönüştürüyoruz. Modern mimari çözümlerle fark yaratıyoruz.',
-    detailedDescription: 'Mimari tasarım sürecimizde, fonksiyonellik ve estetiği harmanlayarak, yaşam kalitesini artıran mekanlar tasarlıyoruz. Sürdürülebilir mimari yaklaşımımızla, çevre dostu ve enerji verimli yapılar üretiyoruz. Her projede müşteri ihtiyaçlarını ön planda tutarak, özgün ve yenilikçi çözümler sunuyoruz.',
+    title: 'Profesyonel Rehberlik',
+    subtitle: 'Deneyimli Rehberlerle Unutulmaz Geziler',
+    description: 'Lisanslı ve deneyimli rehberlerimizle Türkiye\'nin her köşesini keşfedin. Kişiselleştirilmiş tur deneyimleri sunuyoruz.',
+    detailedDescription: 'Rehberlik hizmetlerimizde, alanında uzman ve çok dilli rehberlerimizle en kaliteli gezi deneyimini yaşatıyoruz. Her rehberimiz, bölgenin tarihini, kültürünü ve özel hikayelerini en iyi şekilde anlatabilecek deneyime sahiptir. Özel ilgi alanlarınıza göre kişiselleştirilmiş tur programları hazırlayarak, unutulmaz anılar biriktirmenizi sağlıyoruz.',
     features: [
-      'Sürdürülebilir Tasarım',
-      'Fonksiyonel Mekan Planlaması',
-      'Estetik Mimari Çözümler',
-      'Çevre Dostu Malzemeler',
-      'Enerji Verimli Tasarım',
-      'Yenilikçi Tasarım Yaklaşımları'
+      'Lisanslı Profesyonel Rehberler',
+      'Çoklu Dil Desteği',
+      'Kişiselleştirilmiş Tur Programları',
+      'Özel İlgi Alanları Turları',
+      'Hikaye Anlatıcılığı',
+      'Fotoğraf Çekim Yardımı'
     ],
     stats: [
-      { label: 'Tamamlanan Proje', value: '60+' },
-      { label: 'Tasarlanan Alan', value: '1M m²' },
-      { label: 'Mimari Çizim', value: '500+' },
-      { label: 'Ödül', value: '15+' }
+      { label: 'Rehber Sayısı', value: '25+' },
+      { label: 'Dil Seçeneği', value: '8' },
+      { label: 'Tur Deneyimi', value: '500+' },
+      { label: 'Müşteri Puanı', value: '4.9/5' }
     ],
     images: [
-      'https://images.unsplash.com/photo-1448630360428-65456885c650?w=1200&h=800&fit=crop',
-      'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&h=800&fit=crop',
-      'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&h=800&fit=crop'
+      'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1539650116574-75c0c6d73f6b?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=1200&h=800&fit=crop'
     ],
-    category: 'Mimarlık'
+    category: 'Rehberlik Hizmetleri'
   },
-  'proje-yonetimi': {
+  'macera-turlari': {
     id: '4',
-    title: 'Proje Yönetimi',
-    subtitle: 'Profesyonel Proje Yönetimi ve Koordinasyon Hizmetleri',
-    description: 'Proje yönetimi deneyimimizle, başlangıçtan teslime kadar tüm süreçleri titizlikle koordine ediyoruz.',
-    detailedDescription: 'Proje yönetimi hizmetlerimizde, modern proje yönetimi metodolojilerini kullanarak, zaman, bütçe ve kalite hedeflerinizi başarıyla gerçekleştiriyoruz. Deneyimli proje yöneticilerimiz, tüm paydaşların koordinasyonunu sağlayarak, projenizin başından sonuna kadar her aşamada yanınızda.',
+    title: 'Macera Turları',
+    subtitle: 'Adrenalin Dolu Deneyimler ve Doğa Sporları',
+    description: 'Doğa severlere özel macera turları ile Türkiye\'nin eşsiz doğasında heyecan verici deneyimler yaşayın.',
+    detailedDescription: 'Macera turlarımızda, trekking\'den rafting\'e, yamaç paraşütünden kaya tırmanışına kadar geniş bir aktivite yelpazesi sunuyoruz. Güvenlik önlemlerini en üst düzeyde tutarak, adrenalin dolu ama güvenli maceralar yaşatıyoruz. Deneyimli guide\'larımız ve kaliteli ekipmanlarımızla, her seviyeden katılımcı için uygun programlar hazırlıyoruz.',
     features: [
-      'Proje Planlama ve Programlama',
-      'Kaynak Yönetimi ve Optimizasyonu',
-      'Risk Analizi ve Yönetimi',
-      'Kalite Kontrol ve Güvence',
-      'Paydaş Koordinasyonu',
-      'İlerleme Takibi ve Raporlama'
+      'Trekking ve Doğa Yürüyüşleri',
+      'Rafting ve Su Sporları',
+      'Yamaç Paraşütü Deneyimi',
+      'Kaya Tırmanışı ve Abseiling',
+      'Kamp ve Doğa Deneyimi',
+      'Güvenlik Ekipmanları Dahil'
     ],
     stats: [
-      { label: 'Yönetilen Proje', value: '50+' },
-      { label: 'Toplam Proje Değeri', value: '2B TL' },
-      { label: 'Başarı Oranı', value: '%98' },
-      { label: 'Ortalama Tasarruf', value: '%15' }
+      { label: 'Macera Turu', value: '150+' },
+      { label: 'Aktivite Çeşidi', value: '20+' },
+      { label: 'Güvenlik Skoru', value: '%100' },
+      { label: 'Tekrar Ziyaret', value: '%85' }
     ],
     images: [
-      'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&h=800&fit=crop',
-      'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&h=800&fit=crop',
-      'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&h=800&fit=crop'
+      'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1464822759844-d150badb3805?w=1200&h=800&fit=crop'
     ],
-    category: 'Proje Yönetimi'
+    category: 'Macera Turları'
   }
 };
 
@@ -119,12 +119,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   
   if (!service) {
     return {
-      title: 'Hizmet Bulunamadı | Parla Group'
+      title: 'Hizmet Bulunamadı | Parla Travel'
     };
   }
 
   return {
-    title: `${service.title} | Parla Group`,
+    title: `${service.title} | Parla Travel`,
     description: service.description,
   };
 }

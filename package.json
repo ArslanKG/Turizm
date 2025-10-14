@@ -1,11 +1,11 @@
 {
   "name": "parla-group-website",
   "version": "0.1.0",
-  "description": "Parla Group - Kentsel dönüşüm, inşaat ve mimarlık alanlarında öncü projeler gerçekleştiren güçlü bir ekip.",
+  "description": "Parla Travel - Türkiye'nin en güzel destinasyonlarını keşfetmeniz için özel turlar düzenleyen deneyimli turizm şirketi.",
   "private": true,
   "license": "MIT",
-  "author": "Parla Group",
-  "keywords": ["kentsel-donusum", "insaat", "mimarlik", "nextjs", "react", "typescript"],
+  "author": "Parla Travel",
+  "keywords": ["turizm", "turkiye-turlari", "kultur-gezileri", "otel-rezervasyonu", "rehberlik", "nextjs", "react", "typescript"],
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",

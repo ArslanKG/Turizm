@@ -13,36 +13,36 @@ interface TimelineEvent {
 const timelineEvents: TimelineEvent[] = [
   {
     year: '2008',
-    title: 'Parla Group Kuruluşu',
-    description: 'İstanbul\'da küçük bir ekiple kentsel dönüşüm alanında ilk adımlarımızı attık.',
+    title: 'Parla Travel Kuruluşu',
+    description: 'İstanbul\'da küçük bir ekiple turizm rehberliği alanında ilk adımlarımızı attık.',
     icon: Building,
     color: 'bg-blue-500'
   },
   {
     year: '2012',
-    title: 'İlk Büyük Proje',
-    description: 'Kadıköy bölgesinde 15.000 m² alanlı ilk büyük kentsel dönüşüm projemizi tamamladık.',
+    title: 'İlk Büyük Tur Organizasyonu',
+    description: 'İstanbul ve Kapadokya\'yı kapsayan ilk büyük kültür turunu 200 misafirle gerçekleştirdik.',
     icon: Award,
     color: 'bg-green-500'
   },
   {
     year: '2016',
     title: 'Hizmet Portföyü Genişlemesi',
-    description: 'İnşaat ve mimarlık hizmetlerini de bünyemize katarak tam entegre çözümler sunmaya başladık.',
+    description: 'Otel rezervasyonu ve özel tur planlaması hizmetlerini bünyemize katarak tam entegre çözümler sunmaya başladık.',
     icon: Globe,
     color: 'bg-purple-500'
   },
   {
     year: '2020',
-    title: 'Sürdürülebilirlik Odağı',
-    description: 'LEED sertifikasyonu aldık ve tüm projelerimizde çevre dostu yaklaşımları benimsedik.',
+    title: 'Dijital Dönüşüm',
+    description: 'Online rezervasyon platformu ve mobil uygulamayı geliştirerek dijital turizm hizmetlerinde öncü olduk.',
     icon: Award,
     color: 'bg-emerald-500'
   },
   {
     year: '2024',
-    title: 'Sektör Liderliği',
-    description: 'İstanbul\'un en prestijli kentsel dönüşüm projelerinde öncü konuma geldik.',
+    title: 'Sürdürülebilir Turizm Liderliği',
+    description: 'Türkiye\'nin en güvenilir sürdürülebilir turizm markalarından biri konuma geldik.',
     icon: Building,
     color: 'bg-yellow-500'
   }
@@ -58,7 +58,7 @@ export default function CompanyTimeline() {
             <span className="text-gradient">Kilometre Taşlarımız</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            16 yıllık yolculuğumuzda attığımız önemli adımlar ve kazandığımız başarılar.
+            16 yıllık turizm yolculuğumuzda attığımız önemli adımlar ve kazandığımız başarılar.
           </p>
         </div>
 

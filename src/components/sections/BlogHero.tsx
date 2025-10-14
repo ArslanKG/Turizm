@@ -27,8 +27,8 @@ export default function BlogHero() {
               <div className="w-24 h-1 bg-white"></div>
               
               <p className="text-xl text-gray-300 leading-relaxed">
-                Kentsel dönüşüm, mimarlık ve inşaat sektöründeki güncel gelişmeleri takip edin. 
-                <strong className="text-orange-300"> Uzman görüşlerimizi keşfedin</strong>.
+                Seyahat, turizm ve keşif dünyasındaki güncel gelişmeleri takip edin.
+                <strong className="text-orange-300"> Uzman rehber önerilerimizi keşfedin</strong>.
               </p>
             </div>
 
@@ -54,8 +54,8 @@ export default function BlogHero() {
             <div className="space-y-6">
               <div className="aspect-video rounded-xl relative overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop"
-                  alt="2024 Kentsel Dönüşüm Trendleri"
+                  src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&h=600&fit=crop"
+                  alt="2024 Seyahat Trendleri ve Destinasyon Rehberi"
                   fill
                   className="object-cover"
                 />
@@ -69,12 +69,12 @@ export default function BlogHero() {
               
               <div className="space-y-4">
                 <h3 className="text-2xl font-bold text-white">
-                  2024 Kentsel Dönüşüm Trendleri ve Gelecek Perspektifleri
+                  2024 Seyahat Trendleri ve Destinasyon Rehberi
                 </h3>
                 
                 <p className="text-gray-300 leading-relaxed">
-                  Kentsel dönüşüm projelerinde 2024 yılında öne çıkan trendler ve gelecek 
-                  dönemde beklenen gelişmeler hakkında detaylı analiz.
+                  2024 yılının en popüler destinasyonları ve seyahat trendleri hakkında
+                  uzman rehberlerimizin detaylı analizi ve önerileri.
                 </p>
                 
                 <div className="flex items-center gap-6 text-sm text-gray-400">
@@ -84,7 +84,7 @@ export default function BlogHero() {
                   </div>
                   <div className="flex items-center gap-2">
                     <User className="h-4 w-4" />
-                    <span>Ahmet Parla</span>
+                    <span>Mehmet Seyhan</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Eye className="h-4 w-4" />
