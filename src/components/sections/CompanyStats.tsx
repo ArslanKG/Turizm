@@ -10,40 +10,36 @@ interface Stat {
   suffix: string;
   icon: React.ComponentType<{ className?: string }>;
   color: string;
+  emoji: string;
 }
 
 const stats: Stat[] = [
   {
     id: '1',
-    value: 125,
-    label: 'Tamamlanan Proje',
+    value: 220,
+    label: 'Kültür Turları',
     suffix: '+',
     icon: Building,
-    color: 'text-blue-600'
+    color: 'text-blue-600',
+    emoji: '🏢'
   },
   {
     id: '2',
-    value: 15,
-    label: 'Yıllık Deneyim',
+    value: 180,
+    label: 'Özel Turlar',
     suffix: '+',
     icon: Award,
-    color: 'text-green-600'
+    color: 'text-green-600',
+    emoji: '✈️'
   },
   {
     id: '3',
-    value: 5000,
-    label: 'Mutlu Müşteri',
+    value: 150,
+    label: 'Rehberlik',
     suffix: '+',
     icon: Users,
-    color: 'text-purple-600'
-  },
-  {
-    id: '4',
-    value: 2500000,
-    label: 'Dönüştürülen Alan',
-    suffix: ' m²',
-    icon: MapPin,
-    color: 'text-orange-600'
+    color: 'text-purple-600',
+    emoji: '🧭'
   }
 ];
 
@@ -86,7 +82,6 @@ function useCountUp(target: number, duration: number = 2000) {
 
 function StatCard({ stat, inView }: { stat: Stat; inView: boolean }) {
   const { count, startAnimation } = useCountUp(stat.value);
-  const Icon = stat.icon;
 
   useEffect(() => {
     if (inView) {
@@ -115,19 +110,12 @@ function StatCard({ stat, inView }: { stat: Stat; inView: boolean }) {
   };
 
   return (
-    <div className="group text-center">
-      <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-white shadow-lg group-hover:shadow-xl transition-all duration-300 transform group-hover:scale-110">
-        <Icon className={`h-8 w-8 ${stat.color}`} />
+    <div className="text-center">
+      <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-3">
+        <span className="text-2xl">{stat.emoji}</span>
       </div>
-      
-      <div className="mb-2">
-        <span className={`text-4xl font-bold ${stat.color} font-display`}>
-          {formatNumber(count)}
-          <span className="text-2xl">{getFormattedSuffix(stat.value, stat.suffix)}</span>
-        </span>
-      </div>
-      
-      <p className="text-gray-300 font-medium">{stat.label}</p>
+      <div className="text-white font-medium mb-1">{stat.label}</div>
+      <div className="text-sm text-white/70">{formatNumber(count)}{getFormattedSuffix(stat.value, stat.suffix)} Tur</div>
     </div>
   );
 }
@@ -186,8 +174,8 @@ export default function CompanyStats() {
           </p>
         </div>
 
-        {/* Stats Grid */}
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+        {/* Stats Grid - Ortalanmış ve responsive */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
           {stats.map((stat) => (
             <StatCard key={stat.id} stat={stat} inView={inView} />
           ))}
@@ -197,9 +185,9 @@ export default function CompanyStats() {
         <div className="mt-16 text-center">
           <div className="mx-auto max-w-4xl">
             <p className="text-lg text-blue-100 leading-relaxed">
-              Her projemizde kaliteyi, güveni ve yeniliği bir araya getirerek, 
-              müşterilerimizin hayallerini gerçeğe dönüştürüyor, 
-              şehirlerin geleceğini şekillendiriyoruz.
+              Her turumuzda kaliteyi, güveni ve profesyonelliği bir araya getirerek, 
+              müşterilerimizin seyahat hayallerini gerçeğe dönüştürüyor, 
+              unutulmaz anılar yaratıyoruz.
             </p>
           </div>
         </div>

@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 
-export default function ProjectsHero() {
+export default function ToursHero() {
   return (
     <section className="relative h-screen overflow-hidden">
       {/* Background Image */}
@@ -68,21 +68,14 @@ export default function ProjectsHero() {
               </p>
             </div>
 
-            {/* Project Categories */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl">
+            {/* Tour Categories - Ortalama sorunu düzeltildi */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
               <div className="text-center">
                 <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-3">
                   <span className="text-2xl">🏢</span>
                 </div>
                 <div className="text-white font-medium mb-1">Kültür Turları</div>
                 <div className="text-sm text-white/70">220+ Tur</div>
-              </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-3">
-                  <span className="text-2xl">🏨</span>
-                </div>
-                <div className="text-white font-medium mb-1">Konaklama</div>
-                <div className="text-sm text-white/70">180+ Tur</div>
               </div>
               <div className="text-center">
                 <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-3">
