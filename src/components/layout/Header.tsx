@@ -25,7 +25,7 @@ const navigation: NavigationItem[] = [
       { label: 'Rehberlik Hizmetleri', href: '/hizmetler/rehberlik-hizmetleri' }
     ]
   },
-  { label: 'Turlarımız', href: '/projeler' },
+  { label: 'Turlarımız', href: '/turlar' },
   { label: 'Blog', href: '/blog' },
   { label: 'Kariyer', href: '/kariyer' },
   { label: 'İletişim', href: '/iletisim' }
