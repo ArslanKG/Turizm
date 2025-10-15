@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { MapPin, Hotel, Users, Compass, ArrowRight } from 'lucide-react';
 
 const services = [
@@ -123,10 +124,13 @@ export default function ServicesGrid() {
                   </div>
 
                   {/* CTA Button */}
-                  <button className="inline-flex items-center justify-center w-full py-3 px-6 bg-blue-600 text-white font-medium rounded-xl hover:bg-blue-700 transition-all duration-300 group-hover:translate-y-0 translate-y-2">
+                  <Link
+                    href={`/hizmetler/${service.id}`}
+                    className="inline-flex items-center justify-center w-full py-3 px-6 bg-blue-600 text-white font-medium rounded-xl hover:bg-blue-700 transition-all duration-300 group-hover:translate-y-0 translate-y-2"
+                  >
                     <span className="mr-2">Detayları İncele</span>
                     <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
-                  </button>
+                  </Link>
                 </div>
 
                 {/* Hover Effect Background */}

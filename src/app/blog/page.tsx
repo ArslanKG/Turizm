@@ -4,7 +4,6 @@ import { useState } from 'react';
 import BlogHero from '@/components/sections/BlogHero';
 import BlogGrid from '@/components/sections/BlogGrid';
 import BlogCategories from '@/components/sections/BlogCategories';
-import BlogNewsletter from '@/components/sections/BlogNewsletter';
 
 export default function BlogPage() {
   const [activeCategory, setActiveCategory] = useState('all');
@@ -17,7 +16,6 @@ export default function BlogPage() {
         onCategoryChange={setActiveCategory}
       />
       <BlogGrid activeCategory={activeCategory} />
-      <BlogNewsletter />
     </>
   );
 }

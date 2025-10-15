@@ -51,14 +51,11 @@ export default function Header() {
     setActiveDropdown(null);
   };
 
-  // Ana sayfa dışındaki sayfalarda header her zaman koyu olsun
-  const shouldUseTransparentHeader = pathname === '/';
-  
   return (
     <header
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-        isScrolled || !shouldUseTransparentHeader
+        isScrolled
           ? 'bg-black/95 backdrop-blur-md shadow-lg'
           : 'bg-gradient-to-b from-black/30 via-black/10 to-transparent backdrop-blur-sm'
       )}
@@ -79,7 +76,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex md:items-center md:space-x-8">
+          <div className="hidden md:flex md:items-center md:space-x-4">
             {navigation.map((item) => (
               <div key={item.label} className="relative">
                 {item.children ? (
@@ -99,17 +96,39 @@ export default function Header() {
                       setDropdownTimeout(timeout);
                     }}
                   >
-                    <button
+                    <Link
+                      href={item.href}
                       className={cn(
-                        'flex items-center space-x-1 px-4 py-3 text-sm font-medium transition-all duration-300 rounded-lg relative',
+                        'flex items-center gap-1 px-4 py-3 text-sm font-medium transition-all duration-300 rounded-lg relative',
                         isScrolled
                           ? 'text-white hover:text-orange-300 hover:bg-white/10'
                           : 'text-white hover:text-orange-200 hover:bg-white/10'
                       )}
+                      onClick={(e) => {
+                        // Dropdown arrow'a tıklanırsa link davranışını engelle
+                        if ((e.target as HTMLElement).closest('.dropdown-arrow')) {
+                          e.preventDefault();
+                        }
+                      }}
                     >
                       <span>{item.label}</span>
-                      <ChevronDown className="h-4 w-4" />
-                    </button>
+                      <span
+                        className="dropdown-arrow"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          e.stopPropagation();
+                        }}
+                      >
+                        <ChevronDown className="h-4 w-4" />
+                      </span>
+                      {/* Active Page Indicator */}
+                      <div
+                        className={cn(
+                          "absolute bottom-1 left-1/2 transform -translate-x-1/2 h-0.5 bg-orange-300 transition-all duration-300 rounded-full",
+                          pathname === item.href ? 'w-8' : 'w-0'
+                        )}
+                      ></div>
+                    </Link>
                     
                     {activeDropdown === item.label && (
                       <div className="absolute left-0 top-full mt-2 w-64 rounded-xl bg-white py-3 shadow-2xl border border-gray-100 animate-fade-in-up group-hover:block">
