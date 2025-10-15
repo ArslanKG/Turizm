@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { ArrowRight, Download, Share2 } from 'lucide-react';
 
-export default function ProjectsCTA() {
+export default function ToursCTA() {
   return (
     <section className="py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden">
       {/* Background Pattern */}

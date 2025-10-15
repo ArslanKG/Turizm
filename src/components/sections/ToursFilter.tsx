@@ -10,12 +10,12 @@ const categories = [
   { id: 'city', label: 'Şehir Turları', icon: MapPin, count: 50 }
 ];
 
-interface ProjectsFilterProps {
+interface ToursFilterProps {
   activeCategory: string;
   onCategoryChange: (category: string) => void;
 }
 
-export default function ProjectsFilter({ activeCategory, onCategoryChange }: ProjectsFilterProps) {
+export default function ToursFilter({ activeCategory, onCategoryChange }: ToursFilterProps) {
 
   return (
     <section className="py-16 bg-white border-b border-gray-100">

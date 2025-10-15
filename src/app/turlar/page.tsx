@@ -2,9 +2,9 @@
 
 import { useState } from 'react';
 import ToursHero from '@/components/sections/ToursHero';
-import ProjectsGrid from '@/components/sections/ProjectsGrid';
-import ProjectsFilter from '@/components/sections/ProjectsFilter';
-import ProjectsCTA from '@/components/sections/ProjectsCTA';
+import ToursGrid from '@/components/sections/ToursGrid';
+import ToursFilter from '@/components/sections/ToursFilter';
+import ToursCTA from '@/components/sections/ToursCTA';
 
 export default function TurlarPage() {
   const [activeCategory, setActiveCategory] = useState('all');
@@ -12,12 +12,12 @@ export default function TurlarPage() {
   return (
     <>
       <ToursHero />
-      <ProjectsFilter
+      <ToursFilter
         activeCategory={activeCategory}
         onCategoryChange={setActiveCategory}
       />
-      <ProjectsGrid activeCategory={activeCategory} />
-      <ProjectsCTA />
+      <ToursGrid activeCategory={activeCategory} />
+      <ToursCTA />
     </>
   );
 }

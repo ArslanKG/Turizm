@@ -1,7 +1,5 @@
 import ContactHero from '@/components/sections/ContactHero';
 import ContactForm from '@/components/sections/ContactForm';
-import ContactInfo from '@/components/sections/ContactInfo';
-import ContactMap from '@/components/sections/ContactMap';
 
 export const metadata = {
   title: 'İletişim | Parla Travel',
@@ -13,8 +11,6 @@ export default function ContactPage() {
     <>
       <ContactHero />
       <ContactForm />
-      <ContactInfo />
-      <ContactMap />
     </>
   );
 }

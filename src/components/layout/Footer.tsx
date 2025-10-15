@@ -12,7 +12,7 @@ const services = [
 
 const quickLinks = [
   { label: 'Hakkımızda', href: '/hakkimizda' },
-  { label: 'Turlarımız', href: '/projeler' },
+  { label: 'Turlarımız', href: '/turlar' },
   { label: 'Blog', href: '/blog' },
   { label: 'Kariyer', href: '/kariyer' },
   { label: 'İletişim', href: '/iletisim' }

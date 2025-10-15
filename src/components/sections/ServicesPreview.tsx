@@ -10,7 +10,7 @@ interface Service {
   shortDesc: string;
   icon: React.ComponentType<{ className?: string }>;
   slug: string;
-  projects: number;
+  tours: number;
   color: string;
   gradient: string;
   features: string[];
@@ -24,7 +24,7 @@ const services: Service[] = [
     shortDesc: 'Tarih ve kültür keşfi',
     icon: MapPin,
     slug: 'kultur-turlari',
-    projects: 150,
+    tours: 150,
     color: 'from-blue-500 to-purple-600',
     gradient: 'bg-gradient-to-br from-blue-50 to-purple-50',
     features: ['Tarihî Mekanlar', 'Müze Gezileri', 'Yerel Kültür']
@@ -36,7 +36,7 @@ const services: Service[] = [
     shortDesc: 'Kaliteli konaklama çözümleri',
     icon: Hotel,
     slug: 'otel-rezervasyonu',
-    projects: 200,
+    tours: 200,
     color: 'from-emerald-500 to-teal-600',
     gradient: 'bg-gradient-to-br from-emerald-50 to-teal-50',
     features: ['Lüks Oteller', 'Boutique Hotels', 'Ekonomik Seçenekler']
@@ -48,7 +48,7 @@ const services: Service[] = [
     shortDesc: 'Uzman rehberlik desteği',
     icon: Users,
     slug: 'rehberlik-hizmetleri',
-    projects: 300,
+    tours: 300,
     color: 'from-orange-500 to-red-600',
     gradient: 'bg-gradient-to-br from-orange-50 to-red-50',
     features: ['Kişisel Rehberlik', 'Grup Turları', 'Dil Desteği']
@@ -156,7 +156,7 @@ export default function ServicesPreview() {
                     {/* Stats */}
                     <div className="flex items-center justify-between mb-6 p-4 bg-gray-50 rounded-xl">
                       <div className="text-center">
-                        <div className="text-2xl font-bold text-orange-600">{service.projects}+</div>
+                        <div className="text-2xl font-bold text-orange-600">{service.tours}+</div>
                         <div className="text-xs text-gray-500">Tur</div>
                       </div>
                       <div className="text-center">

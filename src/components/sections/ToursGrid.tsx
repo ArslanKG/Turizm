@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Calendar, MapPin, ArrowRight, Eye } from 'lucide-react';
 
-const projects = [
+const tours = [
   {
     id: 1,
     title: 'İstanbul Kültür Turu',
@@ -74,17 +74,17 @@ const projects = [
   }
 ];
 
-interface ProjectsGridProps {
+interface ToursGridProps {
   activeCategory: string;
 }
 
-export default function ProjectsGrid({ activeCategory }: ProjectsGridProps) {
-  const [hoveredProject, setHoveredProject] = useState<number | null>(null);
+export default function ToursGrid({ activeCategory }: ToursGridProps) {
+  const [hoveredTour, setHoveredTour] = useState<number | null>(null);
 
-  // Filter projects based on active category
-  const filteredProjects = activeCategory === 'all'
-    ? projects
-    : projects.filter(project => project.categoryId === activeCategory);
+  // Filter tours based on active category
+  const filteredTours = activeCategory === 'all'
+    ? tours
+    : tours.filter(tour => tour.categoryId === activeCategory);
 
   // Get category label for display
   const getCategoryLabel = (categoryId: string) => {
@@ -107,25 +107,25 @@ export default function ProjectsGrid({ activeCategory }: ProjectsGridProps) {
             {getCategoryLabel(activeCategory)}
           </h2>
           <p className="text-gray-600">
-            {filteredProjects.length} tur bulundu
+            {filteredTours.length} tur bulundu
           </p>
         </div>
 
         {/* Tours Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project) => (
+          {filteredTours.map((tour) => (
             <Link
-              key={project.id}
-              href={`/turlar/${project.slug}`}
+              key={tour.id}
+              href={`/turlar/${tour.slug}`}
               className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer block"
-              onMouseEnter={() => setHoveredProject(project.id)}
-              onMouseLeave={() => setHoveredProject(null)}
+              onMouseEnter={() => setHoveredTour(tour.id)}
+              onMouseLeave={() => setHoveredTour(null)}
             >
               {/* Image */}
               <div className="relative h-64 overflow-hidden">
                 <Image
-                  src={project.image}
-                  alt={project.title}
+                  src={tour.image}
+                  alt={tour.title}
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-700"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -136,13 +136,13 @@ export default function ProjectsGrid({ activeCategory }: ProjectsGridProps) {
                 <div className="absolute inset-0 flex items-end p-6">
                   <div className="text-white">
                     <div className="inline-block bg-orange-300/90 px-3 py-1 rounded-full text-sm font-medium mb-3">
-                      {project.category}
+                      {tour.category}
                     </div>
                   </div>
                 </div>
 
                 {/* Hover Overlay */}
-                {hoveredProject === project.id && (
+                {hoveredTour === tour.id && (
                   <div className="absolute inset-0 bg-blue-600/90 flex items-center justify-center animate-fade-in-up">
                     <div className="text-center text-white">
                       <Eye className="h-12 w-12 mx-auto mb-4" />
@@ -155,22 +155,22 @@ export default function ProjectsGrid({ activeCategory }: ProjectsGridProps) {
               {/* Content */}
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">
-                  {project.title}
+                  {tour.title}
                 </h3>
                 
                 <p className="text-gray-600 mb-4 leading-relaxed">
-                  {project.description}
+                  {tour.description}
                 </p>
 
                 {/* Meta Info */}
                 <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
                   <div className="flex items-center space-x-1">
                     <MapPin className="h-4 w-4" />
-                    <span>{project.location}</span>
+                    <span>{tour.location}</span>
                   </div>
                   <div className="flex items-center space-x-1">
                     <Calendar className="h-4 w-4" />
-                    <span>{project.year}</span>
+                    <span>{tour.year}</span>
                   </div>
                 </div>
 

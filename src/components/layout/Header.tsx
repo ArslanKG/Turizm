@@ -27,7 +27,6 @@ const navigation: NavigationItem[] = [
   },
   { label: 'Turlarımız', href: '/turlar' },
   { label: 'Blog', href: '/blog' },
-  { label: 'Kariyer', href: '/kariyer' },
   { label: 'İletişim', href: '/iletisim' }
 ];
 
