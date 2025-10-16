@@ -1,14 +1,7 @@
 'use client';
 
 import { MapPin, Camera, Mountain, Compass, Grid3X3 } from 'lucide-react';
-
-const categories = [
-  { id: 'all', label: 'Tümü', icon: Grid3X3, count: 250 },
-  { id: 'cultural', label: 'Kültür Turları', icon: Camera, count: 85 },
-  { id: 'nature', label: 'Doğa Turları', icon: Mountain, count: 70 },
-  { id: 'adventure', label: 'Macera Turları', icon: Compass, count: 45 },
-  { id: 'city', label: 'Şehir Turları', icon: MapPin, count: 50 }
-];
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface ToursFilterProps {
   activeCategory: string;
@@ -16,6 +9,15 @@ interface ToursFilterProps {
 }
 
 export default function ToursFilter({ activeCategory, onCategoryChange }: ToursFilterProps) {
+  const { t } = useLanguage();
+
+  const categories = [
+    { id: 'all', label: t('tours-page.filter.all'), icon: Grid3X3, count: 250 },
+    { id: 'cultural', label: t('tours-page.filter.cultural'), icon: Camera, count: 85 },
+    { id: 'nature', label: t('tours-page.filter.nature'), icon: Mountain, count: 70 },
+    { id: 'adventure', label: t('tours-page.filter.adventure'), icon: Compass, count: 45 },
+    { id: 'city', label: t('tours-page.filter.city'), icon: MapPin, count: 50 }
+  ];
 
   return (
     <section className="py-16 bg-white border-b border-gray-100">

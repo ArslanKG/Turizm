@@ -2,64 +2,46 @@
 
 import { useState } from 'react';
 import { ClipboardList, MapPin, Calendar, CheckCircle, ArrowRight } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
-const processSteps = [
+const processStepsConfig = [
   {
     id: 1,
-    title: 'Danışmanlık & Planlama',
-    description: 'Seyahat ihtiyaçlarınızı detaylı olarak analiz ediyor, kişiye özel planlamalar yapıyoruz.',
+    titleKey: 'service-process.step1.title',
+    descriptionKey: 'service-process.step1.description',
     icon: ClipboardList,
-    duration: '1-3 Gün',
-    details: [
-      'Seyahat tercihlerinizin analizi',
-      'Bütçe planlaması ve öneri paketleri',
-      'Tarih ve süre planlaması',
-      'Özel isteklerinizin değerlendirilmesi'
-    ]
+    durationKey: 'service-process.step1.duration',
+    detailsKey: 'service-process.step1.details'
   },
   {
     id: 2,
-    title: 'Program & Rota Tasarımı',
-    description: 'Uzman ekibimizle size özel tur programları geliştiriyor, benzersiz deneyimler tasarlıyoruz.',
+    titleKey: 'service-process.step2.title',
+    descriptionKey: 'service-process.step2.description',
     icon: MapPin,
-    duration: '2-5 Gün',
-    details: [
-      'Özel rota ve program hazırlığı',
-      'Destinasyon seçimi ve aktivite planı',
-      'Revizyon ve optimizasyon süreci',
-      'Nihai program onayı ve detaylandırma'
-    ]
+    durationKey: 'service-process.step2.duration',
+    detailsKey: 'service-process.step2.details'
   },
   {
     id: 3,
-    title: 'Rezervasyon & Organizasyon',
-    description: 'Profesyonel rezervasyon hizmetleriyle turunuzun tüm detaylarını organize ediyor, sorunsuz seyahatler sağlıyoruz.',
+    titleKey: 'service-process.step3.title',
+    descriptionKey: 'service-process.step3.description',
     icon: Calendar,
-    duration: '3-7 Gün',
-    details: [
-      'Otel ve konaklama rezervasyonları',
-      'Ulaşım ve transfer organizasyonu',
-      'Aktivite ve tur rezervasyonları',
-      'Sigorta ve yasal süreç takibi'
-    ]
+    durationKey: 'service-process.step3.duration',
+    detailsKey: 'service-process.step3.details'
   },
   {
     id: 4,
-    title: 'Rehberlik & Hizmet',
-    description: 'Profesyonel rehberlik hizmetiyle turunuzu gerçekleştiriyor ve mükemmel deneyimler sunuyoruz.',
+    titleKey: 'service-process.step4.title',
+    descriptionKey: 'service-process.step4.description',
     icon: CheckCircle,
-    duration: '1-30 Gün',
-    details: [
-      'Uzman rehber eşliğinde tur gerçekleştirme',
-      '7/24 destek ve yardım hattı',
-      'Anlık problemlerin çözümü',
-      'Tur sonrası memnuniyet takibi'
-    ]
+    durationKey: 'service-process.step4.duration',
+    detailsKey: 'service-process.step4.details'
   }
 ];
 
 export default function ServiceProcess() {
   const [activeStep, setActiveStep] = useState<number>(1);
+  const { t } = useLanguage();
 
   return (
     <section className="py-24 bg-white">
@@ -67,12 +49,11 @@ export default function ServiceProcess() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Çalışma <span className="text-orange-300">Sürecimiz</span>
+            {t('service-process.title')} <span className="text-orange-300">{t('service-process.title.highlight')}</span>
           </h2>
           <div className="w-24 h-1 bg-white mx-auto mb-6"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Her turda sistematik bir yaklaşım benimsiyor, unutulmaz deneyimler için
-            dört aşamalı süreç takip ediyoruz.
+            {t('service-process.description')}
           </p>
         </div>
 
@@ -80,7 +61,7 @@ export default function ServiceProcess() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* Steps Navigation */}
           <div className="space-y-6">
-            {processSteps.map((step, index) => {
+            {processStepsConfig.map((step, index) => {
               const Icon = step.icon;
               const isActive = activeStep === step.id;
               const isCompleted = activeStep > step.id;
@@ -94,7 +75,7 @@ export default function ServiceProcess() {
                   onClick={() => setActiveStep(step.id)}
                 >
                   {/* Connection Line */}
-                  {index < processSteps.length - 1 && (
+                  {index < processStepsConfig.length - 1 && (
                     <div className="absolute left-8 top-20 w-0.5 h-16 bg-gray-200"></div>
                   )}
 
@@ -122,14 +103,14 @@ export default function ServiceProcess() {
                           <h3 className={`text-xl font-bold transition-colors duration-300 ${
                             isActive ? 'text-blue-600' : 'text-gray-900'
                           }`}>
-                            {step.title}
+                            {t(step.titleKey)}
                           </h3>
                           <span className="bg-orange-300/20 text-orange-600 px-3 py-1 rounded-full text-sm font-medium">
-                            {step.duration}
+                            {t(step.durationKey)}
                           </span>
                         </div>
                         <p className="text-gray-600 mt-2">
-                          {step.description}
+                          {t(step.descriptionKey)}
                         </p>
                       </div>
                     </div>
@@ -137,12 +118,12 @@ export default function ServiceProcess() {
                     {/* Details - Show when active */}
                     {isActive && (
                       <div className="mt-6 animate-fade-in-up">
-                        <h4 className="font-semibold text-gray-900 mb-3">Bu Aşamada:</h4>
+                        <h4 className="font-semibold text-gray-900 mb-3">{t('service-process.in-this-step')}</h4>
                         <ul className="space-y-2">
-                          {step.details.map((detail, detailIndex) => (
+                          {t(step.detailsKey).split(',').map((detail, detailIndex) => (
                             <li key={detailIndex} className="flex items-start space-x-3">
                               <div className="w-2 h-2 bg-orange-300 rounded-full mt-2 flex-shrink-0"></div>
-                              <span className="text-gray-600">{detail}</span>
+                              <span className="text-gray-600">{detail.trim()}</span>
                             </li>
                           ))}
                         </ul>
@@ -167,25 +148,25 @@ export default function ServiceProcess() {
               <div className="bg-gradient-to-br from-blue-50 to-white rounded-3xl p-8 shadow-xl border border-blue-100">
                 <div className="text-center mb-8">
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                    Adım {activeStep}: {processSteps[activeStep - 1]?.title}
+                    {t('service-process.step')} {activeStep}: {t(processStepsConfig[activeStep - 1]?.titleKey)}
                   </h3>
                   <p className="text-gray-600">
-                    {processSteps[activeStep - 1]?.description}
+                    {t(processStepsConfig[activeStep - 1]?.descriptionKey)}
                   </p>
                 </div>
 
                 {/* Progress Bar */}
                 <div className="mb-8">
                   <div className="flex justify-between items-center mb-2">
-                    <span className="text-sm font-medium text-gray-600">Tur Hazırlık Süreci</span>
+                    <span className="text-sm font-medium text-gray-600">{t('service-process.preparation')}</span>
                     <span className="text-sm font-medium text-blue-600">
-                      {Math.round((activeStep / processSteps.length) * 100)}%
+                      {Math.round((activeStep / processStepsConfig.length) * 100)}%
                     </span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-3">
-                    <div 
+                    <div
                       className="bg-gradient-to-r from-blue-500 to-blue-600 h-3 rounded-full transition-all duration-500 ease-out"
-                      style={{ width: `${(activeStep / processSteps.length) * 100}%` }}
+                      style={{ width: `${(activeStep / processStepsConfig.length) * 100}%` }}
                     ></div>
                   </div>
                 </div>
@@ -194,9 +175,9 @@ export default function ServiceProcess() {
                 <div className="bg-white rounded-2xl p-6 shadow-sm">
                   <div className="flex items-center justify-between">
                     <div>
-                      <div className="text-sm text-gray-600 mb-1">Tahmini Süre</div>
+                      <div className="text-sm text-gray-600 mb-1">{t('service-process.estimated-time')}</div>
                       <div className="text-2xl font-bold text-gray-900">
-                        {processSteps[activeStep - 1]?.duration}
+                        {t(processStepsConfig[activeStep - 1]?.durationKey)}
                       </div>
                     </div>
                     <div className="w-16 h-16 bg-orange-300/20 rounded-2xl flex items-center justify-center">
@@ -212,14 +193,14 @@ export default function ServiceProcess() {
                     disabled={activeStep === 1}
                     className="px-6 py-3 bg-gray-100 text-gray-700 rounded-xl font-medium disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-200 transition-colors duration-300"
                   >
-                    Önceki Adım
+                    {t('service-process.previous-step')}
                   </button>
-                  <button 
-                    onClick={() => setActiveStep(Math.min(processSteps.length, activeStep + 1))}
-                    disabled={activeStep === processSteps.length}
+                  <button
+                    onClick={() => setActiveStep(Math.min(processStepsConfig.length, activeStep + 1))}
+                    disabled={activeStep === processStepsConfig.length}
                     className="px-6 py-3 bg-blue-600 text-white rounded-xl font-medium disabled:opacity-50 disabled:cursor-not-allowed hover:bg-blue-700 transition-colors duration-300"
                   >
-                    Sonraki Adım
+                    {t('service-process.next-step')}
                   </button>
                 </div>
               </div>

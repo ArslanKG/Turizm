@@ -2,8 +2,10 @@
 
 import { useState } from 'react';
 import { Send, User, Mail, Phone, MessageSquare, Building, Calendar } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function ContactForm() {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -33,14 +35,14 @@ export default function ContactForm() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Seyahat Talebi Oluşturun
+            {t('contact.form.title')}
           </h2>
           
           <div className="w-24 h-1 bg-orange-300 mx-auto mb-6"></div>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Unutulmaz bir seyahat deneyimi için aşağıdaki formu doldurun.
-            Uzman ekibimiz 24 saat içinde sizinle iletişime geçerek kişiselleştirilmiş seyahat planınızı hazırlayacak.
+            {t('contact.form.description')}
+            {' '}{t('contact.form.description.support')}
           </p>
         </div>
 
@@ -55,7 +57,7 @@ export default function ContactForm() {
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                       <div className="flex items-center gap-2">
                         <User className="h-4 w-4" />
-                        Ad Soyad *
+                        {t('contact.form.name.label')} *
                       </div>
                     </label>
                     <input
@@ -66,7 +68,7 @@ export default function ContactForm() {
                       value={formData.name}
                       onChange={handleChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-300 focus:border-transparent transition-all duration-300"
-                      placeholder="Adınız Soyadınız"
+                      placeholder={t('contact.form.name.placeholder')}
                     />
                   </div>
 
@@ -74,7 +76,7 @@ export default function ContactForm() {
                     <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
                       <div className="flex items-center gap-2">
                         <Mail className="h-4 w-4" />
-                        E-posta *
+                        {t('contact.form.email.label')} *
                       </div>
                     </label>
                     <input
@@ -85,7 +87,7 @@ export default function ContactForm() {
                       value={formData.email}
                       onChange={handleChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-300 focus:border-transparent transition-all duration-300"
-                      placeholder="ornek@email.com"
+                      placeholder={t('contact.form.email.placeholder')}
                     />
                   </div>
                 </div>
@@ -95,7 +97,7 @@ export default function ContactForm() {
                     <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
                       <div className="flex items-center gap-2">
                         <Phone className="h-4 w-4" />
-                        Telefon *
+                        {t('contact.form.phone.label')} *
                       </div>
                     </label>
                     <input
@@ -106,7 +108,7 @@ export default function ContactForm() {
                       value={formData.phone}
                       onChange={handleChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-300 focus:border-transparent transition-all duration-300"
-                      placeholder="+90 5XX XXX XX XX"
+                      placeholder={t('contact.form.phone.placeholder')}
                     />
                   </div>
 
@@ -114,7 +116,7 @@ export default function ContactForm() {
                     <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
                       <div className="flex items-center gap-2">
                         <Building className="h-4 w-4" />
-                        Şirket/Kurum
+                        {t('contact.form.company.label')}
                       </div>
                     </label>
                     <input
@@ -124,7 +126,7 @@ export default function ContactForm() {
                       value={formData.company}
                       onChange={handleChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-300 focus:border-transparent transition-all duration-300"
-                      placeholder="Şirket Adı"
+                      placeholder={t('contact.form.company.placeholder')}
                     />
                   </div>
                 </div>
@@ -133,7 +135,7 @@ export default function ContactForm() {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">
-                      Hizmet Türü *
+                      {t('contact.form.service.label')} *
                     </label>
                     <select
                       id="service"
@@ -143,19 +145,19 @@ export default function ContactForm() {
                       onChange={handleChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-300 focus:border-transparent transition-all duration-300"
                     >
-                      <option value="">Hizmet seçiniz</option>
-                      <option value="kultur-turu">Kültür Turları</option>
-                      <option value="ozel-tur">Özel Tur Organizasyonu</option>
-                      <option value="otel-rezervasyon">Otel Rezervasyonu</option>
-                      <option value="grup-turu">Grup Turları</option>
-                      <option value="rehberlik">Profesyonel Rehberlik</option>
-                      <option value="diger">Diğer</option>
+                      <option value="">{t('contact.form.service.placeholder')}</option>
+                      <option value="kultur-turu">{t('contact.form.service.cultural-tours')}</option>
+                      <option value="ozel-tur">{t('contact.form.service.custom-tours')}</option>
+                      <option value="otel-rezervasyon">{t('contact.form.service.hotel-reservation')}</option>
+                      <option value="grup-turu">{t('contact.form.service.group-tours')}</option>
+                      <option value="rehberlik">{t('contact.form.service.guide-services')}</option>
+                      <option value="diger">{t('contact.form.service.other')}</option>
                     </select>
                   </div>
 
                   <div>
                     <label htmlFor="budget" className="block text-sm font-medium text-gray-700 mb-2">
-                      Bütçe Aralığı
+                      {t('contact.form.budget.label')}
                     </label>
                     <select
                       id="budget"
@@ -164,11 +166,11 @@ export default function ContactForm() {
                       onChange={handleChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-300 focus:border-transparent transition-all duration-300"
                     >
-                      <option value="">Bütçe seçiniz</option>
-                      <option value="5k-15k">5.000 - 15.000 TL</option>
-                      <option value="15k-30k">15.000 - 30.000 TL</option>
-                      <option value="30k-50k">30.000 - 50.000 TL</option>
-                      <option value="50k+">50.000 TL+</option>
+                      <option value="">{t('contact.form.budget.placeholder')}</option>
+                      <option value="5k-15k">{t('contact.form.budget.5k-15k')}</option>
+                      <option value="15k-30k">{t('contact.form.budget.15k-30k')}</option>
+                      <option value="30k-50k">{t('contact.form.budget.30k-50k')}</option>
+                      <option value="50k+">{t('contact.form.budget.50k+')}</option>
                     </select>
                   </div>
                 </div>
@@ -177,7 +179,7 @@ export default function ContactForm() {
                   <label htmlFor="timeline" className="block text-sm font-medium text-gray-700 mb-2">
                     <div className="flex items-center gap-2">
                       <Calendar className="h-4 w-4" />
-                      Seyahat Zamanı
+                      {t('contact.form.timeline.label')}
                     </div>
                   </label>
                   <select
@@ -187,12 +189,12 @@ export default function ContactForm() {
                     onChange={handleChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-300 focus:border-transparent transition-all duration-300"
                   >
-                    <option value="">Zaman seçiniz</option>
-                    <option value="asap">En kısa sürede</option>
-                    <option value="1-month">1 ay içinde</option>
-                    <option value="3-months">3 ay içinde</option>
-                    <option value="6-months">6 ay içinde</option>
-                    <option value="flexible">Esnek</option>
+                    <option value="">{t('contact.form.timeline.placeholder')}</option>
+                    <option value="asap">{t('contact.form.timeline.asap')}</option>
+                    <option value="1-month">{t('contact.form.timeline.1-month')}</option>
+                    <option value="3-months">{t('contact.form.timeline.3-months')}</option>
+                    <option value="6-months">{t('contact.form.timeline.6-months')}</option>
+                    <option value="flexible">{t('contact.form.timeline.flexible')}</option>
                   </select>
                 </div>
 
@@ -200,7 +202,7 @@ export default function ContactForm() {
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
                     <div className="flex items-center gap-2">
                       <MessageSquare className="h-4 w-4" />
-                      Seyahat Detayları *
+                      {t('contact.form.message.label')} *
                     </div>
                   </label>
                   <textarea
@@ -211,7 +213,7 @@ export default function ContactForm() {
                     value={formData.message}
                     onChange={handleChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-300 focus:border-transparent transition-all duration-300 resize-none"
-                    placeholder="Seyahat planınızın detaylarını, gitmek istediğiniz yerleri, özel taleplerinizi ve beklentilerinizi açıklayın..."
+                    placeholder={t('contact.form.message.placeholder')}
                   />
                 </div>
 
@@ -223,7 +225,7 @@ export default function ContactForm() {
                     className="mt-1 w-4 h-4 text-orange-300 border-gray-300 rounded focus:ring-orange-300"
                   />
                   <label htmlFor="consent" className="text-sm text-gray-600">
-                    KVKK kapsamında kişisel verilerimin işlenmesini ve tarafımla iletişime geçilmesini kabul ediyorum. *
+                    {t('contact.form.consent.text')} *
                   </label>
                 </div>
 
@@ -232,7 +234,7 @@ export default function ContactForm() {
                   className="w-full py-4 bg-orange-300 text-white font-medium rounded-xl hover:bg-orange-400 transition-all duration-300 hover:scale-105 shadow-lg flex items-center justify-center gap-2"
                 >
                   <Send className="h-5 w-5" />
-                  <span>Seyahat Talebini Gönder</span>
+                  <span>{t('contact.form.submit.text')}</span>
                 </button>
               </form>
             </div>
@@ -242,7 +244,7 @@ export default function ContactForm() {
           <div className="space-y-8">
             <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-lg">
               <h3 className="text-xl font-bold text-gray-900 mb-4">
-                Form Gönderildikten Sonra
+                {t('contact.form.process.title')}
               </h3>
               <div className="space-y-4">
                 <div className="flex gap-3">
@@ -250,8 +252,8 @@ export default function ContactForm() {
                     1
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900">Onay E-postası</h4>
-                    <p className="text-sm text-gray-600">Talebiniz alındı mesajı anında e-postanıza gelir</p>
+                    <h4 className="font-semibold text-gray-900">{t('contact.form.process.step1.title')}</h4>
+                    <p className="text-sm text-gray-600">{t('contact.form.process.step1.description')}</p>
                   </div>
                 </div>
                 <div className="flex gap-3">
@@ -259,8 +261,8 @@ export default function ContactForm() {
                     2
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900">İlk İletişim</h4>
-                    <p className="text-sm text-gray-600">24 saat içinde uzman ekibimiz sizinle görüşür</p>
+                    <h4 className="font-semibold text-gray-900">{t('contact.form.process.step2.title')}</h4>
+                    <p className="text-sm text-gray-600">{t('contact.form.process.step2.description')}</p>
                   </div>
                 </div>
                 <div className="flex gap-3">
@@ -268,8 +270,8 @@ export default function ContactForm() {
                     3
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900">Detaylı Teklif</h4>
-                    <p className="text-sm text-gray-600">3-5 gün içinde kapsamlı teklifimizi sunarız</p>
+                    <h4 className="font-semibold text-gray-900">{t('contact.form.process.step3.title')}</h4>
+                    <p className="text-sm text-gray-600">{t('contact.form.process.step3.description')}</p>
                   </div>
                 </div>
               </div>
@@ -277,20 +279,20 @@ export default function ContactForm() {
 
             <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-6 border border-orange-200">
               <h3 className="text-xl font-bold text-gray-900 mb-4">
-                Hızlı İletişim
+                {t('contact.form.quick.title')}
               </h3>
               <div className="space-y-3">
                 <p className="text-sm text-gray-600">
-                  Acil durumlar için doğrudan aramayı tercih ediyorsanız:
+                  {t('contact.form.quick.description')}
                 </p>
                 <div className="space-y-2">
                   <a href="tel:+902125550123" className="flex items-center gap-2 text-orange-600 font-semibold">
                     <Phone className="h-4 w-4" />
-                    +90 212 555 0123
+                    {t('contact.form.quick.phone')}
                   </a>
                   <a href="mailto:info@parlatravel.com" className="flex items-center gap-2 text-orange-600 font-semibold">
                     <Mail className="h-4 w-4" />
-                    info@parlatravel.com
+                    {t('contact.form.quick.email')}
                   </a>
                 </div>
               </div>

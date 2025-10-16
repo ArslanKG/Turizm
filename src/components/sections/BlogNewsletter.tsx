@@ -1,8 +1,11 @@
 'use client';
 
 import { Mail, Bell, Users, TrendingUp } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function BlogNewsletter() {
+  const { t } = useLanguage();
+
   return (
     <section className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden">
       {/* Background Pattern */}
@@ -15,15 +18,15 @@ export default function BlogNewsletter() {
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Blog Güncellemelerini 
-            <span className="block text-orange-300">Kaçırmayın</span>
+            {t('blog-detail.newsletter.title')}
+            <span className="block text-orange-300">{t('blog-detail.newsletter.subtitle')}</span>
           </h2>
           
           <div className="w-24 h-1 bg-white mx-auto mb-8"></div>
           
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Seyahatteki en güncel destinasyonları, rehber önerilerini ve özel tur fırsatlarını e-posta adresinize gönderiyor,
-            <strong className="text-orange-300"> keşifte öncü olmanızı sağlıyoruz</strong>.
+            {t('blog-detail.newsletter.description')}
+            <strong className="text-orange-300"> {t('blog-detail.newsletter.description.highlight')}</strong>.
           </p>
         </div>
 
@@ -36,32 +39,32 @@ export default function BlogNewsletter() {
                   <Mail className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-white">E-Bülten</h3>
-                  <p className="text-gray-400">Haftalık güncellemeler</p>
+                  <h3 className="text-2xl font-bold text-white">{t('blog-detail.newsletter.form.title')}</h3>
+                  <p className="text-gray-400">{t('blog-detail.newsletter.form.subtitle')}</p>
                 </div>
               </div>
 
               <form className="space-y-4">
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-                    E-posta Adresiniz
+                    {t('blog-detail.newsletter.form.email.label')}
                   </label>
                   <input
                     type="email"
                     id="email"
-                    placeholder="ornek@email.com"
+                    placeholder={t('blog-detail.newsletter.form.email.placeholder')}
                     className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-300 focus:border-transparent backdrop-blur-sm transition-all duration-300"
                   />
                 </div>
 
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
-                    Adınız (İsteğe bağlı)
+                    {t('blog-detail.newsletter.form.name.label')}
                   </label>
                   <input
                     type="text"
                     id="name"
-                    placeholder="Adınız Soyadınız"
+                    placeholder={t('blog-detail.newsletter.form.name.placeholder')}
                     className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-300 focus:border-transparent backdrop-blur-sm transition-all duration-300"
                   />
                 </div>
@@ -73,7 +76,7 @@ export default function BlogNewsletter() {
                     className="mt-1 w-4 h-4 text-orange-300 border-gray-300 rounded focus:ring-orange-300"
                   />
                   <label htmlFor="consent" className="text-sm text-gray-300">
-                    KVKK kapsamında kişisel verilerimin işlenmesini ve e-posta güncellemeleri almayı kabul ediyorum.
+                    {t('blog-detail.newsletter.form.consent')}
                   </label>
                 </div>
 
@@ -81,7 +84,7 @@ export default function BlogNewsletter() {
                   type="submit"
                   className="w-full py-4 bg-orange-300 text-white font-medium rounded-xl hover:bg-orange-400 transition-all duration-300 hover:scale-105 shadow-lg"
                 >
-                  E-Bültene Abone Ol
+                  {t('blog-detail.newsletter.form.submit')}
                 </button>
               </form>
             </div>
@@ -91,7 +94,7 @@ export default function BlogNewsletter() {
           <div className="space-y-8">
             <div className="text-center lg:text-left">
               <h3 className="text-3xl font-bold text-white mb-6">
-                Neler Kazanacaksınız?
+                {t('blog-detail.newsletter.benefits.title')}
               </h3>
             </div>
 
@@ -102,10 +105,10 @@ export default function BlogNewsletter() {
                 </div>
                 <div>
                   <h4 className="text-xl font-semibold text-white mb-2">
-                    Öncelikli Bilgilendirme
+                    {t('blog-detail.newsletter.benefits.priority.title')}
                   </h4>
                   <p className="text-gray-300">
-                    Yeni destinasyon rehberleri ve özel tur fırsatlarından ilk siz haberdar olun.
+                    {t('blog-detail.newsletter.benefits.priority.description')}
                   </p>
                 </div>
               </div>
@@ -116,10 +119,10 @@ export default function BlogNewsletter() {
                 </div>
                 <div>
                   <h4 className="text-xl font-semibold text-white mb-2">
-                    Destinasyon Analizleri
+                    {t('blog-detail.newsletter.benefits.analysis.title')}
                   </h4>
                   <p className="text-gray-300">
-                    Detaylı destinasyon rehberleri ve seyahat önerileri.
+                    {t('blog-detail.newsletter.benefits.analysis.description')}
                   </p>
                 </div>
               </div>
@@ -130,10 +133,10 @@ export default function BlogNewsletter() {
                 </div>
                 <div>
                   <h4 className="text-xl font-semibold text-white mb-2">
-                    Özel Tur Fırsatları
+                    {t('blog-detail.newsletter.benefits.offers.title')}
                   </h4>
                   <p className="text-gray-300">
-                    Sadece abone olanlara özel tur indirimleri ve erken rezervasyon fırsatları.
+                    {t('blog-detail.newsletter.benefits.offers.description')}
                   </p>
                 </div>
               </div>
@@ -143,11 +146,11 @@ export default function BlogNewsletter() {
             <div className="grid grid-cols-2 gap-6 pt-8 border-t border-white/10">
               <div className="text-center">
                 <div className="text-3xl font-bold text-orange-300 mb-2">5K+</div>
-                <div className="text-gray-400">Aktif Abone</div>
+                <div className="text-gray-400">{t('blog-detail.newsletter.stats.subscribers')}</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-orange-300 mb-2">%98</div>
-                <div className="text-gray-400">Memnuniyet Oranı</div>
+                <div className="text-gray-400">{t('blog-detail.newsletter.stats.satisfaction')}</div>
               </div>
             </div>
           </div>

@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowLeft, Calendar, User, Clock, Eye, Share2, ArrowRight } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface BlogPost {
   id: string;
@@ -22,18 +23,20 @@ interface BlogDetailProps {
 }
 
 export default function BlogDetail({ post }: BlogDetailProps) {
+  const { t } = useLanguage();
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
       <div className="bg-white border-b border-gray-200">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex items-center gap-4">
-            <Link 
+            <Link
               href="/blog"
               className="inline-flex items-center gap-2 text-orange-600 hover:text-orange-700 transition-colors"
             >
               <ArrowLeft className="h-5 w-5" />
-              <span>Blog</span>
+              <span>{t('blog-detail.breadcrumb.blog')}</span>
             </Link>
             <span className="text-gray-400">/</span>
             <span className="text-gray-600">{post.title}</span>
@@ -111,19 +114,19 @@ export default function BlogDetail({ post }: BlogDetailProps) {
           <footer className="border-t border-gray-200 pt-8">
             <div className="flex items-center justify-between">
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Bu makaleyi paylaş</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('blog-detail.share.title')}</h3>
                 <div className="flex gap-3">
                   <button className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
                     <Share2 className="h-4 w-4" />
-                    <span>Paylaş</span>
+                    <span>{t('blog-detail.share.button')}</span>
                   </button>
                 </div>
               </div>
               
               <div className="text-right">
-                <p className="text-sm text-gray-500 mb-2">Yazar</p>
+                <p className="text-sm text-gray-500 mb-2">{t('blog-detail.author.label')}</p>
                 <p className="font-semibold text-gray-900">{post.author}</p>
-                <p className="text-sm text-gray-600">Parla Travel Uzmanı</p>
+                <p className="text-sm text-gray-600">{t('blog-detail.author.title')}</p>
               </div>
             </div>
           </footer>
@@ -135,10 +138,10 @@ export default function BlogDetail({ post }: BlogDetailProps) {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              İlgili Yazılar
+              {t('blog-detail.related.title')}
             </h2>
             <p className="text-gray-600">
-              Bu konuyla ilgili diğer yazılarımızı keşfedin.
+              {t('blog-detail.related.description')}
             </p>
           </div>
 
@@ -147,7 +150,7 @@ export default function BlogDetail({ post }: BlogDetailProps) {
               href="/blog"
               className="inline-flex items-center gap-2 py-4 px-8 bg-orange-300 text-white font-medium rounded-xl hover:bg-orange-400 transition-all duration-300 hover:scale-105"
             >
-              <span>Tüm Blog Yazılarını Görüntüle</span>
+              <span>{t('blog-detail.related.view-all')}</span>
               <ArrowRight className="h-5 w-5" />
             </Link>
           </div>

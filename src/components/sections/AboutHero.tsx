@@ -5,16 +5,18 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowDown, X } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function AboutHero() {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+  const { t } = useLanguage();
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <Image
           src="https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?w=1920&h=1080&fit=crop&crop=center"
-          alt="Beautiful Turkey Landscape"
+          alt={t('about.hero.alt.turkey')}
           fill
           className="object-cover opacity-20"
           priority
@@ -36,22 +38,21 @@ export default function AboutHero() {
           <div className="text-white">
             
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight">
-              <span className="block">Türkiye'nin</span>
+              <span className="block">{t('about.hero.title.turkey')}</span>
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
-                Keşfine
+                {t('about.hero.title.discovery')}
               </span>
-              <span className="block">Davet Ediyoruz</span>
+              <span className="block">{t('about.hero.title.invite')}</span>
             </h1>
             
             <p className="text-xl sm:text-2xl text-gray-300 mb-8 leading-relaxed">
-              15+ yıldır kültür turizmi, rehberlik ve otel rezervasyonu alanlarında
-              unutulmaz deneyimler sunan profesyonel bir ekibiz.
+              {t('about.hero.description')}
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 items-start">
               <Link href="/hakkimizda">
                 <Button variant="primary" size="lg" className="bg-blue-600 hover:bg-blue-700 w-full sm:w-auto">
-                  Hikayemizi Keşfedin
+                  {t('about.hero.cta.story')}
                 </Button>
               </Link>
               <Button
@@ -61,7 +62,7 @@ export default function AboutHero() {
                 onClick={() => setIsVideoModalOpen(true)}
               >
                 <span className="mr-2 flex-shrink-0">▶</span>
-                Tanıtım Videosu
+                {t('about.hero.cta.video')}
               </Button>
             </div>
 
@@ -69,15 +70,15 @@ export default function AboutHero() {
             <div className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-white/20">
               <div className="text-center">
                 <div className="text-3xl font-bold text-blue-400 mb-2">1250+</div>
-                <div className="text-sm text-gray-400">Mutlu Misafir</div>
+                <div className="text-sm text-gray-400">{t('about.hero.stats.guests')}</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-green-400 mb-2">15+</div>
-                <div className="text-sm text-gray-400">Yıllık Deneyim</div>
+                <div className="text-sm text-gray-400">{t('about.hero.stats.experience')}</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-purple-400 mb-2">350+</div>
-                <div className="text-sm text-gray-400">Tamamlanan Tur</div>
+                <div className="text-sm text-gray-400">{t('about.hero.stats.tours')}</div>
               </div>
             </div>
           </div>
@@ -89,7 +90,7 @@ export default function AboutHero() {
                 <div className="relative h-48 rounded-2xl overflow-hidden transform rotate-3 hover:rotate-0 transition-transform duration-500">
                   <Image
                     src="https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=400&h=300&fit=crop&crop=center"
-                    alt="Istanbul Tourism"
+                    alt={t('about.hero.alt.istanbul')}
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 50vw, 25vw"
@@ -99,7 +100,7 @@ export default function AboutHero() {
                 <div className="relative h-32 rounded-2xl overflow-hidden transform -rotate-2 hover:rotate-0 transition-transform duration-500">
                   <Image
                     src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=200&fit=crop&crop=center"
-                    alt="Turkish Culture"
+                    alt={t('about.hero.alt.culture')}
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 50vw, 25vw"
@@ -111,7 +112,7 @@ export default function AboutHero() {
                 <div className="relative h-32 rounded-2xl overflow-hidden transform rotate-2 hover:rotate-0 transition-transform duration-500">
                   <Image
                     src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=400&h=200&fit=crop&crop=center"
-                    alt="Travel Experience"
+                    alt={t('about.hero.alt.travel')}
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 50vw, 25vw"
@@ -121,7 +122,7 @@ export default function AboutHero() {
                 <div className="relative h-48 rounded-2xl overflow-hidden transform -rotate-3 hover:rotate-0 transition-transform duration-500">
                   <Image
                     src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop&crop=center"
-                    alt="Beautiful Destinations"
+                    alt={t('about.hero.alt.destinations')}
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 50vw, 25vw"
@@ -133,7 +134,7 @@ export default function AboutHero() {
             
             {/* Floating Badge */}
             <div className="absolute -top-4 -right-4 bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg transform rotate-12">
-              15+ Yıl Deneyim
+              {t('about.hero.badge.experience')}
             </div>
           </div>
         </div>
@@ -158,7 +159,7 @@ export default function AboutHero() {
             <div className="relative aspect-video bg-black rounded-xl overflow-hidden">
               <iframe
                 src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&rel=0"
-                title="Parla Travel Tanıtım Videosu"
+                title={t('about.hero.video.title')}
                 className="w-full h-full"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen

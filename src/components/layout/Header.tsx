@@ -4,30 +4,31 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, Globe } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface NavigationItem {
-  label: string;
+  labelKey: string;
   href: string;
   children?: NavigationItem[];
 }
 
 const navigation: NavigationItem[] = [
-  { label: 'Ana Sayfa', href: '/' },
-  { label: 'Hakkımızda', href: '/hakkimizda' },
+  { labelKey: 'nav.home', href: '/' },
+  { labelKey: 'nav.about', href: '/hakkimizda' },
   {
-    label: 'Hizmetler',
+    labelKey: 'nav.services',
     href: '/hizmetler',
     children: [
-      { label: 'Kültür Turları', href: '/hizmetler/kultur-turlari' },
-      { label: 'Otel Rezervasyonları', href: '/hizmetler/otel-rezervasyonu' },
-      { label: 'Rehberlik Hizmetleri', href: '/hizmetler/rehberlik-hizmetleri' }
+      { labelKey: 'services.culture-tours', href: '/hizmetler/kultur-turlari' },
+      { labelKey: 'services.hotel-reservations', href: '/hizmetler/otel-rezervasyonu' },
+      { labelKey: 'services.guide-services', href: '/hizmetler/rehberlik-hizmetleri' }
     ]
   },
-  { label: 'Turlarımız', href: '/turlar' },
-  { label: 'Blog', href: '/blog' },
-  { label: 'İletişim', href: '/iletisim' }
+  { labelKey: 'nav.tours', href: '/turlar' },
+  { labelKey: 'nav.blog', href: '/blog' },
+  { labelKey: 'nav.contact', href: '/iletisim' }
 ];
 
 export default function Header() {
@@ -36,6 +37,7 @@ export default function Header() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [dropdownTimeout, setDropdownTimeout] = useState<NodeJS.Timeout | null>(null);
   const pathname = usePathname();
+  const { language, setLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -74,11 +76,10 @@ export default function Header() {
               priority
             />
           </Link>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex md:items-center md:space-x-4">
-            {navigation.map((item) => (
-              <div key={item.label} className="relative">
+{/* Desktop Navigation */}
+<div className="hidden md:flex md:items-center md:space-x-4">
+  {navigation.map((item) => (
+              <div key={item.labelKey} className="relative">
                 {item.children ? (
                   <div
                     className="relative group"
@@ -87,7 +88,7 @@ export default function Header() {
                         clearTimeout(dropdownTimeout);
                         setDropdownTimeout(null);
                       }
-                      setActiveDropdown(item.label);
+                      setActiveDropdown(item.labelKey);
                     }}
                     onMouseLeave={() => {
                       const timeout = setTimeout(() => {
@@ -111,7 +112,7 @@ export default function Header() {
                         }
                       }}
                     >
-                      <span>{item.label}</span>
+                      <span>{t(item.labelKey)}</span>
                       <span
                         className="dropdown-arrow"
                         onClick={(e) => {
@@ -130,11 +131,11 @@ export default function Header() {
                       ></div>
                     </Link>
                     
-                    {activeDropdown === item.label && (
+                    {activeDropdown === item.labelKey && (
                       <div className="absolute left-0 top-full mt-2 w-64 rounded-xl bg-white py-3 shadow-2xl border border-gray-100 animate-fade-in-up group-hover:block">
                         {item.children.map((child) => (
                           <Link
-                            key={child.label}
+                            key={child.labelKey}
                             href={child.href}
                             className={cn(
                               "block px-5 py-3 text-sm transition-all duration-200 rounded-lg mx-2 hover:translate-x-1",
@@ -143,7 +144,7 @@ export default function Header() {
                                 : "text-gray-700 hover:bg-orange-50 hover:text-orange-600"
                             )}
                           >
-                            {child.label}
+                            {t(child.labelKey)}
                           </Link>
                         ))}
                       </div>
@@ -159,7 +160,7 @@ export default function Header() {
                         : 'text-white hover:text-orange-200 hover:bg-white/10'
                     )}
                   >
-                    {item.label}
+                    {t(item.labelKey)}
                     {/* Enhanced Active Page Indicator */}
                     <div
                       className={cn(
@@ -171,6 +172,34 @@ export default function Header() {
                 )}
               </div>
             ))}
+          </div>
+
+          {/* Desktop Language Switcher - En sağda */}
+          <div className="hidden md:flex md:items-center md:space-x-1 md:ml-4">
+            
+            <button
+              onClick={() => setLanguage('tr')}
+              className={cn(
+                'px-2 py-1 text-xs font-medium rounded transition-colors',
+                language === 'tr'
+                  ? 'bg-orange-300 text-white'
+                  : 'text-white/70 hover:text-white hover:bg-white/10'
+              )}
+            >
+              TR
+            </button>
+            <span className="text-white/50">|</span>
+            <button
+              onClick={() => setLanguage('en')}
+              className={cn(
+                'px-2 py-1 text-xs font-medium rounded transition-colors',
+                language === 'en'
+                  ? 'bg-orange-300 text-white'
+                  : 'text-white/70 hover:text-white hover:bg-white/10'
+              )}
+            >
+              EN
+            </button>
           </div>
 
           {/* Mobile menu button */}
@@ -193,36 +222,63 @@ export default function Header() {
         {isOpen && (
           <div className="md:hidden">
             <div className="space-y-1 px-2 pb-3 pt-2 bg-white rounded-lg mt-2 shadow-lg">
+              {/* Mobile Language Switcher */}
+              <div className="flex items-center justify-center space-x-2 py-2 border-b border-gray-100 mb-2">
+                
+                <button
+                  onClick={() => setLanguage('tr')}
+                  className={cn(
+                    'px-3 py-1 text-sm font-medium rounded transition-colors',
+                    language === 'tr'
+                      ? 'bg-orange-300 text-white'
+                      : 'text-gray-500 hover:text-gray-700 hover:bg-gray-100'
+                  )}
+                >
+                  TR
+                </button>
+                <span className="text-gray-300">|</span>
+                <button
+                  onClick={() => setLanguage('en')}
+                  className={cn(
+                    'px-3 py-1 text-sm font-medium rounded transition-colors',
+                    language === 'en'
+                      ? 'bg-orange-300 text-white'
+                      : 'text-gray-500 hover:text-gray-700 hover:bg-gray-100'
+                  )}
+                >
+                  EN
+                </button>
+              </div>
               {navigation.map((item) => (
-                <div key={item.label}>
+                <div key={item.labelKey}>
                   {item.children ? (
                     <div>
                       <button
                         onClick={() =>
                           setActiveDropdown(
-                            activeDropdown === item.label ? null : item.label
+                            activeDropdown === item.labelKey ? null : item.labelKey
                           )
                         }
                         className="flex w-full items-center justify-between rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50"
                       >
-                        <span>{item.label}</span>
+                        <span>{t(item.labelKey)}</span>
                         <ChevronDown
                           className={cn(
                             'h-4 w-4 transition-transform',
-                            activeDropdown === item.label && 'rotate-180'
+                            activeDropdown === item.labelKey && 'rotate-180'
                           )}
                         />
                       </button>
-                      {activeDropdown === item.label && (
+                      {activeDropdown === item.labelKey && (
                         <div className="ml-4 space-y-1">
                           {item.children.map((child) => (
                             <Link
-                              key={child.label}
+                              key={child.labelKey}
                               href={child.href}
                               onClick={closeMenu}
                               className="block rounded-md px-3 py-2 text-sm text-gray-600 hover:bg-gray-50"
                             >
-                              {child.label}
+                              {t(child.labelKey)}
                             </Link>
                           ))}
                         </div>
@@ -234,7 +290,7 @@ export default function Header() {
                       onClick={closeMenu}
                       className="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50"
                     >
-                      {item.label}
+                      {t(item.labelKey)}
                     </Link>
                   )}
                 </div>

@@ -4,48 +4,50 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { MapPin, Hotel, Users, Compass, ArrowRight } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const services = [
   {
     id: 'kultur-turlari',
-    title: 'Kültür Turları',
-    description: 'Türkiye\'nin zengin tarihî ve kültürel mirasını keşfedin, uzman rehberlerimiz eşliğinde unutulmaz deneyimler yaşayın.',
+    titleKey: 'services.culture-tours',
+    descriptionKey: 'services.culture-tours.description',
     icon: MapPin,
     image: 'https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=800&h=600&fit=crop&crop=center&q=90',
-    features: ['Tarihî Mekanlar', 'Müze Gezileri', 'Antik Şehirler', 'Yerel Kültür'],
-    process: '1-15 Gün'
+    featuresKey: 'services.culture-tours.features',
+    processKey: 'services.culture-tours.process'
   },
   {
     id: 'otel-rezervasyonu',
-    title: 'Otel Rezervasyonları',
-    description: 'Konforlu konaklama deneyimi için en iyi otellerde rezervasyon hizmeti sunuyoruz, her bütçeye uygun seçenekler.',
+    titleKey: 'services.hotel-reservations',
+    descriptionKey: 'services.hotel-reservations.description',
     icon: Hotel,
     image: 'https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800&h=600&fit=crop&crop=center&q=90',
-    features: ['Lüks Oteller', 'Boutique Hotels', 'Butik Pansiyonlar', 'Özel Villalar'],
-    process: '1-7 Gün'
+    featuresKey: 'services.hotel-reservations.features',
+    processKey: 'services.hotel-reservations.process'
   },
   {
     id: 'rehberlik-hizmetleri',
-    title: 'Rehberlik Hizmetleri',
-    description: 'Profesyonel ve deneyimli rehberlerimiz ile Türkiye\'nin her köşesini keşfedin, kişisel ve grup turları.',
+    titleKey: 'services.guide-services',
+    descriptionKey: 'services.guide-services.description',
     icon: Users,
     image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&h=600&fit=crop&crop=center&q=90',
-    features: ['Kişisel Rehberlik', 'Grup Rehberliği', 'Çok Dilli Hizmet', 'Özel İlgi Alanları'],
-    process: '1-30 Gün'
+    featuresKey: 'services.guide-services.features',
+    processKey: 'services.guide-services.process'
   },
   {
     id: 'macera-turlari',
-    title: 'Macera Turları',
-    description: 'Size özel hazırladığımız tatil paketleri ile hayalinizdeki seyahati yaşayın, tamamen kişiselleştirilebilir.',
+    titleKey: 'services.adventure-tours',
+    descriptionKey: 'services.adventure-tours.description',
     icon: Compass,
     image: 'https://images.unsplash.com/photo-1527838832700-5059252407fa?w=800&h=600&fit=crop&crop=center&q=90',
-    features: ['VIP Turlar', 'Romantik Geziler', 'Macera Turları', 'Gastronomi Turları'],
-    process: '3-21 Gün'
+    featuresKey: 'services.adventure-tours.features',
+    processKey: 'services.adventure-tours.process'
   }
 ];
 
 export default function ServicesGrid() {
   const [activeService, setActiveService] = useState<string | null>(null);
+  const { t } = useLanguage();
 
   return (
     <section className="py-24 bg-gray-50">
@@ -53,12 +55,11 @@ export default function ServicesGrid() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Hizmet <span className="text-orange-300">Alanlarımız</span>
+            {t('services.title')} <span className="text-orange-300">{t('services.title.highlight')}</span>
           </h2>
           <div className="w-24 h-1 bg-white mx-auto mb-6"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            15 yıllık deneyimimizle turizm, seyahat ve rehberlik alanlarında
-            kapsamlı hizmetler sunuyoruz.
+            {t('services.description')}
           </p>
         </div>
 
@@ -81,7 +82,7 @@ export default function ServicesGrid() {
                 <div className="relative h-64 overflow-hidden">
                   <Image
                     src={service.image}
-                    alt={service.title}
+                    alt={t(service.titleKey)}
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-700"
                     sizes="(max-width: 768px) 100vw, 50vw"
@@ -98,7 +99,7 @@ export default function ServicesGrid() {
                   {/* Process Duration */}
                   <div className="absolute top-6 right-6">
                     <div className="bg-orange-300/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium text-white">
-                      {service.process}
+                      {t(service.processKey)}
                     </div>
                   </div>
                 </div>
@@ -106,19 +107,19 @@ export default function ServicesGrid() {
                 {/* Content */}
                 <div className="p-8">
                   <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors duration-300">
-                    {service.title}
+                    {t(service.titleKey)}
                   </h3>
                   
                   <p className="text-gray-600 mb-6 leading-relaxed">
-                    {service.description}
+                    {t(service.descriptionKey)}
                   </p>
 
                   {/* Features */}
                   <div className="grid grid-cols-2 gap-3 mb-6">
-                    {service.features.map((feature, index) => (
+                    {t(service.featuresKey).split(',').map((feature, index) => (
                       <div key={index} className="flex items-center space-x-2">
                         <div className="w-2 h-2 bg-orange-300 rounded-full"></div>
-                        <span className="text-sm text-gray-600">{feature}</span>
+                        <span className="text-sm text-gray-600">{feature.trim()}</span>
                       </div>
                     ))}
                   </div>
@@ -128,7 +129,7 @@ export default function ServicesGrid() {
                     href={`/hizmetler/${service.id}`}
                     className="inline-flex items-center justify-center w-full py-3 px-6 bg-blue-600 text-white font-medium rounded-xl hover:bg-blue-700 transition-all duration-300 group-hover:translate-y-0 translate-y-2"
                   >
-                    <span className="mr-2">Detayları İncele</span>
+                    <span className="mr-2">{t('services.view-details')}</span>
                     <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
                   </Link>
                 </div>
@@ -146,13 +147,13 @@ export default function ServicesGrid() {
         <div className="text-center mt-16">
           <div className="bg-white rounded-2xl shadow-lg p-8 max-w-2xl mx-auto">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Hayalinizdeki Tur İçin Teklif Alın
+              {t('services.cta.title')}
             </h3>
             <p className="text-gray-600 mb-6">
-              Uzman ekibimizle seyahat planınızı değerlendirin ve size özel turlar keşfedin.
+              {t('services.cta.description')}
             </p>
             <button className="inline-flex items-center justify-center py-4 px-8 bg-orange-300 text-white font-medium rounded-xl hover:bg-orange-400 transition-all duration-300 hover:scale-105">
-              <span className="mr-2">Ücretsiz Danışmanlık</span>
+              <span className="mr-2">{t('services.cta.button')}</span>
               <ArrowRight className="h-5 w-5" />
             </button>
           </div>

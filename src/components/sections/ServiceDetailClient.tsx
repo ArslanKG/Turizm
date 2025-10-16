@@ -13,11 +13,11 @@ interface Service {
   category: string;
 }
 
-interface ServiceDetailProps {
+interface ServiceDetailClientProps {
   service: Service;
 }
 
-export default function ServiceDetail({ service }: ServiceDetailProps) {
+export default function ServiceDetailClient({ service }: ServiceDetailClientProps) {
   const { t } = useLanguage();
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   

@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { ArrowRight, Calendar, MapPin } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/Button';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface FeaturedTour {
   id: string;
@@ -66,11 +67,11 @@ const featuredTours: FeaturedTour[] = [
   }
 ];
 
-const categories = [
-  { id: 'all', label: 'Tümü', color: 'bg-gray-100 text-gray-700' },
-  { id: 'kulturel', label: 'Kültürel', color: 'bg-blue-100 text-blue-700' },
-  { id: 'dogal', label: 'Doğal', color: 'bg-green-100 text-green-700' },
-  { id: 'macera', label: 'Macera', color: 'bg-orange-100 text-orange-700' }
+const getCategories = (t: (key: string) => string) => [
+  { id: 'all', label: t('featured-tours.filter.all'), color: 'bg-gray-100 text-gray-700' },
+  { id: 'kulturel', label: t('featured-tours.filter.cultural'), color: 'bg-blue-100 text-blue-700' },
+  { id: 'dogal', label: t('featured-tours.filter.natural'), color: 'bg-green-100 text-green-700' },
+  { id: 'macera', label: t('featured-tours.filter.adventure'), color: 'bg-orange-100 text-orange-700' }
 ];
 
 const getCategoryColor = (category: string) => {
@@ -82,18 +83,20 @@ const getCategoryColor = (category: string) => {
   }
 };
 
-const getCategoryLabel = (category: string) => {
+const getCategoryLabel = (category: string, t: (key: string) => string) => {
   switch (category) {
-    case 'kulturel': return 'Kültürel';
-    case 'dogal': return 'Doğal';
-    case 'macera': return 'Macera';
-    default: return 'Genel';
+    case 'kulturel': return t('featured-tours.category.cultural');
+    case 'dogal': return t('featured-tours.category.natural');
+    case 'macera': return t('featured-tours.category.adventure');
+    default: return t('featured-tours.category.general');
   }
 };
 
 export default function FeaturedTours() {
+  const { t } = useLanguage();
   const [activeCategory, setActiveCategory] = useState('all');
 
+  const categories = getCategories(t);
   const filteredTours = featuredTours.filter(
     tour => activeCategory === 'all' || tour.category === activeCategory
   );
@@ -104,11 +107,10 @@ export default function FeaturedTours() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 sm:text-5xl font-display mb-4">
-            Öne Çıkan <span className="text-orange-600">Turlarımız</span>
+            {t('featured-tours.title')} <span className="text-orange-600">{t('featured-tours.title.highlight')}</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            En popüler destinasyonlarımızda unutulmaz deneyimler yaşayın. 
-            Uzman rehberlerimiz eşliğinde Türkiye'nin en güzel yerlerini keşfedin.
+            {t('featured-tours.description')}
           </p>
         </div>
 
@@ -154,7 +156,7 @@ export default function FeaturedTours() {
                     'px-3 py-1 rounded-full text-xs font-semibold',
                     getCategoryColor(tour.category)
                   )}>
-                    {getCategoryLabel(tour.category)}
+                    {getCategoryLabel(tour.category, t)}
                   </span>
                 </div>
 
@@ -164,7 +166,7 @@ export default function FeaturedTours() {
                     href={`/turlar/${tour.slug}`}
                     className="bg-white text-orange-600 px-6 py-3 rounded-full font-semibold hover:bg-orange-50 transition-colors duration-200 flex items-center"
                   >
-                    <span>Detayları Görüntüle</span>
+                    <span>{t('featured-tours.view-details')}</span>
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </div>
@@ -193,14 +195,14 @@ export default function FeaturedTours() {
 
                 <div className="flex items-center justify-between">
                   <div className="text-sm text-gray-500">
-                    <span className="font-semibold text-orange-600">{tour.area}</span> Tur Süresi
+                    <span className="font-semibold text-orange-600">{tour.area}</span> {t('featured-tours.tour-duration')}
                   </div>
                   
                   <Link
                     href={`/turlar/${tour.slug}`}
                     className="text-orange-600 font-semibold hover:text-orange-700 transition-colors duration-200 flex items-center"
                   >
-                    <span>İncele</span>
+                    <span>{t('featured-tours.explore')}</span>
                     <ArrowRight className="ml-1 h-4 w-4" />
                   </Link>
                 </div>
@@ -212,11 +214,11 @@ export default function FeaturedTours() {
         {/* CTA Section */}
         <div className="text-center mt-16">
           <p className="text-lg text-gray-600 mb-8">
-            Daha fazla tur seçeneği için tam listemize göz atın.
+            {t('featured-tours.cta.description')}
           </p>
           <Link href="/turlar">
             <Button variant="orange" size="lg">
-              Tüm Turları Görüntüle
+              {t('featured-tours.view-all')}
             </Button>
           </Link>
         </div>

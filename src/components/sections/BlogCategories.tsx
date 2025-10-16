@@ -1,85 +1,87 @@
 'use client';
 
 import { MapPin, Compass, Hotel, UtensilsCrossed, Users, Camera, Award, Globe } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface BlogCategoriesProps {
   activeCategory: string;
   onCategoryChange: (category: string) => void;
 }
 
-const categories = [
-  {
-    id: 'all',
-    name: 'Tümü',
-    icon: Globe,
-    count: 156,
-    description: 'Tüm blog yazıları'
-  },
-  {
-    id: 'destinations',
-    name: 'Destinasyonlar',
-    icon: MapPin,
-    count: 42,
-    description: 'Popüler seyahat destinasyonları ve rehberler'
-  },
-  {
-    id: 'travel-guides',
-    name: 'Seyahat Rehberleri',
-    icon: Compass,
-    count: 38,
-    description: 'Detaylı gezi planları ve öneriler'
-  },
-  {
-    id: 'accommodation',
-    name: 'Konaklama',
-    icon: Hotel,
-    count: 35,
-    description: 'Otel önerileri ve konaklama rehberleri'
-  },
-  {
-    id: 'gastronomy',
-    name: 'Gastronomi',
-    icon: UtensilsCrossed,
-    count: 28,
-    description: 'Yerel lezzetler ve kulinarya deneyimleri'
-  },
-  {
-    id: 'team',
-    name: 'Ekip & Kariyer',
-    icon: Users,
-    count: 18,
-    description: 'Ekip hikayeleri ve turizm kariyeri'
-  },
-  {
-    id: 'photography',
-    name: 'Seyahat Fotoğrafçılığı',
-    icon: Camera,
-    count: 22,
-    description: 'Fotoğraf ipuçları ve en güzel kareler'
-  },
-  {
-    id: 'awards',
-    name: 'Ödüller & Başarılar',
-    icon: Award,
-    count: 15,
-    description: 'Aldığımız ödüller ve başarı hikayeleri'
-  }
-];
-
 export default function BlogCategories({ activeCategory, onCategoryChange }: BlogCategoriesProps) {
+  const { t } = useLanguage();
+
+  const categories = [
+    {
+      id: 'all',
+      name: t('blog.categories.all.name'),
+      icon: Globe,
+      count: 156,
+      description: t('blog.categories.all.description')
+    },
+    {
+      id: 'destinations',
+      name: t('blog.categories.destinations.name'),
+      icon: MapPin,
+      count: 42,
+      description: t('blog.categories.destinations.description')
+    },
+    {
+      id: 'travel-guides',
+      name: t('blog.categories.travel-guides.name'),
+      icon: Compass,
+      count: 38,
+      description: t('blog.categories.travel-guides.description')
+    },
+    {
+      id: 'accommodation',
+      name: t('blog.categories.accommodation.name'),
+      icon: Hotel,
+      count: 35,
+      description: t('blog.categories.accommodation.description')
+    },
+    {
+      id: 'gastronomy',
+      name: t('blog.categories.gastronomy.name'),
+      icon: UtensilsCrossed,
+      count: 28,
+      description: t('blog.categories.gastronomy.description')
+    },
+    {
+      id: 'team',
+      name: t('blog.categories.team.name'),
+      icon: Users,
+      count: 18,
+      description: t('blog.categories.team.description')
+    },
+    {
+      id: 'photography',
+      name: t('blog.categories.photography.name'),
+      icon: Camera,
+      count: 22,
+      description: t('blog.categories.photography.description')
+    },
+    {
+      id: 'awards',
+      name: t('blog.categories.awards.name'),
+      icon: Award,
+      count: 15,
+      description: t('blog.categories.awards.description')
+    }
+  ];
 
   return (
     <section className="py-16 bg-gray-50">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Blog Kategorileri
+            {t('blog.categories.title')}
           </h2>
           
           <div className="w-24 h-1 bg-orange-300 mx-auto mb-6"></div>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            İlgi alanınıza göre içerikleri keşfedin ve sektördeki gelişmeleri takip edin.
+            {t('blog.categories.description')}
           </p>
         </div>
 
@@ -148,13 +150,13 @@ export default function BlogCategories({ activeCategory, onCategoryChange }: Blo
         <div className="mt-12 text-center">
           <div className="inline-flex items-center gap-3 px-6 py-3 bg-white rounded-xl border border-gray-200 shadow-sm">
             <span className="text-gray-600">
-              Seçili kategori:
+              {t('blog.categories.selected')}:
             </span>
             <span className="font-semibold text-orange-600">
               {categories.find(cat => cat.id === activeCategory)?.name}
             </span>
             <span className="text-gray-500">
-              ({categories.find(cat => cat.id === activeCategory)?.count} yazı)
+              ({categories.find(cat => cat.id === activeCategory)?.count} {t('blog.categories.posts')})
             </span>
           </div>
         </div>

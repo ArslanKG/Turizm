@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { MapPin, Hotel, Users, ArrowRight, Star } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface Service {
   id: string;
@@ -16,46 +17,62 @@ interface Service {
   features: string[];
 }
 
-const services: Service[] = [
-  {
-    id: '1',
-    title: 'Kültür Turları',
-    description: 'Türkiye\'nin zengin tarihî ve kültürel mirasını keşfedin. Uzman rehberlerimiz eşliğinde unutulmaz deneyimler yaşayın.',
-    shortDesc: 'Tarih ve kültür keşfi',
-    icon: MapPin,
-    slug: 'kultur-turlari',
-    tours: 150,
-    color: 'from-blue-500 to-purple-600',
-    gradient: 'bg-gradient-to-br from-blue-50 to-purple-50',
-    features: ['Tarihî Mekanlar', 'Müze Gezileri', 'Yerel Kültür']
-  },
-  {
-    id: '2',
-    title: 'Otel Rezervasyonları',
-    description: 'Konforlu konaklama deneyimi için en iyi otellerde rezervasyon hizmeti sunuyoruz. Her bütçeye uygun seçenekler mevcuttur.',
-    shortDesc: 'Kaliteli konaklama çözümleri',
-    icon: Hotel,
-    slug: 'otel-rezervasyonu',
-    tours: 200,
-    color: 'from-emerald-500 to-teal-600',
-    gradient: 'bg-gradient-to-br from-emerald-50 to-teal-50',
-    features: ['Lüks Oteller', 'Boutique Hotels', 'Ekonomik Seçenekler']
-  },
-  {
-    id: '3',
-    title: 'Rehberlik Hizmetleri',
-    description: 'Profesyonel ve deneyimli rehberlerimiz ile Türkiye\'nin her köşesini keşfedin. Kişisel ve grup turları için özel hizmet.',
-    shortDesc: 'Uzman rehberlik desteği',
-    icon: Users,
-    slug: 'rehberlik-hizmetleri',
-    tours: 300,
-    color: 'from-orange-500 to-red-600',
-    gradient: 'bg-gradient-to-br from-orange-50 to-red-50',
-    features: ['Kişisel Rehberlik', 'Grup Turları', 'Dil Desteği']
-  }
-];
 
 export default function ServicesPreview() {
+  const { t } = useLanguage();
+
+  // Dynamic services data using translations
+  const services: Service[] = [
+    {
+      id: '1',
+      title: t('services-preview.service.culture-tours.title'),
+      description: t('services-preview.service.culture-tours.description'),
+      shortDesc: t('services-preview.service.culture-tours.short'),
+      icon: MapPin,
+      slug: 'kultur-turlari',
+      tours: 150,
+      color: 'from-blue-500 to-purple-600',
+      gradient: 'bg-gradient-to-br from-blue-50 to-purple-50',
+      features: [
+        t('services-preview.service.culture-tours.feature1'),
+        t('services-preview.service.culture-tours.feature2'),
+        t('services-preview.service.culture-tours.feature3')
+      ]
+    },
+    {
+      id: '2',
+      title: t('services-preview.service.hotel-reservations.title'),
+      description: t('services-preview.service.hotel-reservations.description'),
+      shortDesc: t('services-preview.service.hotel-reservations.short'),
+      icon: Hotel,
+      slug: 'otel-rezervasyonu',
+      tours: 200,
+      color: 'from-emerald-500 to-teal-600',
+      gradient: 'bg-gradient-to-br from-emerald-50 to-teal-50',
+      features: [
+        t('services-preview.service.hotel-reservations.feature1'),
+        t('services-preview.service.hotel-reservations.feature2'),
+        t('services-preview.service.hotel-reservations.feature3')
+      ]
+    },
+    {
+      id: '3',
+      title: t('services-preview.service.guide-services.title'),
+      description: t('services-preview.service.guide-services.description'),
+      shortDesc: t('services-preview.service.guide-services.short'),
+      icon: Users,
+      slug: 'rehberlik-hizmetleri',
+      tours: 300,
+      color: 'from-orange-500 to-red-600',
+      gradient: 'bg-gradient-to-br from-orange-50 to-red-50',
+      features: [
+        t('services-preview.service.guide-services.feature1'),
+        t('services-preview.service.guide-services.feature2'),
+        t('services-preview.service.guide-services.feature3')
+      ]
+    }
+  ];
+
   return (
     <section id="services-section" className="py-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
       {/* Background decorations */}
@@ -69,34 +86,35 @@ export default function ServicesPreview() {
         <div className="text-center mb-20">
           <div className="inline-flex items-center px-4 py-2 bg-orange-100 text-orange-600 rounded-full text-sm font-medium mb-6">
             <Star className="w-4 h-4 mr-2" />
-            Uzman Hizmetlerimiz
+            {t('services-preview.badge')}
           </div>
           
           <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-            Türkiye'yi
+            {t('services-preview.title.main')}
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-600">
-              Keşfediyoruz
+              {t('services-preview.title.highlight')}
             </span>
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            15+ yıllık deneyimimizle turizm ve seyahat alanlarında
-            <strong className="text-gray-800"> unutulmaz deneyimler</strong> sunuyoruz.
+            {t('services-preview.description')}
+            <strong className="text-gray-800">{t('services-preview.description.highlight')}</strong>
+            {t('services-preview.description.end')}
           </p>
 
           {/* Stats */}
           <div className="flex flex-wrap justify-center gap-8 mt-12">
             <div className="text-center">
               <div className="text-3xl font-bold text-orange-600 mb-2">650+</div>
-              <div className="text-gray-600 text-sm">Gerçekleştirilen Tur</div>
+              <div className="text-gray-600 text-sm">{t('services-preview.stats.tours')}</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-orange-600 mb-2">15+</div>
-              <div className="text-gray-600 text-sm">Yıllık Deneyim</div>
+              <div className="text-gray-600 text-sm">{t('services-preview.stats.experience')}</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-orange-600 mb-2">12000+</div>
-              <div className="text-gray-600 text-sm">Mutlu Ziyaretçi</div>
+              <div className="text-gray-600 text-sm">{t('services-preview.stats.visitors')}</div>
             </div>
           </div>
         </div>
@@ -157,15 +175,15 @@ export default function ServicesPreview() {
                     <div className="flex items-center justify-between mb-6 p-4 bg-gray-50 rounded-xl">
                       <div className="text-center">
                         <div className="text-2xl font-bold text-orange-600">{service.tours}+</div>
-                        <div className="text-xs text-gray-500">Tur</div>
+                        <div className="text-xs text-gray-500">{t('services-preview.tour-label')}</div>
                       </div>
                       <div className="text-center">
                         <div className="text-2xl font-bold text-orange-600">⭐</div>
-                        <div className="text-xs text-gray-500">Premium</div>
+                        <div className="text-xs text-gray-500">{t('services-preview.premium-label')}</div>
                       </div>
                       <div className="text-center">
                         <div className="text-2xl font-bold text-orange-600">✓</div>
-                        <div className="text-xs text-gray-500">Garanti</div>
+                        <div className="text-xs text-gray-500">{t('services-preview.guarantee-label')}</div>
                       </div>
                     </div>
 
@@ -178,7 +196,7 @@ export default function ServicesPreview() {
                         {/* Button glow effect */}
                         <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-red-500 opacity-0 group-hover/btn:opacity-20 transition-opacity duration-300"></div>
                         
-                        <span className="relative mr-2">Detayları Keşfedin</span>
+                        <span className="relative mr-2">{t('services-preview.button.explore')}</span>
                         <ArrowRight className="relative w-5 h-5 group-hover/btn:translate-x-1 transition-transform duration-200" />
                       </Link>
                     </div>

@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowLeft, ArrowRight, CheckCircle, MapPin, Users, Calendar, Star } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface Tour {
   id: string;
@@ -28,6 +29,7 @@ interface TourDetailProps {
 
 export default function TourDetail({ project: tour }: TourDetailProps) {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
+  const { t } = useLanguage();
 
   const getStatusColor = (status: string) => {
     switch (status) {
@@ -60,7 +62,7 @@ export default function TourDetail({ project: tour }: TourDetailProps) {
                 className="inline-flex items-center gap-2 text-orange-600 hover:text-orange-700 transition-colors"
               >
                 <ArrowLeft className="h-5 w-5" />
-                <span>Turlar</span>
+                <span>{t('tour-detail.breadcrumb.tours')}</span>
               </Link>
               <span className="text-gray-400">/</span>
               <span className="text-gray-600">{tour.title}</span>
@@ -93,11 +95,11 @@ export default function TourDetail({ project: tour }: TourDetailProps) {
               <div className="grid grid-cols-2 gap-6">
                 <div className="text-center">
                   <div className="text-3xl font-bold text-orange-300 mb-2">{tour.area}</div>
-                  <div className="text-gray-400 text-sm">Tur Süresi</div>
+                  <div className="text-gray-400 text-sm">{t('tour-detail.tour-duration')}</div>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold text-orange-300 mb-2">{tour.year}</div>
-                  <div className="text-gray-400 text-sm">Sezon</div>
+                  <div className="text-gray-400 text-sm">{t('tour-detail.season')}</div>
                 </div>
               </div>
             </div>
@@ -140,7 +142,7 @@ export default function TourDetail({ project: tour }: TourDetailProps) {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-16 lg:grid-cols-3">
             <div className="lg:col-span-2">
-              <h2 className="text-3xl font-bold text-gray-900 mb-8">Tur Özellikleri</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-8">{t('tour-detail.features-title')}</h2>
 
               <div className="grid md:grid-cols-2 gap-4">
                 {tour.features.map((feature, index) => (
@@ -154,7 +156,7 @@ export default function TourDetail({ project: tour }: TourDetailProps) {
 
             {/* Tour Info */}
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Tur Bilgileri</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">{t('tour-detail.info-title')}</h3>
 
               <div className="space-y-6">
                 <div className="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
@@ -162,7 +164,7 @@ export default function TourDetail({ project: tour }: TourDetailProps) {
                     <MapPin className="h-5 w-5 text-orange-600" />
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-900">Lokasyon</div>
+                    <div className="font-semibold text-gray-900">{t('tour-detail.location')}</div>
                     <div className="text-gray-600">{tour.location}</div>
                   </div>
                 </div>
@@ -172,7 +174,7 @@ export default function TourDetail({ project: tour }: TourDetailProps) {
                     <Calendar className="h-5 w-5 text-blue-600" />
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-900">Sezon</div>
+                    <div className="font-semibold text-gray-900">{t('tour-detail.season')}</div>
                     <div className="text-gray-600">{tour.year}</div>
                   </div>
                 </div>
@@ -182,7 +184,7 @@ export default function TourDetail({ project: tour }: TourDetailProps) {
                     <Users className="h-5 w-5 text-green-600" />
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-900">Tur Organizatörü</div>
+                    <div className="font-semibold text-gray-900">{t('tour-detail.tour-organizer')}</div>
                     <div className="text-gray-600">{tour.client}</div>
                   </div>
                 </div>
@@ -192,7 +194,7 @@ export default function TourDetail({ project: tour }: TourDetailProps) {
                     <Star className="h-5 w-5 text-purple-600" />
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-900">Rehber</div>
+                    <div className="font-semibold text-gray-900">{t('tour-detail.guide')}</div>
                     <div className="text-gray-600">{tour.coordinator}</div>
                   </div>
                 </div>
@@ -202,7 +204,7 @@ export default function TourDetail({ project: tour }: TourDetailProps) {
                     <Users className="h-5 w-5 text-indigo-600" />
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-900">İş Ortağı</div>
+                    <div className="font-semibold text-gray-900">{t('tour-detail.partner')}</div>
                     <div className="text-gray-600">{tour.partner}</div>
                   </div>
                 </div>
@@ -211,16 +213,16 @@ export default function TourDetail({ project: tour }: TourDetailProps) {
               {/* CTA Box */}
               <div className="mt-8 p-6 bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl text-white">
                 <h4 className="text-lg font-bold text-white mb-4">
-                  Benzer Bir Tur mu İstiyorsunuz?
+                  {t('tour-detail.cta.title')}
                 </h4>
                 <p className="text-orange-100 mb-4 text-sm">
-                  Bu tura benzer bir deneyim için bizimle iletişime geçin.
+                  {t('tour-detail.cta.description')}
                 </p>
                 <Link
                   href="/iletisim"
                   className="inline-flex items-center gap-2 py-3 px-6 bg-white text-orange-600 font-medium rounded-xl hover:bg-orange-50 transition-all duration-300"
                 >
-                  <span>İletişime Geçin</span>
+                  <span>{t('tour-detail.cta.button')}</span>
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>
@@ -234,10 +236,10 @@ export default function TourDetail({ project: tour }: TourDetailProps) {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Diğer Turlarımız
+              {t('tour-detail.other-tours.title')}
             </h2>
             <p className="text-gray-600">
-              Portföyümüzdeki diğer popüler turları keşfedin.
+              {t('tour-detail.other-tours.description')}
             </p>
           </div>
 
@@ -246,7 +248,7 @@ export default function TourDetail({ project: tour }: TourDetailProps) {
               href="/turlar"
               className="inline-flex items-center gap-2 py-4 px-8 bg-orange-300 text-white font-medium rounded-xl hover:bg-orange-400 transition-all duration-300 hover:scale-105"
             >
-              <span>Tüm Turları Görüntüle</span>
+              <span>{t('tour-detail.other-tours.button')}</span>
               <ArrowRight className="h-5 w-5" />
             </Link>
           </div>

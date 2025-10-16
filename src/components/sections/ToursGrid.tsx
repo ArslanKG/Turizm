@@ -4,73 +4,74 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Calendar, MapPin, ArrowRight, Eye } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const tours = [
   {
     id: 1,
-    title: 'İstanbul Kültür Turu',
-    category: 'Kültür Turları',
+    title: 'tours-page.tour.istanbul-culture.title',
+    category: 'tours-page.tour.istanbul-culture.category',
     categoryId: 'cultural',
     slug: 'istanbul-kultur-turu',
-    location: 'İstanbul, Türkiye',
+    location: 'tours-page.tour.istanbul-culture.location',
     year: '2024',
     image: 'https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=800&h=600&fit=crop&crop=center&q=90',
-    description: 'Tarihi Sultanahmet\'ten modern Beyoğlu\'na kadar İstanbul\'un tüm güzelliklerini keşfediyoruz.'
+    description: 'tours-page.tour.istanbul-culture.description'
   },
   {
     id: 2,
-    title: 'Kapadokya Balon Turu',
-    category: 'Macera Turları',
+    title: 'tours-page.tour.cappadocia-balloon.title',
+    category: 'tours-page.tour.cappadocia-balloon.category',
     categoryId: 'adventure',
     slug: 'kapadokya-balon-turu',
-    location: 'Kapadokya, Nevşehir',
+    location: 'tours-page.tour.cappadocia-balloon.location',
     year: '2024',
     image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop&crop=center&q=90',
-    description: 'Kapadokya\'nın eşsiz peyzajını sıcak hava balon turu ile keşfetmenin unutulmaz deneyimi.'
+    description: 'tours-page.tour.cappadocia-balloon.description'
   },
   {
     id: 3,
-    title: 'Pamukkale Doğa Turu',
-    category: 'Doğa Turları',
+    title: 'tours-page.tour.pamukkale-nature.title',
+    category: 'tours-page.tour.pamukkale-nature.category',
     categoryId: 'nature',
     slug: 'pamukkale-doga-turu',
-    location: 'Pamukkale, Denizli',
+    location: 'tours-page.tour.pamukkale-nature.location',
     year: '2024',
     image: 'https://images.unsplash.com/photo-1605540436563-5bca919ae766?w=800&h=600&fit=crop&crop=center&q=90',
-    description: 'Beyaz travertenler ve antik Hierapolis kalıntıları ile doğa harikası Pamukkale keşfi.'
+    description: 'tours-page.tour.pamukkale-nature.description'
   },
   {
     id: 4,
-    title: 'Antalya Şehir Turu',
-    category: 'Şehir Turları',
+    title: 'tours-page.tour.antalya-city.title',
+    category: 'tours-page.tour.antalya-city.category',
     categoryId: 'city',
     slug: 'antalya-sehir-turu',
-    location: 'Antalya, Türkiye',
+    location: 'tours-page.tour.antalya-city.location',
     year: '2024',
     image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop&crop=center&q=90',
-    description: 'Akdeniz\'in turkuaz suları ve tarihi Kaleiçi ile Antalya\'nın eşsiz güzelliklerini yaşayın.'
+    description: 'tours-page.tour.antalya-city.description'
   },
   {
     id: 5,
-    title: 'Efes Antik Kenti Turu',
-    category: 'Kültür Turları',
+    title: 'tours-page.tour.ephesus-ancient.title',
+    category: 'tours-page.tour.ephesus-ancient.category',
     categoryId: 'cultural',
     slug: 'efes-antik-kenti-turu',
-    location: 'Efes, İzmir',
+    location: 'tours-page.tour.ephesus-ancient.location',
     year: '2024',
     image: 'https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?w=800&h=600&fit=crop&crop=center&q=90',
-    description: 'Antik dünyanın en iyi korunmuş şehirlerinden Efes\'in tarihî atmosferinde yolculuk.'
+    description: 'tours-page.tour.ephesus-ancient.description'
   },
   {
     id: 6,
-    title: 'Karadeniz Yaylalar Turu',
-    category: 'Doğa Turları',
+    title: 'tours-page.tour.blacksea-highlands.title',
+    category: 'tours-page.tour.blacksea-highlands.category',
     categoryId: 'nature',
     slug: 'karadeniz-yaylalar-turu',
-    location: 'Karadeniz Bölgesi',
+    location: 'tours-page.tour.blacksea-highlands.location',
     year: '2024',
     image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop&crop=center&q=90',
-    description: 'Karadeniz\'in yemyeşil yaylaları ve doğal güzellikleri ile huzurlu bir kaçış deneyimi.'
+    description: 'tours-page.tour.blacksea-highlands.description'
   }
 ];
 
@@ -79,6 +80,7 @@ interface ToursGridProps {
 }
 
 export default function ToursGrid({ activeCategory }: ToursGridProps) {
+  const { t } = useLanguage();
   const [hoveredTour, setHoveredTour] = useState<number | null>(null);
 
   // Filter tours based on active category
@@ -89,13 +91,13 @@ export default function ToursGrid({ activeCategory }: ToursGridProps) {
   // Get category label for display
   const getCategoryLabel = (categoryId: string) => {
     const categoryMap = {
-      'all': 'Tüm Turlar',
-      'cultural': 'Kültür Turları',
-      'nature': 'Doğa Turları',
-      'adventure': 'Macera Turları',
-      'city': 'Şehir Turları'
+      'all': t('tours-page.grid.category.all'),
+      'cultural': t('tours-page.grid.category.cultural'),
+      'nature': t('tours-page.grid.category.nature'),
+      'adventure': t('tours-page.grid.category.adventure'),
+      'city': t('tours-page.grid.category.city')
     };
-    return categoryMap[categoryId as keyof typeof categoryMap] || 'Turlar';
+    return categoryMap[categoryId as keyof typeof categoryMap] || t('tours-page.grid.category.tours');
   };
 
   return (
@@ -107,7 +109,7 @@ export default function ToursGrid({ activeCategory }: ToursGridProps) {
             {getCategoryLabel(activeCategory)}
           </h2>
           <p className="text-gray-600">
-            {filteredTours.length} tur bulundu
+            {filteredTours.length} {t('tours-page.grid.tours-found')}
           </p>
         </div>
 
@@ -136,7 +138,7 @@ export default function ToursGrid({ activeCategory }: ToursGridProps) {
                 <div className="absolute inset-0 flex items-end p-6">
                   <div className="text-white">
                     <div className="inline-block bg-orange-300/90 px-3 py-1 rounded-full text-sm font-medium mb-3">
-                      {tour.category}
+                      {t(tour.category)}
                     </div>
                   </div>
                 </div>
@@ -146,7 +148,7 @@ export default function ToursGrid({ activeCategory }: ToursGridProps) {
                   <div className="absolute inset-0 bg-blue-600/90 flex items-center justify-center animate-fade-in-up">
                     <div className="text-center text-white">
                       <Eye className="h-12 w-12 mx-auto mb-4" />
-                      <div className="font-medium">Turu İncele</div>
+                      <div className="font-medium">{t('tours-page.grid.view-tour')}</div>
                     </div>
                   </div>
                 )}
@@ -155,18 +157,18 @@ export default function ToursGrid({ activeCategory }: ToursGridProps) {
               {/* Content */}
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">
-                  {tour.title}
+                  {t(tour.title)}
                 </h3>
                 
                 <p className="text-gray-600 mb-4 leading-relaxed">
-                  {tour.description}
+                  {t(tour.description)}
                 </p>
 
                 {/* Meta Info */}
                 <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
                   <div className="flex items-center space-x-1">
                     <MapPin className="h-4 w-4" />
-                    <span>{tour.location}</span>
+                    <span>{t(tour.location)}</span>
                   </div>
                   <div className="flex items-center space-x-1">
                     <Calendar className="h-4 w-4" />
@@ -176,7 +178,7 @@ export default function ToursGrid({ activeCategory }: ToursGridProps) {
 
                 {/* CTA */}
                 <div className="inline-flex items-center text-blue-600 font-medium group-hover:text-blue-700 transition-colors duration-300">
-                  <span className="mr-2">Tur Detayları</span>
+                  <span className="mr-2">{t('tours-page.grid.tour-details')}</span>
                   <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
                 </div>
               </div>
@@ -187,7 +189,7 @@ export default function ToursGrid({ activeCategory }: ToursGridProps) {
         {/* Load More */}
         <div className="text-center mt-16">
           <button className="inline-flex items-center justify-center py-4 px-8 bg-blue-600 text-white font-medium rounded-xl hover:bg-blue-700 transition-all duration-300 hover:scale-105">
-            <span className="mr-2">Daha Fazla Tur</span>
+            <span className="mr-2">{t('tours-page.grid.load-more')}</span>
             <ArrowRight className="h-5 w-5" />
           </button>
         </div>

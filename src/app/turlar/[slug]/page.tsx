@@ -183,13 +183,37 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   
   if (!tour) {
     return {
-      title: 'Tur Bulunamadı | Parla Travel'
+      title: 'Tur Bulunamadı | Parla Travel',
+      alternates: {
+        languages: {
+          'tr': 'Tur Bulunamadı | Parla Travel',
+          'en': 'Tour Not Found | Parla Travel'
+        }
+      }
     };
   }
 
   return {
     title: `${tour.title} | Parla Travel`,
     description: tour.description,
+    alternates: {
+      languages: {
+        'tr': `${tour.title} | Parla Travel`,
+        'en': `${tour.title} | Parla Travel`
+      }
+    },
+    openGraph: {
+      title: `${tour.title} | Parla Travel`,
+      description: tour.description,
+      images: [tour.images[0]],
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${tour.title} | Parla Travel`,
+      description: tour.description,
+      images: [tour.images[0]],
+    }
   };
 }
 

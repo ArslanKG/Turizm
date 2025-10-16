@@ -1,8 +1,10 @@
 'use client';
 
 import Image from 'next/image';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function ServicesHero() {
+  const { t } = useLanguage();
   return (
     <section className="relative h-screen overflow-hidden">
       {/* Background Image */}
@@ -25,9 +27,9 @@ export default function ServicesHero() {
             {/* Breadcrumb */}
             <div className="mb-8">
               <div className="flex items-center space-x-2 text-sm text-white/70">
-                <span>Ana Sayfa</span>
+                <span>{t('nav.home')}</span>
                 <span>/</span>
-                <span className="text-orange-300">Hizmetlerimiz</span>
+                <span className="text-orange-300">{t('nav.services')}</span>
               </div>
             </div>
 
@@ -39,8 +41,8 @@ export default function ServicesHero() {
                   color: 'white',
                   fontWeight: '700'
                 }}>
-                <span className="block mb-2">Profesyonel</span>
-                <span className="block">Hizmetlerimiz</span>
+                <span className="block mb-2">{t('services-hero.professional')}</span>
+                <span className="block">{t('services-hero.services')}</span>
               </h1>
               
               {/* Accent Line */}
@@ -63,8 +65,8 @@ export default function ServicesHero() {
                    maxWidth: '70%'
                  }}
                  className="max-w-[70%]">
-                Kültür turlarından otel rezervasyonlarına, rehberlik hizmetlerinden özel turlara kadar geniş bir yelpazede hizmet sunuyoruz,
-                <strong className="font-medium text-orange-300"> unutulmaz deneyimler yaşatıyoruz</strong>.
+                {t('services-hero.description')}
+                <strong className="font-medium text-orange-300"> {t('services-hero.description.highlight')}</strong>.
               </p>
             </div>
 
@@ -72,15 +74,15 @@ export default function ServicesHero() {
             <div className="grid grid-cols-3 gap-8 max-w-2xl">
               <div className="text-center">
                 <div className="text-3xl font-bold text-white mb-2">15+</div>
-                <div className="text-sm text-white/70">Yıl Deneyim</div>
+                <div className="text-sm text-white/70">{t('stats.years')}</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-white mb-2">650+</div>
-                <div className="text-sm text-white/70">Düzenlenen Tur</div>
+                <div className="text-sm text-white/70">{t('services-hero.stats.tours')}</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-white mb-2">12000+</div>
-                <div className="text-sm text-white/70">Mutlu Ziyaretçi</div>
+                <div className="text-sm text-white/70">{t('services-hero.stats.visitors')}</div>
               </div>
             </div>
           </div>
@@ -90,7 +92,7 @@ export default function ServicesHero() {
       {/* Company Established Year */}
       <div className="absolute bottom-8 left-8 z-20">
         <div className="text-white/50 text-xs font-normal tracking-wider">
-          EST. 2008
+          {t('services-hero.established')}
         </div>
       </div>
     </section>

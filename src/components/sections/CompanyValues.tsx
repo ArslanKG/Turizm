@@ -1,68 +1,70 @@
 'use client';
 
 import { Shield, Heart, Lightbulb, Users, Leaf, Trophy } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface Value {
   id: string;
-  title: string;
-  description: string;
+  titleKey: string;
+  descriptionKey: string;
   icon: React.ComponentType<{ className?: string }>;
   color: string;
   bgColor: string;
 }
 
-const values: Value[] = [
-  {
-    id: 'quality',
-    title: 'Kaliteli Hizmet',
-    description: 'Her turumuzda en yüksek hizmet kalitesini sunar, misafirlerimizin memnuniyetini önceliğimiz yaparız.',
-    icon: Trophy,
-    color: 'text-yellow-600',
-    bgColor: 'bg-yellow-100'
-  },
-  {
-    id: 'trust',
-    title: 'Güvenilirlik',
-    description: 'Misafirlerimizle uzun vadeli güven ilişkileri kurar, söz verdiğimiz deneyimi eksiksiz sunarız.',
-    icon: Shield,
-    color: 'text-blue-600',
-    bgColor: 'bg-blue-100'
-  },
-  {
-    id: 'innovation',
-    title: 'Yenilikçilik',
-    description: 'Turizm trendlerini takip eder, teknoloji destekli çözümlerle seyahat deneyimlerini geliştiririz.',
-    icon: Lightbulb,
-    color: 'text-purple-600',
-    bgColor: 'bg-purple-100'
-  },
-  {
-    id: 'teamwork',
-    title: 'Takım Ruhu',
-    description: 'Profesyonel ekibimizle çalışır, birlikte unutulmaz anılar yaratırız.',
-    icon: Users,
-    color: 'text-green-600',
-    bgColor: 'bg-green-100'
-  },
-  {
-    id: 'sustainability',
-    title: 'Sürdürülebilir Turizm',
-    description: 'Çevre dostu turizm anlayışıyla yerel kültürleri korur, gelecek nesillere yaşanabilir bir dünya bırakırız.',
-    icon: Leaf,
-    color: 'text-emerald-600',
-    bgColor: 'bg-emerald-100'
-  },
-  {
-    id: 'passion',
-    title: 'Tutku ve Özveri',
-    description: 'Turizm işini tutkuyla yapar, her seyahatte kalplerimizi ortaya koyarız.',
-    icon: Heart,
-    color: 'text-red-600',
-    bgColor: 'bg-red-100'
-  }
-];
-
 export default function CompanyValues() {
+  const { t } = useLanguage();
+
+  const values: Value[] = [
+    {
+      id: 'quality',
+      titleKey: 'about.values.quality.title',
+      descriptionKey: 'about.values.quality.description',
+      icon: Trophy,
+      color: 'text-yellow-600',
+      bgColor: 'bg-yellow-100'
+    },
+    {
+      id: 'trust',
+      titleKey: 'about.values.trust.title',
+      descriptionKey: 'about.values.trust.description',
+      icon: Shield,
+      color: 'text-blue-600',
+      bgColor: 'bg-blue-100'
+    },
+    {
+      id: 'innovation',
+      titleKey: 'about.values.innovation.title',
+      descriptionKey: 'about.values.innovation.description',
+      icon: Lightbulb,
+      color: 'text-purple-600',
+      bgColor: 'bg-purple-100'
+    },
+    {
+      id: 'teamwork',
+      titleKey: 'about.values.teamwork.title',
+      descriptionKey: 'about.values.teamwork.description',
+      icon: Users,
+      color: 'text-green-600',
+      bgColor: 'bg-green-100'
+    },
+    {
+      id: 'sustainability',
+      titleKey: 'about.values.sustainability.title',
+      descriptionKey: 'about.values.sustainability.description',
+      icon: Leaf,
+      color: 'text-emerald-600',
+      bgColor: 'bg-emerald-100'
+    },
+    {
+      id: 'passion',
+      titleKey: 'about.values.passion.title',
+      descriptionKey: 'about.values.passion.description',
+      icon: Heart,
+      color: 'text-red-600',
+      bgColor: 'bg-red-100'
+    }
+  ];
   return (
     <section className="py-20 bg-gray-50 relative overflow-hidden">
       {/* Background Pattern */}
@@ -77,11 +79,10 @@ export default function CompanyValues() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6 font-display">
-            <span className="text-gradient">Değerlerimiz</span>
+            <span className="text-gradient">{t('about.values.title')}</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Parla Travel olarak her turumuzda rehber olan temel değerlerimiz,
-            bizi turizm sektöründe farklı kılan ve misafirlerimizin güvenini kazandıran ilkelerimizdir.
+            {t('about.values.description')}
           </p>
         </div>
 
@@ -104,11 +105,11 @@ export default function CompanyValues() {
 
                 {/* Content */}
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors duration-300">
-                  {value.title}
+                  {t(value.titleKey)}
                 </h3>
                 
                 <p className="text-gray-600 leading-relaxed">
-                  {value.description}
+                  {t(value.descriptionKey)}
                 </p>
 
                 {/* Hover Effect Lines */}
@@ -131,27 +132,25 @@ export default function CompanyValues() {
               
               <div className="relative z-10">
                 <h3 className="text-3xl font-bold text-gray-900 mb-6 font-display">
-                  Kurumsal Kültürümüz
+                  {t('about.values.culture.title')}
                 </h3>
                 <p className="text-lg text-gray-700 leading-relaxed mb-8">
-                  Parla Travel'da her birey değerlidir. Açık iletişim, sürekli öğrenme ve gelişim odaklı
-                  kültürümüzle ekip üyelerimizin potansiyelini en üst düzeyde ortaya çıkarırız.
-                  Birlikte büyür, birlikte başarırız.
+                  {t('about.values.culture.description')}
                 </p>
                 
                 {/* Mini Stats */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-8">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-blue-600 mb-1">45+</div>
-                    <div className="text-sm text-gray-600">Ekip Üyesi</div>
+                    <div className="text-2xl font-bold text-blue-600 mb-1">{t('about.values.culture.stat1.value')}</div>
+                    <div className="text-sm text-gray-600">{t('about.values.culture.stat1.label')}</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-green-600 mb-1">%98</div>
-                    <div className="text-sm text-gray-600">Misafir Memnuniyeti</div>
+                    <div className="text-2xl font-bold text-green-600 mb-1">{t('about.values.culture.stat2.value')}</div>
+                    <div className="text-sm text-gray-600">{t('about.values.culture.stat2.label')}</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-purple-600 mb-1">7.5</div>
-                    <div className="text-sm text-gray-600">Ortalama Çalışma Süresi (Yıl)</div>
+                    <div className="text-2xl font-bold text-purple-600 mb-1">{t('about.values.culture.stat3.value')}</div>
+                    <div className="text-sm text-gray-600">{t('about.values.culture.stat3.label')}</div>
                   </div>
                 </div>
               </div>

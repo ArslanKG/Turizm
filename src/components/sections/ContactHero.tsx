@@ -1,8 +1,10 @@
 'use client';
 
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function ContactHero() {
+  const { t } = useLanguage();
   return (
     <section className="relative py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 overflow-hidden">
       {/* Background Pattern */}
@@ -18,27 +20,27 @@ export default function ContactHero() {
           <div className="space-y-8">
             <div className="space-y-6">
               <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight">
-                İletişime
-                <span className="block text-orange-300">Geçin</span>
+                {t('contact.hero.title.main')}
+                <span className="block text-orange-300">{t('contact.hero.title.highlight')}</span>
               </h1>
               
               <div className="w-24 h-1 bg-white"></div>
               
               <p className="text-xl text-gray-300 leading-relaxed">
-                Seyahat planlarınız için bilgi almak, rezervasyon yapmak veya özel tur talepleri için
-                <strong className="text-orange-300"> bizimle iletişime geçin</strong>.
+                {t('contact.hero.description')}
+                <strong className="text-orange-300">{t('contact.hero.description.highlight')}</strong>.
               </p>
             </div>
 
             {/* Quick Contact Info */}
             <div className="grid grid-cols-2 gap-6">
               <div className="text-center">
-                <div className="text-3xl font-bold text-orange-300 mb-2">24/7</div>
-                <div className="text-gray-400 text-sm">Rezervasyon Hizmetleri</div>
+                <div className="text-3xl font-bold text-orange-300 mb-2">{t('contact.hero.stats.service.value')}</div>
+                <div className="text-gray-400 text-sm">{t('contact.hero.stats.service.label')}</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-orange-300 mb-2">&lt;1</div>
-                <div className="text-gray-400 text-sm">Saat İçinde Yanıt</div>
+                <div className="text-3xl font-bold text-orange-300 mb-2">{t('contact.hero.stats.response.value')}</div>
+                <div className="text-gray-400 text-sm">{t('contact.hero.stats.response.label')}</div>
               </div>
             </div>
           </div>
@@ -52,9 +54,9 @@ export default function ContactHero() {
                   <Phone className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-white">Telefon</h3>
-                  <p className="text-gray-300">+90 212 555 0123</p>
-                  <p className="text-sm text-gray-400">Pazartesi - Cuma: 09:00 - 18:00</p>
+                  <h3 className="text-lg font-semibold text-white">{t('contact.info.phone.title')}</h3>
+                  <p className="text-gray-300">{t('contact.info.phone.number')}</p>
+                  <p className="text-sm text-gray-400">{t('contact.info.phone.hours')}</p>
                 </div>
               </div>
             </div>
@@ -66,9 +68,9 @@ export default function ContactHero() {
                   <Mail className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-white">E-posta</h3>
-                  <p className="text-gray-300">info@parlatravel.com</p>
-                  <p className="text-sm text-gray-400">7/24 e-posta desteği</p>
+                  <h3 className="text-lg font-semibold text-white">{t('contact.info.email.title')}</h3>
+                  <p className="text-gray-300">{t('contact.info.email.address')}</p>
+                  <p className="text-sm text-gray-400">{t('contact.info.email.support')}</p>
                 </div>
               </div>
             </div>
@@ -80,9 +82,9 @@ export default function ContactHero() {
                   <MapPin className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-white">Adres</h3>
-                  <p className="text-gray-300">Maslak Mahallesi, Büyükdere Cad.</p>
-                  <p className="text-gray-300">No:123 Sarıyer/İstanbul</p>
+                  <h3 className="text-lg font-semibold text-white">{t('contact.info.address.title')}</h3>
+                  <p className="text-gray-300">{t('contact.info.address.street')}</p>
+                  <p className="text-gray-300">{t('contact.info.address.details')}</p>
                 </div>
               </div>
             </div>
@@ -94,9 +96,9 @@ export default function ContactHero() {
                   <Clock className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-white">Çalışma Saatleri</h3>
-                  <p className="text-gray-300">Pazartesi - Cuma: 09:00 - 18:00</p>
-                  <p className="text-gray-300">Cumartesi: 09:00 - 14:00</p>
+                  <h3 className="text-lg font-semibold text-white">{t('contact.info.hours.title')}</h3>
+                  <p className="text-gray-300">{t('contact.info.hours.weekdays')}</p>
+                  <p className="text-gray-300">{t('contact.info.hours.saturday')}</p>
                 </div>
               </div>
             </div>

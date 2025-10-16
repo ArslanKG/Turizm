@@ -4,62 +4,58 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ChevronLeft, ChevronRight, Play, ArrowRight, ChevronDown } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface HeroSlide {
   id: string;
-  title: string;
-  subtitle: string;
-  description: string;
+  titleKey: string;
+  descriptionKey: string;
   image: string;
   cta: {
-    primary: string;
-    secondary: string;
+    primaryKey: string;
+    secondaryKey: string;
   };
 }
 
 const heroSlides: HeroSlide[] = [
   {
     id: '1',
-    title: 'Eşsiz Türkiye Turları',
-    subtitle: '',
-    description: 'Türkiye\'nin zengin kültürel mirasını keşfedin, unutulmaz anılar biriktirin.',
+    titleKey: 'hero.slide1.title',
+    descriptionKey: 'hero.slide1.description',
     image: 'https://images.unsplash.com/photo-1527838832700-5059252407fa?w=1920&h=1080&fit=crop&crop=center&q=90',
     cta: {
-      primary: 'Turlarımız',
-      secondary: 'Hizmetlerimiz'
+      primaryKey: 'hero.cta.tours',
+      secondaryKey: 'hero.cta.services'
     }
   },
   {
     id: '2',
-    title: 'Lüks Otel Rezervasyonları',
-    subtitle: '',
-    description: 'Konforlu konaklama seçenekleri ile tatil deneyiminizi mükemmel hale getiriyoruz.',
+    titleKey: 'hero.slide2.title',
+    descriptionKey: 'hero.slide2.description',
     image: 'https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=1920&h=1080&fit=crop&crop=center&q=90',
     cta: {
-      primary: 'Oteller',
-      secondary: 'Hizmetlerimiz'
+      primaryKey: 'hero.cta.hotels',
+      secondaryKey: 'hero.cta.services'
     }
   },
   {
     id: '3',
-    title: 'Kültür Gezileri ve Rehberlik',
-    subtitle: '',
-    description: 'Uzman rehberlerimiz eşliğinde tarihi ve kültürel zenginlikleri keşfedin.',
+    titleKey: 'hero.slide3.title',
+    descriptionKey: 'hero.slide3.description',
     image: 'https://images.unsplash.com/photo-1527838832700-5059252407fa?w=1920&h=1080&fit=crop&crop=center&q=90',
     cta: {
-      primary: 'Kültür Turları',
-      secondary: 'Hizmetlerimiz'
+      primaryKey: 'hero.cta.culture',
+      secondaryKey: 'hero.cta.services'
     }
   },
   {
     id: '4',
-    title: 'Özel Tatil Paketleri',
-    subtitle: '',
-    description: 'Size özel hazırladığımız tatil paketleri ile hayalinizdeki seyahati yaşayın.',
+    titleKey: 'hero.slide4.title',
+    descriptionKey: 'hero.slide4.description',
     image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1920&h=1080&fit=crop&crop=center&q=90',
     cta: {
-      primary: 'Paketler',
-      secondary: 'Hizmetlerimiz'
+      primaryKey: 'hero.cta.packages',
+      secondaryKey: 'hero.cta.services'
     }
   }
 ];
@@ -67,6 +63,7 @@ const heroSlides: HeroSlide[] = [
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlay, setIsAutoPlay] = useState(true);
+  const { t } = useLanguage();
 
   useEffect(() => {
     if (!isAutoPlay) return;
@@ -109,7 +106,7 @@ export default function Hero() {
           >
             <Image
               src={slide.image}
-              alt={slide.title}
+              alt={t(slide.titleKey)}
               fill
               className="object-cover"
               priority={index === 0}
@@ -156,7 +153,7 @@ export default function Hero() {
                           letterSpacing: '1.2px',
                           fontWeight: '400'
                         }}>
-                    {currentSlideData.title.split(' ').slice(0, 2).join(' ')}
+                    {t(currentSlideData.titleKey).split(' ').slice(0, 2).join(' ')}
                   </span>
                   <span className="block"
                         style={{
@@ -164,7 +161,7 @@ export default function Hero() {
                           color: 'white',
                           fontWeight: '700'
                         }}>
-                    {currentSlideData.title.split(' ').slice(2).join(' ')}
+                    {t(currentSlideData.titleKey).split(' ').slice(2).join(' ')}
                   </span>
                 </h1>
               </div>
@@ -191,37 +188,29 @@ export default function Hero() {
                    }}
                    className="w-full md:max-w-[50%] max-w-[80%]">
                   {(() => {
-                    if (currentSlideData.description.includes('unutulmaz anılar biriktirin')) {
-                      return (
-                        <>
-                          {currentSlideData.description.split(', unutulmaz anılar biriktirin')[0]},
-                          <strong className="font-medium text-orange-300"> unutulmaz anılar biriktirin</strong>.
-                        </>
+                    const description = t(currentSlideData.descriptionKey);
+                    const highlights = [
+                      t('hero.highlight.memories'),
+                      t('hero.highlight.perfect'),
+                      t('hero.highlight.discover'),
+                      t('hero.highlight.travel')
+                    ];
+                    
+                    // Find which highlight phrase exists in the description
+                    const foundHighlight = highlights.find(highlight =>
+                      description.toLowerCase().includes(highlight.toLowerCase())
+                    );
+                    
+                    if (foundHighlight) {
+                      const parts = description.split(new RegExp(`(${foundHighlight})`, 'gi'));
+                      return parts.map((part, index) =>
+                        part.toLowerCase() === foundHighlight.toLowerCase()
+                          ? <strong key={index} className="font-medium text-orange-300">{part}</strong>
+                          : part
                       );
-                    } else if (currentSlideData.description.includes('mükemmel hale getiriyoruz')) {
-                      return (
-                        <>
-                          {currentSlideData.description.split(' mükemmel hale getiriyoruz')[0]},
-                          <strong className="font-medium text-orange-300"> mükemmel hale getiriyoruz</strong>.
-                        </>
-                      );
-                    } else if (currentSlideData.description.includes('zenginlikleri keşfedin')) {
-                      return (
-                        <>
-                          {currentSlideData.description.split(' zenginlikleri keşfedin')[0]},
-                          <strong className="font-medium text-orange-300"> zenginlikleri keşfedin</strong>.
-                        </>
-                      );
-                    } else if (currentSlideData.description.includes('seyahati yaşayın')) {
-                      return (
-                        <>
-                          {currentSlideData.description.split(' seyahati yaşayın')[0]},
-                          <strong className="font-medium text-orange-300"> seyahati yaşayın</strong>.
-                        </>
-                      );
-                    } else {
-                      return currentSlideData.description;
                     }
+                    
+                    return description;
                   })()}
                 </p>
               </div>
@@ -250,15 +239,15 @@ export default function Hero() {
                   }}
                 >
                   <span style={{ marginRight: '6px' }}>
-                    {currentSlideData.cta.primary}
+                    {t(currentSlideData.cta.primaryKey)}
                   </span>
                   <ArrowRight style={{ width: '16px', height: '16px', color: 'white' }} />
                 </Link>
                 
                 <button
                   onClick={() => {
-                    // Video modal açılacak
-                    console.log('Tanıtım videosu açılacak');
+                    // Video modal will open
+                    console.log(t('hero.video.coming-soon'));
                   }}
                   className="group inline-flex items-center justify-center transition-all duration-200 ease-out whitespace-nowrap"
                   style={{
@@ -286,7 +275,7 @@ export default function Hero() {
                     color: 'white'
                   }} />
                   <span>
-                    Keşif Videosu
+                    {t('hero.video.title')}
                   </span>
                 </button>
               </div>
@@ -378,7 +367,7 @@ export default function Hero() {
       >
         <div className="flex flex-col items-center text-white transition-all duration-300"
              style={{ color: 'rgba(255, 255, 255, 0.7)' }}>
-          <span className="mb-2 text-sm font-normal">Kaydır</span>
+          <span className="mb-2 text-sm font-normal">{t('hero.scroll.text')}</span>
           <ChevronDown className="animate-bounce" style={{ width: '20px', height: '20px' }} />
         </div>
       </div>

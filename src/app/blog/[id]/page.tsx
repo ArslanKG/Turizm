@@ -1,5 +1,7 @@
 import { notFound } from 'next/navigation';
+import { headers } from 'next/headers';
 import BlogDetail from '@/components/sections/BlogDetail';
+import BlogNewsletter from '@/components/sections/BlogNewsletter';
 
 // Blog verilerini simüle ediyoruz
 const blogPosts = {
@@ -57,19 +59,87 @@ const blogPosts = {
   // Diğer blog yazıları için de benzer yapı...
 };
 
+// Basit dil algılama fonksiyonu
+async function getLanguageFromHeaders() {
+  const headersList = await headers();
+  const acceptLanguage = headersList.get('accept-language') || '';
+  const languageFromCookie = headersList.get('cookie')
+    ?.split(';')
+    .find(c => c.trim().startsWith('language='))
+    ?.split('=')[1];
+  
+  if (languageFromCookie && (languageFromCookie === 'tr' || languageFromCookie === 'en')) {
+    return languageFromCookie as 'tr' | 'en';
+  }
+  
+  // Accept-Language header'dan dil tespiti
+  if (acceptLanguage.includes('tr') || acceptLanguage.includes('tr-TR')) {
+    return 'tr' as const;
+  }
+  if (acceptLanguage.includes('en') || acceptLanguage.includes('en-US') || acceptLanguage.includes('en-GB')) {
+    return 'en' as const;
+  }
+  
+  return 'tr' as const; // Varsayılan dil
+}
+
+// Çeviri metinleri
+const metaTranslations = {
+  tr: {
+    'blog-detail.meta.not-found': 'Blog Yazısı Bulunamadı | Parla Travel',
+    'blog-detail.meta.blog-suffix': '| Parla Travel Blog'
+  },
+  en: {
+    'blog-detail.meta.not-found': 'Blog Post Not Found | Parla Travel',
+    'blog-detail.meta.blog-suffix': '| Parla Travel Blog'
+  }
+};
+
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const post = blogPosts[id as keyof typeof blogPosts];
+  const language = await getLanguageFromHeaders();
   
   if (!post) {
     return {
-      title: 'Blog Yazısı Bulunamadı | Parla Travel'
+      title: metaTranslations[language]['blog-detail.meta.not-found'],
+      description: language === 'en'
+        ? 'The requested blog post could not be found.'
+        : 'Aradığınız blog yazısı bulunamadı.'
     };
   }
 
   return {
-    title: `${post.title} | Parla Travel Blog`,
+    title: `${post.title} ${metaTranslations[language]['blog-detail.meta.blog-suffix']}`,
     description: post.excerpt,
+    openGraph: {
+      title: `${post.title} ${metaTranslations[language]['blog-detail.meta.blog-suffix']}`,
+      description: post.excerpt,
+      type: 'article',
+      locale: language === 'tr' ? 'tr_TR' : 'en_US',
+      images: [
+        {
+          url: post.image,
+          width: 800,
+          height: 600,
+          alt: post.title,
+        }
+      ],
+      authors: [post.author],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${post.title} ${metaTranslations[language]['blog-detail.meta.blog-suffix']}`,
+      description: post.excerpt,
+      images: [post.image],
+    },
+    alternates: {
+      canonical: `/blog/${id}`,
+      languages: {
+        'tr': `/tr/blog/${id}`,
+        'en': `/en/blog/${id}`,
+      },
+    },
   };
 }
 
@@ -81,7 +151,12 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ id:
     notFound();
   }
 
-  return <BlogDetail post={post} />;
+  return (
+    <>
+      <BlogDetail post={post} />
+      <BlogNewsletter />
+    </>
+  );
 }
 
 export async function generateStaticParams() {

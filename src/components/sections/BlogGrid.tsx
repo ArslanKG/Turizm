@@ -3,103 +3,106 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Calendar, User, Eye, ArrowRight, Clock } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface BlogGridProps {
   activeCategory: string;
 }
 
-// Category mapping function
-const getCategoryId = (category: string): string => {
-  const categoryMap: { [key: string]: string } = {
-    'Seyahat Rehberi': 'travel-guides',
-    'Destinasyon': 'destinations',
-    'Şehir Turları': 'destinations',
-    'Konaklama': 'accommodation',
-    'Gastronomi': 'gastronomy',
-    'Mavi Tur': 'destinations',
-    'Ekip & Kariyer': 'team',
-    'Seyahat Fotoğrafçılığı': 'photography',
-    'Ödüller & Başarılar': 'awards'
-  };
-  return categoryMap[category] || 'destinations';
-};
-
-const blogPosts = [
-  {
-    id: 1,
-    title: '2024 Seyahat Trendleri ve Destinasyon Rehberi',
-    excerpt: '2024 yılının en popüler destinasyonları ve seyahat trendleri hakkında uzman rehberlerimizin detaylı analizi ve önerileri.',
-    category: 'Seyahat Rehberi',
-    author: 'Mehmet Seyhan',
-    date: '15 Mayıs 2024',
-    readTime: '8 dk',
-    views: '1.2K',
-    featured: true,
-    image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&h=600&fit=crop'
-  },
-  {
-    id: 2,
-    title: 'Kapadokya Gezi Rehberi: Balon Turu ve Gizli Güzellikler',
-    excerpt: 'Kapadokya\'nın eşsiz güzelliklerini keşfedin. Balon turları, yeraltı şehirleri ve yerel lezzetler için kapsamlı rehber.',
-    category: 'Destinasyon',
-    author: 'Ayşe Kaya',
-    date: '12 Mayıs 2024',
-    readTime: '6 dk',
-    views: '890',
-    featured: false,
-    image: 'https://images.unsplash.com/photo-1539650116574-75c0c6d73c6e?w=800&h=600&fit=crop'
-  },
-  {
-    id: 3,
-    title: 'İstanbul\'un Saklı Cenneti: Boğaziçi Kıyıları Turu',
-    excerpt: 'Boğaziçi\'nin en güzel noktalarını keşfedin. Tarihi yapılar, yerel kafeler ve nefes kesen manzaralar.',
-    category: 'Şehir Turları',
-    author: 'Can Demir',
-    date: '10 Mayıs 2024',
-    readTime: '12 dk',
-    views: '1.5K',
-    featured: false,
-    image: 'https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=800&h=600&fit=crop'
-  },
-  {
-    id: 4,
-    title: 'Antalya\'da Lüks Otel Deneyimi: En İyi Tatil Köyleri',
-    excerpt: 'Antalya\'nın en prestijli otellerinde unutulmaz bir tatil için rehber. Lüks konaklama ve aktivite önerileri.',
-    category: 'Konaklama',
-    author: 'Zeynep Özkan',
-    date: '8 Mayıs 2024',
-    readTime: '7 dk',
-    views: '740',
-    featured: false,
-    image: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&h=600&fit=crop'
-  },
-  {
-    id: 5,
-    title: 'Türk Mutfağı Keşfi: Yerel Lezzetler Turu',
-    excerpt: 'Türkiye\'nin farklı bölgelerindeki otantik lezzetleri keşfedin. Yerel restoranlar ve sokak yemekleri rehberi.',
-    category: 'Gastronomi',
-    author: 'Ali Şahin',
-    date: '5 Mayıs 2024',
-    readTime: '9 dk',
-    views: '920',
-    featured: false,
-    image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=800&h=600&fit=crop'
-  },
-  {
-    id: 6,
-    title: 'Ege Sahillerinde Tekne Turu: Mavi Yolculuk Rehberi',
-    excerpt: 'Ege\'nin berrak sularında unutulmaz bir tekne turu deneyimi. En güzel koylar ve antik şehirler.',
-    category: 'Mavi Tur',
-    author: 'Berat Toprak',
-    date: '3 Mayıs 2024',
-    readTime: '11 dk',
-    views: '1.1K',
-    featured: false,
-    image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&h=600&fit=crop'
-  }
-];
-
 export default function BlogGrid({ activeCategory }: BlogGridProps) {
+  const { t } = useLanguage();
+
+  // Category mapping function
+  const getCategoryId = (category: string): string => {
+    const categoryMap: { [key: string]: string } = {
+      [t('blog.posts.category.travel-guide')]: 'travel-guides',
+      [t('blog.posts.category.destination')]: 'destinations',
+      [t('blog.posts.category.city-tours')]: 'destinations',
+      [t('blog.posts.category.accommodation')]: 'accommodation',
+      [t('blog.posts.category.gastronomy')]: 'gastronomy',
+      [t('blog.posts.category.blue-tour')]: 'destinations',
+      [t('blog.posts.category.team')]: 'team',
+      [t('blog.posts.category.photography')]: 'photography',
+      [t('blog.posts.category.awards')]: 'awards'
+    };
+    return categoryMap[category] || 'destinations';
+  };
+
+  const blogPosts = [
+    {
+      id: 1,
+      title: t('blog.posts.post1.title'),
+      excerpt: t('blog.posts.post1.excerpt'),
+      category: t('blog.posts.category.travel-guide'),
+      author: t('blog.posts.post1.author'),
+      date: t('blog.posts.post1.date'),
+      readTime: t('blog.posts.post1.readTime'),
+      views: t('blog.posts.post1.views'),
+      featured: true,
+      image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&h=600&fit=crop'
+    },
+    {
+      id: 2,
+      title: t('blog.posts.post2.title'),
+      excerpt: t('blog.posts.post2.excerpt'),
+      category: t('blog.posts.category.destination'),
+      author: t('blog.posts.post2.author'),
+      date: t('blog.posts.post2.date'),
+      readTime: t('blog.posts.post2.readTime'),
+      views: t('blog.posts.post2.views'),
+      featured: false,
+      image: 'https://images.unsplash.com/photo-1539650116574-75c0c6d73c6e?w=800&h=600&fit=crop'
+    },
+    {
+      id: 3,
+      title: t('blog.posts.post3.title'),
+      excerpt: t('blog.posts.post3.excerpt'),
+      category: t('blog.posts.category.city-tours'),
+      author: t('blog.posts.post3.author'),
+      date: t('blog.posts.post3.date'),
+      readTime: t('blog.posts.post3.readTime'),
+      views: t('blog.posts.post3.views'),
+      featured: false,
+      image: 'https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=800&h=600&fit=crop'
+    },
+    {
+      id: 4,
+      title: t('blog.posts.post4.title'),
+      excerpt: t('blog.posts.post4.excerpt'),
+      category: t('blog.posts.category.accommodation'),
+      author: t('blog.posts.post4.author'),
+      date: t('blog.posts.post4.date'),
+      readTime: t('blog.posts.post4.readTime'),
+      views: t('blog.posts.post4.views'),
+      featured: false,
+      image: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&h=600&fit=crop'
+    },
+    {
+      id: 5,
+      title: t('blog.posts.post5.title'),
+      excerpt: t('blog.posts.post5.excerpt'),
+      category: t('blog.posts.category.gastronomy'),
+      author: t('blog.posts.post5.author'),
+      date: t('blog.posts.post5.date'),
+      readTime: t('blog.posts.post5.readTime'),
+      views: t('blog.posts.post5.views'),
+      featured: false,
+      image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=800&h=600&fit=crop'
+    },
+    {
+      id: 6,
+      title: t('blog.posts.post6.title'),
+      excerpt: t('blog.posts.post6.excerpt'),
+      category: t('blog.posts.category.blue-tour'),
+      author: t('blog.posts.post6.author'),
+      date: t('blog.posts.post6.date'),
+      readTime: t('blog.posts.post6.readTime'),
+      views: t('blog.posts.post6.views'),
+      featured: false,
+      image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&h=600&fit=crop'
+    }
+  ];
+
   // Filter blog posts based on active category
   const filteredPosts = activeCategory === 'all'
     ? blogPosts
@@ -109,15 +112,15 @@ export default function BlogGrid({ activeCategory }: BlogGridProps) {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            {activeCategory === 'all' ? 'Son Blog Yazıları' : 'Filtrelenmiş Yazılar'}
+            {activeCategory === 'all' ? t('blog.grid.title.all') : t('blog.grid.title.filtered')}
           </h2>
           
           <div className="w-24 h-1 bg-orange-300 mx-auto mb-6"></div>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             {filteredPosts.length === 0
-              ? 'Bu kategoride henüz yazı bulunmuyor.'
-              : `${filteredPosts.length} yazı bulundu.`}
+              ? t('blog.grid.no-posts')
+              : `${filteredPosts.length} ${t('blog.grid.posts-found')}.`}
           </p>
         </div>
 
@@ -133,7 +136,7 @@ export default function BlogGrid({ activeCategory }: BlogGridProps) {
               {post.featured && (
                 <div className="absolute top-4 left-4 z-10">
                   <span className="inline-block px-3 py-1 bg-orange-300 text-white text-sm font-medium rounded-lg">
-                    Öne Çıkan
+                    {t('blog.grid.featured')}
                   </span>
                 </div>
               )}
@@ -194,7 +197,7 @@ export default function BlogGrid({ activeCategory }: BlogGridProps) {
                   {/* Read More Button */}
                   <div className="pt-2">
                     <Link href={`/blog/${post.id}`} className="inline-flex items-center gap-2 text-orange-600 font-medium hover:text-orange-700 transition-colors duration-300 group">
-                      <span>Devamını Oku</span>
+                      <span>{t('blog.grid.read-more')}</span>
                       <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
                     </Link>
                   </div>
@@ -207,7 +210,7 @@ export default function BlogGrid({ activeCategory }: BlogGridProps) {
         {/* Load More Button */}
         <div className="text-center mt-12">
           <Link href="/blog" className="inline-flex items-center justify-center py-4 px-8 bg-orange-300 text-white font-medium rounded-xl hover:bg-orange-400 transition-all duration-300 hover:scale-105 shadow-lg">
-            <span className="mr-2">Daha Fazla Yükle</span>
+            <span className="mr-2">{t('blog.grid.load-more')}</span>
             <ArrowRight className="h-5 w-5" />
           </Link>
         </div>

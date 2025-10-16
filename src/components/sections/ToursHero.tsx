@@ -1,8 +1,10 @@
 'use client';
 
 import Image from 'next/image';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function ToursHero() {
+  const { t } = useLanguage();
   return (
     <section className="relative h-screen overflow-hidden">
       {/* Background Image */}
@@ -25,9 +27,9 @@ export default function ToursHero() {
             {/* Breadcrumb */}
             <div className="mb-8">
               <div className="flex items-center space-x-2 text-sm text-white/70">
-                <span>Ana Sayfa</span>
+                <span>{t('tours-page.hero.breadcrumb.home')}</span>
                 <span>/</span>
-                <span className="text-orange-300">Turlarımız</span>
+                <span className="text-orange-300">{t('tours-page.hero.breadcrumb.tours')}</span>
               </div>
             </div>
 
@@ -39,9 +41,9 @@ export default function ToursHero() {
                   color: 'white',
                   fontWeight: '700'
                 }}>
-                <span className="block mb-2">Popüler</span>
-                <span className="block">Turlarımız</span>
-              </h1>
+                <span className="block mb-2">{t('tours-page.hero.title.popular')}</span>
+                <span className="block">{t('tours-page.hero.title.tours')}</span>
+               </h1>
               
               {/* Accent Line */}
               <div style={{
@@ -63,9 +65,9 @@ export default function ToursHero() {
                    maxWidth: '70%'
                  }}
                  className="max-w-[70%]">
-                650'den fazla başarılı tur deneyimimizle kültür gezilerinden doğa turlarına kadar geniş bir portföy sunuyoruz,
-                <strong className="font-medium text-orange-300"> unutulmaz anılar yaratıyoruz</strong>.
-              </p>
+               {t('tours-page.hero.description.main')}
+               <strong className="font-medium text-orange-300"> {t('tours-page.hero.description.highlight')}</strong>.
+             </p>
             </div>
 
             {/* Tour Categories - Ortalama sorunu düzeltildi */}
@@ -74,22 +76,22 @@ export default function ToursHero() {
                 <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-3">
                   <span className="text-2xl">🏢</span>
                 </div>
-                <div className="text-white font-medium mb-1">Kültür Turları</div>
-                <div className="text-sm text-white/70">220+ Tur</div>
+                <div className="text-white font-medium mb-1">{t('tours-page.hero.category.cultural-tours')}</div>
+                <div className="text-sm text-white/70">{t('tours-page.hero.category.cultural-tours.count')}</div>
               </div>
               <div className="text-center">
                 <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-3">
                   <span className="text-2xl">🧭</span>
                 </div>
-                <div className="text-white font-medium mb-1">Rehberlik</div>
-                <div className="text-sm text-white/70">150+ Tur</div>
+                <div className="text-white font-medium mb-1">{t('tours-page.hero.category.guide-services')}</div>
+                <div className="text-sm text-white/70">{t('tours-page.hero.category.guide-services.count')}</div>
               </div>
               <div className="text-center">
                 <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-3">
                   <span className="text-2xl">✈️</span>
                 </div>
-                <div className="text-white font-medium mb-1">Özel Turlar</div>
-                <div className="text-sm text-white/70">100+ Tur</div>
+                <div className="text-white font-medium mb-1">{t('tours-page.hero.category.special-tours')}</div>
+                <div className="text-sm text-white/70">{t('tours-page.hero.category.special-tours.count')}</div>
               </div>
             </div>
           </div>
@@ -99,7 +101,7 @@ export default function ToursHero() {
       {/* Company Established Year */}
       <div className="absolute bottom-8 left-8 z-20">
         <div className="text-white/50 text-xs font-normal tracking-wider">
-          EST. 2008
+          {t('tours-page.hero.established')}
         </div>
       </div>
     </section>

@@ -2,11 +2,12 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { Building, Users, Award, MapPin } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface Stat {
   id: string;
   value: number;
-  label: string;
+  labelKey: string;
   suffix: string;
   icon: React.ComponentType<{ className?: string }>;
   color: string;
@@ -17,7 +18,7 @@ const stats: Stat[] = [
   {
     id: '1',
     value: 220,
-    label: 'Kültür Turları',
+    labelKey: 'about.stats.cultural.label',
     suffix: '+',
     icon: Building,
     color: 'text-blue-600',
@@ -26,7 +27,7 @@ const stats: Stat[] = [
   {
     id: '2',
     value: 180,
-    label: 'Özel Turlar',
+    labelKey: 'about.stats.special.label',
     suffix: '+',
     icon: Award,
     color: 'text-green-600',
@@ -35,7 +36,7 @@ const stats: Stat[] = [
   {
     id: '3',
     value: 150,
-    label: 'Rehberlik',
+    labelKey: 'about.stats.guide.label',
     suffix: '+',
     icon: Users,
     color: 'text-purple-600',
@@ -82,6 +83,7 @@ function useCountUp(target: number, duration: number = 2000) {
 
 function StatCard({ stat, inView }: { stat: Stat; inView: boolean }) {
   const { count, startAnimation } = useCountUp(stat.value);
+  const { t } = useLanguage();
 
   useEffect(() => {
     if (inView) {
@@ -114,8 +116,8 @@ function StatCard({ stat, inView }: { stat: Stat; inView: boolean }) {
       <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-3">
         <span className="text-2xl">{stat.emoji}</span>
       </div>
-      <div className="text-white font-medium mb-1">{stat.label}</div>
-      <div className="text-sm text-white/70">{formatNumber(count)}{getFormattedSuffix(stat.value, stat.suffix)} Tur</div>
+      <div className="text-white font-medium mb-1">{t(stat.labelKey)}</div>
+      <div className="text-sm text-white/70">{formatNumber(count)}{getFormattedSuffix(stat.value, stat.suffix)} {t('about.stats.suffix.tours')}</div>
     </div>
   );
 }
@@ -123,6 +125,7 @@ function StatCard({ stat, inView }: { stat: Stat; inView: boolean }) {
 export default function CompanyStats() {
   const [inView, setInView] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -150,7 +153,7 @@ export default function CompanyStats() {
   }, [inView]);
 
   return (
-    <section 
+    <section
       ref={sectionRef}
       className="py-20 bg-gradient-to-r from-blue-900 via-blue-800 to-indigo-900 relative overflow-hidden"
     >
@@ -166,11 +169,10 @@ export default function CompanyStats() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-white sm:text-5xl font-display mb-4">
-            Sayılarla <span className="text-blue-300">Parla Travel</span>
+            {t('about.stats.title.highlight')} <span className="text-blue-300">{t('about.stats.title.main')}</span>
           </h2>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-            15+ yıllık deneyimimiz ve başarılarımızla Türkiye turizminde
-            öncülük eden güçlü bir ekibiz.
+            {t('about.stats.description')}
           </p>
         </div>
 
@@ -185,9 +187,7 @@ export default function CompanyStats() {
         <div className="mt-16 text-center">
           <div className="mx-auto max-w-4xl">
             <p className="text-lg text-blue-100 leading-relaxed">
-              Her turumuzda kaliteyi, güveni ve profesyonelliği bir araya getirerek, 
-              müşterilerimizin seyahat hayallerini gerçeğe dönüştürüyor, 
-              unutulmaz anılar yaratıyoruz.
+              {t('about.stats.conclusion')}
             </p>
           </div>
         </div>
