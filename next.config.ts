@@ -1,8 +1,16 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Image optimization
+  // Output standalone for Plesk hosting
+  output: 'standalone',
+  
+  // Trailing slash configuration
+  trailingSlash: false,
+
+  // Image optimization - unoptimized for Plesk
   images: {
+    // Plesk hosting için image optimization devre dışı
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
@@ -31,6 +39,15 @@ const nextConfig: NextConfig = {
   // Performance optimizations
   compress: true,
   poweredByHeader: false,
+
+  // Experimental features - Plesk hosting optimizations
+  experimental: {
+    // Webpack build worker devre dışı - Plesk ve Windows için gerekli
+    webpackBuildWorker: false,
+  },
+
+  // Server external packages (moved from experimental)
+  serverExternalPackages: [],
   
   // Security headers
   async headers() {
@@ -116,36 +133,73 @@ const nextConfig: NextConfig = {
     },
   },
 
-  // Only use webpack for production builds
-  // Turbopack handles development builds automatically
-  webpack: (config, { dev }) => {
-    // Skip webpack configuration for development when using Turbopack
-    if (dev) {
-      return config;
+  // Webpack configuration - Plesk hosting için cache devre dışı
+  webpack: (config, { dev, isServer }) => {
+    // Webpack cache'i tamamen devre dışı bırak - Plesk ve Windows için kritik
+    config.cache = false;
+    
+    // File system snapshot devre dışı - cache hatalarını önler
+    if (config.snapshot) {
+      config.snapshot.managedPaths = [];
+      config.snapshot.immutablePaths = [];
+    }
+    
+    // Memory cache de devre dışı
+    if (config.infrastructureLogging) {
+      config.infrastructureLogging.level = 'error';
     }
 
-    // Apply optimizations only for production builds
-    config.optimization.splitChunks = {
-      chunks: 'all',
-      cacheGroups: {
-        default: false,
-        vendors: false,
-        vendor: {
-          name: 'vendor',
-          chunks: 'all',
-          test: /node_modules/,
-          priority: 20
-        },
-        common: {
-          name: 'common',
-          minChunks: 2,
-          chunks: 'all',
-          priority: 10,
-          reuseExistingChunk: true,
-          enforce: true
-        }
+    // Windows-specific optimizations
+    if (process.platform === 'win32') {
+      // Windows path handling
+      config.resolve = config.resolve || {};
+      config.resolve.symlinks = false;
+      
+      // Windows file watching optimizations (avoid readonly property error)
+      const ignoredPaths = ['**/node_modules/**', '**/.git/**', '**/.next/**', '**/dist/**'];
+      
+      if (config.watchOptions) {
+        // Create new watchOptions object to avoid readonly property issues
+        config.watchOptions = {
+          ...config.watchOptions,
+          ignored: [
+            ...(Array.isArray(config.watchOptions.ignored) ? config.watchOptions.ignored : []),
+            ...ignoredPaths
+          ],
+          poll: 1000
+        };
+      } else {
+        config.watchOptions = {
+          ignored: ignoredPaths,
+          poll: 1000
+        };
       }
-    };
+    }
+
+    // Production builds için optimizasyonlar
+    if (!dev) {
+      config.optimization.splitChunks = {
+        chunks: 'all',
+        cacheGroups: {
+          default: false,
+          vendors: false,
+          vendor: {
+            name: 'vendor',
+            chunks: 'all',
+            test: /node_modules/,
+            priority: 20
+          },
+          common: {
+            name: 'common',
+            minChunks: 2,
+            chunks: 'all',
+            priority: 10,
+            reuseExistingChunk: true,
+            enforce: true
+          }
+        }
+      };
+    }
 
     return config;
   },

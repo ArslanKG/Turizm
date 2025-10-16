@@ -6,18 +6,18 @@ import { LanguageProvider } from "@/contexts/LanguageContext";
 
 export const metadata: Metadata = {
   title: {
-    default: "Parla Travel - Türkiye Turları & Seyahat Hizmetleri",
-    template: "%s | Parla Travel"
+    default: "Teddy Travel - Türkiye Turları & Seyahat Hizmetleri",
+    template: "%s | Teddy Travel"
   },
-  description: "15+ yıllık deneyimle Türkiye'nin en güzel destinasyonlarını keşfetmeniz için özel turlar düzenleyen Parla Travel ile tanışın. Kültür turları, otel rezervasyonları ve rehberlik hizmetleri.",
+  description: "15+ yıllık deneyimle Türkiye'nin en güzel destinasyonlarını keşfetmeniz için özel turlar düzenleyen Teddy Travel ile tanışın. Kültür turları, otel rezervasyonları ve rehberlik hizmetleri.",
   keywords: [
     "türkiye turları", "kültür gezileri", "otel rezervasyonu", "rehberlik hizmeti", "seyahat acentesi",
     "tatil paketleri", "istanbul turları", "kapadokya turları", "pamukkale", "efes",
-    "türkiye seyahat", "grup turları", "parla travel", "turizm"
+    "türkiye seyahat", "grup turları", "teddy travel", "turizm"
   ],
-  authors: [{ name: "Parla Travel", url: "https://www.parlatravel.com" }],
-  creator: "Parla Travel",
-  publisher: "Parla Travel",
+  authors: [{ name: "Teddy Travel", url: "https://www.teddytravel.net" }],
+  creator: "Teddy Travel",
+  publisher: "Teddy Travel",
   robots: {
     index: true,
     follow: true,
@@ -30,33 +30,33 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://www.parlagroup.com",
+    canonical: "https://www.teddytravel.net",
     languages: {
-      'tr-TR': 'https://www.parlagroup.com',
+      'tr-TR': 'https://www.teddytravel.net',
     },
   },
   openGraph: {
     type: "website",
     locale: "tr_TR",
-    url: "https://www.parlatravel.com",
-    title: "Parla Travel - Türkiye Turları & Seyahat Hizmetleri",
-    description: "15+ yıllık deneyimle Türkiye'nin en güzel destinasyonlarını keşfetmeniz için özel turlar düzenleyen Parla Travel ile tanışın.",
-    siteName: "Parla Travel",
+    url: "https://www.teddytravel.net",
+    title: "Teddy Travel - Türkiye Turları & Seyahat Hizmetleri",
+    description: "15+ yıllık deneyimle Türkiye'nin en güzel destinasyonlarını keşfetmeniz için özel turlar düzenleyen Teddy Travel ile tanışın.",
+    siteName: "Teddy Travel",
     images: [
       {
-        url: "https://www.parlagroup.com/images/og-image.jpg",
+        url: "https://www.teddytravel.net/images/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Parla Travel - Türkiye Turları ve Seyahat",
+        alt: "Teddy Travel - Türkiye Turları ve Seyahat",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Parla Travel - Türkiye Turları & Seyahat Hizmetleri",
-    description: "15+ yıllık deneyimle Türkiye'nin en güzel destinasyonlarını keşfetmeniz için özel turlar düzenleyen Parla Travel ile tanışın.",
-    images: ["https://www.parlatravel.com/images/og-image.jpg"],
-    creator: "@parlagroup",
+    title: "Teddy Travel - Türkiye Turları & Seyahat Hizmetleri",
+    description: "15+ yıllık deneyimle Türkiye'nin en güzel destinasyonlarını keşfetmeniz için özel turlar düzenleyen Teddy Travel ile tanışın.",
+    images: ["https://www.teddytravel.net/images/og-image.jpg"],
+    creator: "@teddytravel",
   },
   verification: {
     google: "your-google-verification-code",

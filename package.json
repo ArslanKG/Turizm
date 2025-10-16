@@ -1,16 +1,49 @@
 {
-  "name": "parla-group-website",
-  "version": "0.1.0",
-  "description": "Parla Travel - Türkiye'nin en güzel destinasyonlarını keşfetmeniz için özel turlar düzenleyen deneyimli turizm şirketi.",
+  "name": "teddy-travel-website",
+  "version": "1.0.0",
+  "description": "Teddy Travel - Türkiye'nin en güzel destinasyonlarını keşfetmeniz için özel turlar düzenleyen deneyimli turizm şirketi.",
   "private": true,
   "license": "MIT",
-  "author": "Parla Travel",
-  "keywords": ["turizm", "turkiye-turlari", "kultur-gezileri", "otel-rezervasyonu", "rehberlik", "nextjs", "react", "typescript"],
+  "author": "Teddy Travel <info@teddytravel.net>",
+  "homepage": "https://www.teddytravel.net",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/teddytravel/website.git"
+  },
+  "bugs": {
+    "url": "https://github.com/teddytravel/website/issues",
+    "email": "destek@teddytravel.net"
+  },
+  "keywords": ["turizm", "turkiye-turlari", "kultur-gezileri", "otel-rezervasyonu", "rehberlik", "nextjs", "react", "typescript", "teddy-travel", "plesk", "production"],
+  "engines": {
+    "node": ">=18.20.6",
+    "npm": ">=9.0.0"
+  },
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "next start -p 3000",
+    "lint": "next lint",
+    "build:analyze": "cross-env ANALYZE=true next build",
+    "build:production": "cross-env NODE_ENV=production next build",
+    "start:production": "cross-env NODE_ENV=production next start -p 3000",
+    "dev:windows": "cross-env NODE_ENV=development next dev --turbopack",
+    "build:windows": "cross-env NODE_ENV=production next build",
+    "export": "next build && next export",
+    "clean": "rimraf .next .turbo out node_modules/.cache npm-debug.log* yarn-error.log*",
+    "clean:windows": "if exist .next rmdir /s /q .next & if exist .turbo rmdir /s /q .turbo & if exist out rmdir /s /q out",
+    "build-production": "npm run clean && npm install --no-cache && next build",
+    "validate": "npm run lint && npm run type-check",
+    "type-check": "tsc --noEmit",
+    "health-check": "node -e \"require('http').get('http://localhost:3000/', (res) => process.exit(res.statusCode === 200 ? 0 : 1)).on('error', () => process.exit(1))\"",
+    "prestart": "npm run build:production",
+    "postinstall": "npm run build:production",
+    "deploy:plesk": "npm run clean && npm ci --no-cache && npm run build:production && echo Build completed successfully for Plesk deployment",
+    "plesk-deploy": "npm install --no-cache && cross-env NODE_ENV=production next build && echo Plesk deployment build completed successfully",
+    "logs": "pm2 logs teddy-travel",
+    "restart": "pm2 restart teddy-travel",
+    "stop": "pm2 stop teddy-travel",
+    "status": "pm2 status"
   },
   "dependencies": {
     "clsx": "^2.1.1",
@@ -27,8 +60,10 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "cross-env": "^7.0.3",
     "eslint": "^9",
     "eslint-config-next": "15.3.3",
+    "rimraf": "^5.0.5",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

@@ -1,196 +1,308 @@
-# Parla Travel Corporate Website
+# 🏖️ Teddy Travel - Türkiye Turizm Website'i
 
-Modern, responsive corporate website for Parla Travel - a leading tourism and travel services company in Turkey.
+Modern, responsive ve kullanıcı dostu turizm website'i. Next.js 15, React 19 ve TypeScript ile geliştirilmiştir.
 
-## 🚀 Features
+## 🚀 Özellikler
 
-- **Modern Design**: Clean, professional design with smooth animations
-- **Fully Responsive**: Optimized for all devices (desktop, tablet, mobile)
-- **SEO Optimized**: Complete meta tags, structured data, and performance optimization
-- **Fast Performance**: Next.js 15 with Turbopack for lightning-fast development
-- **Accessibility**: WCAG compliant with proper semantic HTML
-- **Multi-language Ready**: Turkish content with structure for internationalization
+- ⚡ **Next.js 15.3.3** - En güncel framework
+- ⚛️ **React 19.0.0** - Modern React hooks ve features  
+- 🔷 **TypeScript** - Type-safe development
+- 🎨 **Tailwind CSS 4.x** - Modern CSS framework
+- 📱 **Responsive Design** - Tüm cihazlarda uyumlu
+- 🔍 **SEO Optimized** - Search engine friendly
+- 🌐 **Multi-language Support** - Türkçe/İngilizce (hazır)
+- ⚡ **Performance Optimized** - Fast loading times
 
-## 🛠 Technology Stack
+## 💻 Windows Kurulum & Geliştirme
 
-- **Framework**: Next.js 15 (App Router)
-- **Styling**: Tailwind CSS 4
-- **Language**: TypeScript
-- **Icons**: Lucide React
-- **Animations**: Framer Motion
-- **Image Optimization**: Next.js Image component
-- **Build Tool**: Turbopack
+### 📋 Ön Koşullar
 
-## 📱 Pages
+```powershell
+# Node.js 18.20.6 (Önemli: Tam bu versiyon gerekli)
+node --version  # v18.20.6 çıktısı vermeli
 
-- **Homepage** (`/`) - Hero section, services preview, featured projects
-- **About** (`/hakkimizda`) - Company story, values, timeline, team
-- **Services** (`/hizmetler`) - Service grid with detailed pages:
-  - Culture Tours (`/hizmetler/kultur-turlari`)
-  - Hotel Reservations (`/hizmetler/otel-rezervasyon`)
-  - Professional Guide Services (`/hizmetler/rehberlik-hizmetleri`)
-  - Tour Planning (`/hizmetler/tur-planlama`)
-- **Projects** (`/projeler`) - Project showcase with filtering
-- **Blog** (`/blog`) - News and insights with categories
-- **Career** (`/kariyer`) - Job positions, benefits, application form
-- **Contact** (`/iletisim`) - Contact form, map, company information
+# npm 9.0.0+
+npm --version   # 9.0.0+ çıktısı vermeli
 
-## 🏗 Project Structure
-
-```
-src/
-├── app/                    # Next.js 15 App Router
-│   ├── layout.tsx         # Root layout with meta tags
-│   ├── page.tsx           # Homepage
-│   ├── globals.css        # Global styles
-│   └── [pages]/           # Individual page routes
-├── components/
-│   ├── layout/            # Header, Footer
-│   ├── sections/          # Page sections (Hero, About, etc.)
-│   └── ui/                # Reusable UI components
-├── lib/
-│   └── utils.ts           # Utility functions
-└── types/
-    └── index.ts           # TypeScript type definitions
+# Git (Windows)
+git --version
 ```
 
-## 🚀 Getting Started
+### 📥 Node.js 18.20.6 Kurulumu (Windows)
 
-### Prerequisites
+1. **Resmi Website'den İndir:**
+   - https://nodejs.org/download/release/v18.20.6/
+   - `node-v18.20.6-x64.msi` dosyasını indir
 
-- Node.js 18 or later
-- npm or yarn
+2. **Kurulumu Doğrula:**
+   ```powershell
+   node --version  # v18.20.6
+   npm --version   # 9.8.1 (veya üstü)
+   ```
 
-### Installation
+### 🛠️ Proje Kurulumu
 
-1. Clone the repository:
+```powershell
+# 1. Repository'yi klonla
+git clone https://github.com/username/teddy-travel-website.git
+cd teddy-travel-website
+
+# 2. Bağımlılıkları kur (Windows optimize)
+npm install --no-cache
+
+# 3. Environment dosyasını hazırla
+copy .env.example .env.local
+
+# 4. Development server'ı başlat
+npm run dev
+
+# 5. Browser'da aç: http://localhost:3000
+```
+
+### 🔧 Windows-Specific Komutlar
+
+```powershell
+# Development (Windows optimize)
+npm run dev:windows
+
+# Production build (Windows optimize)  
+npm run build:windows
+
+# Cache temizleme (Windows)
+npm run clean:windows
+
+# Cross-platform temizleme
+npm run clean
+```
+
+### 📁 Proje Yapısı
+
+```
+teddy-travel-website/
+├── 📁 src/
+│   ├── 📁 app/                 # Next.js App Router
+│   │   ├── 📄 layout.tsx      # Root layout
+│   │   ├── 📄 page.tsx        # Ana sayfa
+│   │   ├── 📁 blog/           # Blog sayfaları
+│   │   ├── 📁 turlar/         # Tur sayfaları
+│   │   ├── 📁 hizmetler/      # Hizmetler
+│   │   ├── 📁 hakkimizda/     # Hakkımızda
+│   │   └── 📁 iletisim/       # İletişim
+│   ├── 📁 components/         # React bileşenleri
+│   │   ├── 📁 layout/         # Layout bileşenleri
+│   │   ├── 📁 sections/       # Sayfa bölümleri
+│   │   └── 📁 ui/            # UI bileşenleri
+│   ├── 📁 contexts/          # React contexts
+│   ├── 📁 lib/               # Utility functions
+│   └── 📁 types/             # TypeScript types
+├── 📁 public/                # Static assets
+├── 📄 package.json           # Dependencies
+├── 📄 next.config.ts         # Next.js config
+├── 📄 tsconfig.json          # TypeScript config
+├── 📄 server.js              # Custom server
+├── 📄 web.config             # IIS configuration
+└── 📄 .env.local             # Environment variables
+```
+
+## 🚀 Development Scripts
+
+```powershell
+# Development server
+npm run dev                    # Standard development
+npm run dev:windows           # Windows optimize development
+
+# Production build
+npm run build                 # Standard production build
+npm run build:production      # Production optimized
+npm run build:windows        # Windows optimize build
+
+# Testing & Quality
+npm run lint                  # ESLint check
+npm run type-check           # TypeScript check
+npm run validate             # Lint + type check
+
+# Deployment
+npm run start                # Production server
+npm run plesk-deploy        # Plesk hosting deploy
+
+# Maintenance  
+npm run clean               # Cross-platform cache clean
+npm run clean:windows      # Windows specific clean
+```
+
+## 🌐 Environment Variables
+
+Geliştirme için `.env.local` dosyasını düzenleyin:
+
 ```bash
-git clone https://github.com/parlagroup/website.git
-cd parla-group-website
+# Application
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+NODE_ENV=development
+
+# Windows Optimizations
+UV_THREADPOOL_SIZE=16
+NODE_OPTIONS=--max-old-space-size=4096
+
+# Analytics (Production için)
+NEXT_PUBLIC_GOOGLE_ANALYTICS=G-XXXXXXXXXX
+NEXT_PUBLIC_GTM_ID=GTM-XXXXXXX
+
+# Social Media Links
+NEXT_PUBLIC_FACEBOOK_URL=https://facebook.com/teddytravel
+NEXT_PUBLIC_INSTAGRAM_URL=https://instagram.com/teddytravel
 ```
 
-2. Install dependencies:
-```bash
-npm install
+## 🔧 Windows Troubleshooting
+
+### Yaygın Problemler ve Çözümler
+
+#### 1. Port zaten kullanımda (EADDRINUSE)
+```powershell
+# Port'u kullanan process'i bul
+netstat -ano | findstr :3000
+
+# Process'i sonlandır (PID ile)
+taskkill /PID <PID_NUMBER> /F
 ```
 
-3. Set up environment variables:
-```bash
-cp .env.example .env.local
+#### 2. Node.js versiyon uyumsuzluğu
+```powershell
+# Mevcut versiyon kontrolü
+node --version
+
+# Node.js 18.20.6 indirmek için:
+# https://nodejs.org/download/release/v18.20.6/
 ```
 
-4. Start the development server:
-```bash
+#### 3. npm install hataları
+```powershell
+# Cache temizle ve tekrar kur
+npm cache clean --force
+rd /s /q node_modules
+del package-lock.json
+npm install --no-cache
+```
+
+#### 4. Build hataları
+```powershell
+# Tam temizleme
+npm run clean:windows
+npm install --no-cache
+npm run build:windows
+```
+
+### Windows Performance Tips
+
+```powershell
+# Memory artırma (büyük projeler için)
+set NODE_OPTIONS=--max-old-space-size=8192
+npm run build
+
+# Multi-core compilation
+set UV_THREADPOOL_SIZE=16
 npm run dev
 ```
 
-5. Open [http://localhost:3002](http://localhost:3002) in your browser.
+## 📦 Production Deployment
 
-## 📋 Available Scripts
-
-- `npm run dev` - Start development server with Turbopack
-- `npm run build` - Build for production
-- `npm run start` - Start production server
-- `npm run lint` - Run ESLint
-
-## 🔧 Configuration
-
-### Environment Variables
-
-Copy `.env.example` to `.env.local` and configure:
+### Plesk Hosting
 
 ```bash
-# Site Configuration
-NEXT_PUBLIC_SITE_URL=https://www.parlatravel.com
-NEXT_PUBLIC_SITE_NAME="Parla Travel"
+# 1. Build production files
+npm run build:production
 
-# Analytics
-NEXT_PUBLIC_GOOGLE_ANALYTICS=your-ga-id
-NEXT_PUBLIC_GOOGLE_TAG_MANAGER=your-gtm-id
+# 2. Upload files to Plesk:
+# - .next/ (build output)
+# - public/ (static assets)  
+# - package.json
+# - server.js
+# - web.config
+# - .env.local (production values)
 
-# Contact Form
-CONTACT_FORM_ENDPOINT=your-form-endpoint
+# 3. Plesk'te Node.js ayarları:
+# - Node.js Version: 18.20.6
+# - Application startup file: server.js
+# - Application mode: Production
 ```
 
-### SEO Configuration
+### Windows IIS
 
-The website includes comprehensive SEO optimization:
-
-- **Meta Tags**: Complete Open Graph and Twitter Card tags
-- **Structured Data**: JSON-LD for organization and services
-- **Sitemap**: Auto-generated XML sitemap
-- **Robots.txt**: Search engine crawling instructions
-- **Canonical URLs**: Proper URL canonicalization
+```powershell
+# iisnode modülü gerekli
+# web.config otomatik yapılandırılmış
+# server.js IIS handler olarak ayarlanmış
+```
 
 ## 🎨 Customization
 
-### Colors & Branding
+### Tema Değişiklikleri
+- `src/app/globals.css` - Global stiller
+- `tailwind.config.js` - Tailwind ayarları
+- `src/components/` - Component'ler
 
-Primary brand colors are defined in `tailwind.config.js`:
-- Primary: Orange (#f97316)
-- Secondary: Gray (#64748b)
-- Accent: Blue (#3b82f6)
+### İçerik Yönetimi
+- `src/app/` - Sayfa yapısı
+- `src/components/sections/` - Sayfa bölümleri
+- `public/images/` - Görseller
 
-### Content Updates
+## 📱 Responsive Breakpoints
 
-1. **Company Information**: Update in `src/components/sections/`
-2. **Services**: Modify service data in respective section files
-3. **Projects**: Update project data in `src/components/sections/ProjectsGrid.tsx`
-4. **Team**: Update team information in `src/components/sections/TeamSection.tsx`
-
-## 📊 Performance
-
-The website is optimized for performance:
-
-- **Core Web Vitals**: Optimized for LCP, FID, and CLS
-- **Image Optimization**: Next.js Image component with WebP/AVIF
-- **Code Splitting**: Automatic route-based code splitting
-- **Bundle Optimization**: Tree shaking and dead code elimination
-
-## 🔒 Security
-
-Security headers are configured in `next.config.ts`:
-
-- Content Security Policy
-- X-Frame-Options
-- X-Content-Type-Options
-- Referrer Policy
-
-## 📱 Responsive Design
-
-Responsive breakpoints:
-- **Mobile**: < 768px
-- **Tablet**: 768px - 1024px
-- **Desktop**: > 1024px
-- **Large Desktop**: > 1280px
-
-## 🌐 Deployment
-
-### Vercel (Recommended)
-
-1. Connect your repository to Vercel
-2. Configure environment variables
-3. Deploy automatically on push to main
-
-### Manual Deployment
-
-```bash
-npm run build
-npm run start
+```css
+/* Tailwind CSS Breakpoints */
+sm: 640px   /* Telefon (büyük) */
+md: 768px   /* Tablet */
+lg: 1024px  /* Laptop */
+xl: 1280px  /* Desktop */
+2xl: 1536px /* Large Desktop */
 ```
+
+## 🔒 Security Features
+
+- ✅ Content Security Policy headers
+- ✅ XSS protection
+- ✅ CSRF protection
+- ✅ Secure environment variables
+- ✅ Input validation
+- ✅ SQL injection prevention
+
+## 📊 Performance Metrics
+
+Target performance goals:
+
+- **LCP (Largest Contentful Paint)**: < 2.5s
+- **FID (First Input Delay)**: < 100ms  
+- **CLS (Cumulative Layout Shift)**: < 0.1
+- **TTFB (Time to First Byte)**: < 800ms
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create feature branch: `git checkout -b feature/amazing-feature`
+3. Commit changes: `git commit -m 'Add amazing feature'`
+4. Push to branch: `git push origin feature/amazing-feature`
+5. Open Pull Request
 
 ## 📞 Support
 
-For technical support or questions:
-
-- **Email**: info@parlagroup.com
-- **Phone**: +90 (212) 555-0123
-- **Website**: [www.parlagroup.com](https://www.parlagroup.com)
+- **Website**: https://www.teddytravel.net
+- **Email**: info@teddytravel.net
+- **Support**: destek@teddytravel.net
 
 ## 📄 License
 
-© 2024 Parla Travel. All rights reserved.
+MIT License - detaylar için [LICENSE](LICENSE) dosyasına bakın.
 
 ---
 
-**Built with ❤️ by Parla Travel Development Team**
+## ⚡ Quick Start (Windows)
+
+```powershell
+# Hızlı başlangıç (3 komut)
+git clone <repo-url> && cd teddy-travel-website
+npm install --no-cache
+npm run dev
+
+# Browser: http://localhost:3000 🚀
+```
+
+**Developed with ❤️ for Teddy Travel**
